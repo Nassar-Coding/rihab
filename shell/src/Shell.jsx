@@ -29,14 +29,21 @@ const CSS = `
 @import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Marcellus&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 *{box-sizing:border-box}
 html,body{margin:0;background:${C.ink};color:${C.marble};-webkit-font-smoothing:antialiased}
-body{min-height:100vh}
-.rh{min-height:100vh;position:relative;overflow:hidden;font-family:'IBM Plex Sans Arabic','IBM Plex Sans',system-ui,sans-serif}
+body{min-height:100dvh}
+/* like the two city apps: a phone on a computer screen, the whole screen on a phone */
+.stage{min-height:100dvh;display:flex;align-items:center;justify-content:center}
+.stage.framed{padding:22px 12px;background:radial-gradient(1200px 760px at 50% -12%, #213a37 0%, #102021 52%, #071011 100%)}
+.phone{position:relative;width:100%;height:100dvh;overflow:hidden;background:${C.ink};isolation:isolate}
+.framed .phone{width:390px;max-width:100%;height:844px;max-height:calc(100dvh - 44px);border-radius:38px;
+  border:1px solid rgba(200,164,93,.30);box-shadow:0 0 0 7px rgba(8,17,18,.55),0 44px 100px -34px rgba(0,0,0,.9)}
+.rh{position:relative;z-index:1;height:100%;overflow-y:auto;overflow-x:hidden;scrollbar-width:none;font-family:'IBM Plex Sans Arabic','IBM Plex Sans',system-ui,sans-serif}
+.rh::-webkit-scrollbar{display:none}
 .rh[lang=en]{font-family:'IBM Plex Sans','IBM Plex Sans Arabic',system-ui,sans-serif}
-.rh::before{content:"";position:fixed;inset:0;pointer-events:none;
+.phone::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(120% 70% at 50% -10%, rgba(200,164,93,.16), transparent 60%),
              radial-gradient(90% 60% at 50% 115%, rgba(23,70,58,.35), transparent 70%)}
-.pattern{position:fixed;inset:0;pointer-events:none;opacity:.07}
-.wrap{position:relative;max-width:460px;margin:0 auto;padding:18px 22px 28px;min-height:100vh;display:flex;flex-direction:column}
+.pattern{position:absolute;inset:0;pointer-events:none;opacity:.07}
+.wrap{position:relative;max-width:460px;margin:0 auto;padding:18px 22px 28px;min-height:100%;display:flex;flex-direction:column}
 .wide .wrap{max-width:980px}
 .top{display:flex;align-items:center;justify-content:space-between;min-height:40px}
 .pill{appearance:none;border:1px solid ${C.line};background:rgba(19,36,38,.6);color:${C.marble};border-radius:999px;
@@ -220,11 +227,17 @@ function App() {
   const [opened, setOpened] = useState(false);
   const [menu, setMenu] = useState(false);
   const [wide, setWide] = useState(() => typeof window !== "undefined" && window.innerWidth >= 900);
+  /* the city apps' rule: a phone-sized screen, or a short one, uses the whole screen */
+  const readDevice = () => typeof window === "undefined" || window.innerWidth <= 560 || window.innerHeight <= 720;
+  const [device, setDevice] = useState(readDevice);
   const set = (k) => (v) => setF((x) => ({ ...x, [k]: v }));
 
   useEffect(() => { store.set(K.LANG, lang); document.documentElement.lang = lang; document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
     document.title = BI ? t.title : lang === "ar" ? "رحاب" : "Rihab"; }, [lang]);
-  useEffect(() => { const r = () => setWide(window.innerWidth >= 900); window.addEventListener("resize", r); return () => window.removeEventListener("resize", r); }, []);
+  useEffect(() => { const r = () => { setWide(window.innerWidth >= 900); setDevice(readDevice()); }; window.addEventListener("resize", r); window.addEventListener("orientationchange", r);
+    return () => { window.removeEventListener("resize", r); window.removeEventListener("orientationchange", r); }; }, []);
+  /* the app's entry sits in the phone frame like Rihab Makkah and Rihab Madinah; the BI entry, which leads to desktop dashboards, fills the page */
+  const framed = !BI && !device;
   useEffect(() => { setErr(""); setNote(""); setShow(false); }, [view]);
 
   const fail = (e) => setErr(t.e[e?.code] || t.e[e?.message] || t.e.generic);
@@ -258,9 +271,11 @@ function App() {
   const lastCity = store.get(K.LAST_CITY);
 
   return (
-    <div className={`rh${wide && session ? " wide" : ""}`} lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
-      <style>{CSS}</style>
-      <Pattern />
+    <div className={`stage${framed ? " framed" : ""}`}>
+    <style>{CSS}</style>
+    <div className="phone" data-phone>
+    <Pattern />
+    <div className={`rh${BI && wide && session ? " wide" : ""}`} lang={lang} dir={lang === "ar" ? "rtl" : "ltr"}>
       <div className="wrap">
         <div className="top">
           {session ? <Wordmark small /> : <span />}
@@ -362,6 +377,8 @@ function App() {
 
         <div className="foot"><span>{t.cities.split(" · ")[0]}</span><b>✦</b><span>{t.cities.split(" · ")[1]}</span></div>
       </div>
+    </div>
+    </div>
     </div>
   );
 }
