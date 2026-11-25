@@ -6,7 +6,8 @@
    cities. Passwords are kept only as salted PBKDF2 hashes, exactly as in the apps. */
 import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { RIHAB as K, store, Accounts, passwordError, normEmail, EMAIL_RX } from "./rihab-auth.js";
+import { RIHAB as K, MODE, store, Accounts, passwordError, normEmail, EMAIL_RX } from "./rihab-auth.js";
+const BI = MODE === "bi";
 
 /* ── identity ─────────────────────────────────────────────────────────────
    «الرحاب» are the open precincts of the two Holy Mosques. The palette takes the
@@ -47,6 +48,8 @@ body{min-height:100vh}
 .arch svg{position:absolute;inset:0}
 .word-ar{font-family:'Aref Ruqaa',serif;font-weight:700;color:${C.marble};font-size:68px;line-height:1;margin-top:30px;
   text-shadow:0 2px 24px rgba(200,164,93,.18)}
+.kicker{margin-top:10px;font-size:12.5px;font-weight:600;letter-spacing:.08em;color:${C.mist};padding:4px 12px;border:1px solid ${C.line};border-radius:999px}
+.rh[lang=en] .kicker{font-family:'Marcellus',serif;font-weight:400;letter-spacing:.24em;text-transform:uppercase;font-size:11px}
 .word-en{font-family:'Marcellus',serif;letter-spacing:.56em;margin-inline-start:.56em;color:${C.gold};font-size:15px;margin-top:6px}
 .sm{margin:0;flex-direction:row;gap:10px;align-items:baseline}
 .sm .word-ar{font-size:34px;margin:0;color:${C.goldHi};text-shadow:none}
@@ -118,6 +121,12 @@ body{min-height:100vh}
 @media (prefers-reduced-motion: reduce){.city,.city img{transition:none}.city:hover,.city:hover img{transform:none}}
 `;
 
+const T_BI = {
+  ar: { kicker: "ذكاء الأعمال", signInSub: "لوحات ذكاء الأعمال لرحاب مكة ورحاب المدينة. حسابات الأعمال تصدرها إدارة المنصة.", hiK: "رحاب — ذكاء الأعمال",
+    pick: "اختر المدينة لعرض لوحاتها بهويتها الخاصة.", open: "افتح اللوحات", title: "رحاب — ذكاء الأعمال" },
+  en: { kicker: "Business Intelligence", signInSub: "Business intelligence for Rihab Makkah and Rihab Madinah. Business accounts are issued by the platform team.", hiK: "Rihab Business Intelligence",
+    pick: "Choose a city to open its dashboards, in its own identity.", open: "Open dashboards", title: "Rihab — Business Intelligence" },
+};
 const T = {
   ar: { lang: "English", signIn: "تسجيل الدخول", signInSub: "حساب واحد لرحاب مكة ورحاب المدينة.", email: "البريد الإلكتروني", password: "كلمة المرور",
     show: "إظهار", hide: "إخفاء", forgot: "نسيت كلمة المرور؟", enter: "دخول", or: "أو", create: "إنشاء حساب رحاب", haveAcc: "لديك حساب؟", backIn: "سجّل الدخول",
@@ -162,7 +171,7 @@ const Pattern = () => (
 );
 
 /* the wordmark: رحاب under a gold pointed arch — the arcade around the precincts */
-function Wordmark({ small }) {
+function Wordmark({ small, kicker }) {
   if (small) return (
     <div className="mark sm" role="img" aria-label="رحاب — Rihab">
       <span className="word-ar" aria-hidden="true">رحاب</span><span className="word-en" aria-hidden="true">RIHAB</span>
@@ -179,6 +188,7 @@ function Wordmark({ small }) {
         <div className="word-ar" aria-hidden="true">رحاب</div>
       </div>
       {!small && <div className="word-en" aria-hidden="true">RIHAB</div>}
+      {!small && kicker && <div className="kicker">{kicker}</div>}
     </div>
   );
 }
@@ -198,7 +208,7 @@ function Field({ label, type = "text", value, onChange, auto, show, onToggle, t,
 
 function App() {
   const [lang, setLang] = useState(() => store.get(K.LANG) || "ar");
-  const t = T[lang];
+  const t = BI ? { ...T[lang], ...T_BI[lang], hi: () => (lang === "ar" ? "مرحبًا بك" : "Welcome") } : T[lang];
   const [session, setSession] = useState(() => Accounts.readSession());
   const [view, setView] = useState("signin");
   const [busy, setBusy] = useState(false);
@@ -213,7 +223,7 @@ function App() {
   const set = (k) => (v) => setF((x) => ({ ...x, [k]: v }));
 
   useEffect(() => { store.set(K.LANG, lang); document.documentElement.lang = lang; document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-    document.title = lang === "ar" ? "رحاب" : "Rihab"; }, [lang]);
+    document.title = BI ? t.title : lang === "ar" ? "رحاب" : "Rihab"; }, [lang]);
   useEffect(() => { const r = () => setWide(window.innerWidth >= 900); window.addEventListener("resize", r); return () => window.removeEventListener("resize", r); }, []);
   useEffect(() => { setErr(""); setNote(""); setShow(false); }, [view]);
 
@@ -267,7 +277,7 @@ function App() {
         )}
 
         {!session && <>
-          <Wordmark />
+          <Wordmark kicker={BI ? t.kicker : null} />
           <div className="rule" aria-hidden="true">✦</div>
 
           {view === "signin" && (
@@ -277,11 +287,13 @@ function App() {
               {note && <p className="ok" role="status">{note}</p>}
               <Field label={t.email} type="email" value={f.email} onChange={set("email")} auto="username" t={t} dir="ltr" />
               <Field label={t.password} type="password" value={f.password} onChange={set("password")} auto="current-password" show={show} onToggle={() => setShow((s) => !s)} t={t} dir="ltr" />
-              <div className="between"><span /><button type="button" className="link" onClick={() => setView("reset")}>{t.forgot}</button></div>
+              {!BI && <div className="between"><span /><button type="button" className="link" onClick={() => setView("reset")}>{t.forgot}</button></div>}
               {err && <p className="err" role="alert">{err}</p>}
               <button className="btn" disabled={busy} data-rihab-submit>{t.enter}</button>
+              {!BI && <>
               <div className="or">{t.or}</div>
               <button type="button" className="btn ghost" onClick={() => setView("signup")}>{t.create}</button>
+              </>}
             </form>
           )}
 

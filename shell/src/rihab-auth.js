@@ -5,12 +5,12 @@
      rihab.lang         "ar" | "en"
    Per-city data (resident or visitor, profile, plan, communities, requests) stays
    under rihab.makkah.* and rihab.madinah.*, owned by each city app. */
-export const RIHAB = {
-  ACCOUNTS: "rihab.accounts.v1",
-  SESSION: "rihab.session.v1",
-  LANG: "rihab.lang",
-  LAST_CITY: "rihab.lastCity",
-};
+/* "app" for the Rihab app; "bi" for Rihab Business Intelligence, whose business accounts
+   and sign-in are kept apart from the residents' and visitors' accounts */
+export const MODE = (typeof window !== "undefined" && window.RIHAB_MODE) === "bi" ? "bi" : "app";
+export const RIHAB = MODE === "bi"
+  ? { ACCOUNTS: "rihab.bi.accounts.v1", SESSION: "rihab.bi.session.v1", LANG: "rihab.lang", LAST_CITY: "rihab.bi.lastCity" }
+  : { ACCOUNTS: "rihab.accounts.v1", SESSION: "rihab.session.v1", LANG: "rihab.lang", LAST_CITY: "rihab.lastCity" };
 
 export const store = {
   get(k) { try { const v = window.localStorage.getItem(k); return v ? JSON.parse(v) : null; } catch { return null; } },
@@ -42,12 +42,18 @@ const randomNonce = () => hex(crypto.getRandomValues(new Uint8Array(24)));
 /* The Rihab demo accounts (password: demo). Ordinary accounts with no extra
    privileges, restored on every launch so the published sign-ins always work.
    Each city keeps its own persona for them (see the city apps' seeded profiles). */
-export const SEEDED = [
+const SEEDED_APP = [
   { uid: "local-demo-resident", email: "resident@rihab.app", firstName: "أمل", lastName: "الحربي", firstNameEn: "Amal", lastNameEn: "Al-Harbi",
     salt: "a3f19c6e7b204d58b1e6c9d02f4a7e31", hash: "12f6418e3bccd0a4f5277b7b9eac6ea6e494cdf8bcd9ffb9315d954dc5b98878", createdAt: "2026-10-05T00:00:00.000Z" },
   { uid: "local-demo-visitor", email: "visitor@rihab.app", firstName: "يوسف", lastName: "الأنصاري", firstNameEn: "Yousef", lastNameEn: "Al-Ansari",
     salt: "5c8e2b7d91f04a63e0b4d7a8c2f15e96", hash: "2f315022e7c542fac3d68c9f4c764548a2c37818d910708767c20af9b2fdc4ae", createdAt: "2026-10-05T00:00:00.000Z" },
 ];
+/* Rihab BI's business demo account (password: demo) */
+const SEEDED_BI = [
+  { uid: "local-bi-analyst", email: "bi@rihab.app", firstName: "محلل الأعمال", lastName: "", firstNameEn: "Business analyst", lastNameEn: "",
+    salt: "9ac4451fb11a466dd11b3c679f21d1b4", hash: "91e480974c7b190616f7f57cbfe3ce8eae43c5b0b768c1250ee62b8e138f68f8", createdAt: "2026-10-05T00:00:00.000Z" },
+];
+export const SEEDED = MODE === "bi" ? SEEDED_BI : SEEDED_APP;
 
 let seeded = false;
 function db() {

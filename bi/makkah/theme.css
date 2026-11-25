@@ -1,0 +1,20 @@
+/* Rihab Makkah BI — the Rihab Makkah identity, as in the app: Warm Ivory surfaces, Makkah green
+   for the brand surfaces, brass for accents, green for residents and gold for visitors;
+   Tajawal and Inter. Only the tokens change: every component reads them. */
+:root {
+  --marble: #F9F6EC; --card: #FFFCF6; --stone: #EEE8DC; --line: #DDD5C6; --line-soft: #ECE6DA;
+  --ink: #1F2321; --slate: #5E5850; --muted: #756E64;
+  --grove: #2F6B55; --grove-deep: #21503F; --grove-tint: #E7F0EC; --fajr: #B07A1F; --fajr-tint: #F7EEDC;
+  --noor: #17463A; --noor-2: #0E3129; --canopy: #D8BE86; --canopy-tint: #F5EDDB; --rose: #A65F45; --amber: #8C5F16;
+  --font: "Tajawal", "Inter", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+  --font-en: "Inter", "Tajawal", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+html, body { background: var(--marble); }
+:focus-visible { outline-color: var(--noor); }
+.side { color: #EFE9DC; }
+.nav-gt { color: rgba(239, 233, 220, .55); }
+.nav-i { color: #E6DFCF; }
+.nav-i.on { background: rgba(216, 190, 134, .16); }
+.side-f { color: rgba(239, 233, 220, .62); }
+.btn:hover { background: #1D5446; }
+.nav-open .scrim { background: rgba(14, 49, 41, .4); }
