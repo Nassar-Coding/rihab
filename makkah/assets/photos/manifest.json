@@ -342,5 +342,41 @@
     "source": "https://www.flickr.com/photos/regnatarajan/9810438335",
     "author": "Reg Natarajan",
     "license": "CC BY 2.0"
+  },
+  "prod_dates_gift": {
+    "url": "https://open-images-dataset.s3.amazonaws.com/test/297d7da9847ca660.jpg",
+    "size": "card",
+    "focal": [
+      0.5,
+      0.5
+    ],
+    "source": "https://www.flickr.com/photos/4blogs/6282206735",
+    "author": "Kathy McGraw",
+    "license": "CC BY 2.0",
+    "title": "Dates"
+  },
+  "prod_perfume": {
+    "url": "https://open-images-dataset.s3.amazonaws.com/test/740341a8283e07d4.jpg",
+    "size": "card",
+    "focal": [
+      0.5,
+      0.5
+    ],
+    "source": "https://www.flickr.com/photos/jplouis/5024354220/",
+    "author": "Jean-Pierre Louis",
+    "license": "CC BY 2.0",
+    "title": "Bales+Louis83"
+  },
+  "prod_prayer_beads": {
+    "url": "https://open-images-dataset.s3.amazonaws.com/validation/9e8080a638993c49.jpg",
+    "size": "card",
+    "focal": [
+      0.5,
+      0.45
+    ],
+    "source": "https://www.flickr.com/photos/elifayse/42473842",
+    "author": "elif ayse",
+    "license": "CC BY 2.0",
+    "title": "pelesenk ağacından olan tesbihim"
   }
 }

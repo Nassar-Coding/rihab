@@ -2860,6 +2860,177 @@
         "followup_keys": []
       },
       "priority": 90
+    },
+    {
+      "id": "market_overview",
+      "category": "opportunities",
+      "purpose": "Explain the Market tab: experiences, services and local products, and where homes and business opportunities live.",
+      "examples": {
+        "ar": [
+          "وش في السوق",
+          "افتح السوق",
+          "وش تبويب السوق",
+          "ايش فيه السوق في التطبيق",
+          "وش أقدر أسوي في السوق",
+          "اشرح لي السوق"
+        ],
+        "en": [
+          "what's in the market",
+          "open the market",
+          "what is the market tab",
+          "what can I do in the market",
+          "explain the market"
+        ]
+      },
+      "matching": {
+        "keywords_ar": [
+          "السوق",
+          "تبويب السوق"
+        ],
+        "keywords_en": [
+          "market",
+          "market tab"
+        ],
+        "entities": [
+          "neighborhood"
+        ]
+      },
+      "answer": {
+        "type": "dynamic",
+        "handler": "city_answer",
+        "responses": {
+          "ar": [
+            "«السوق» فيه التجارب والخدمات والمنتجات المحلية."
+          ],
+          "en": [
+            "The Market holds experiences, services and local products."
+          ]
+        },
+        "result_shape": "city"
+      },
+      "context": {
+        "applicable_pages": [
+          "*"
+        ],
+        "followup_keys": []
+      },
+      "priority": 90
+    },
+    {
+      "id": "market_products",
+      "category": "opportunities",
+      "purpose": "Point to local products in the Market (dates, gifts, crafts, perfumes) and how a request is recorded.",
+      "examples": {
+        "ar": [
+          "أبغى أشتري تمر سكري",
+          "وين ألقى هدايا من مكة",
+          "أبغى هدية تذكارية",
+          "أبي أشتري دهن عود",
+          "عندكم مسابح",
+          "وين أشتري تمور",
+          "أبغى منتجات محلية",
+          "أبغى فانوس تراثي",
+          "أبغى معمول بالتمر"
+        ],
+        "en": [
+          "I want to buy Sukkari dates",
+          "where can I find gifts from Makkah",
+          "souvenirs to take home",
+          "buy oud oil",
+          "do you have prayer beads",
+          "local products",
+          "where can I buy dates"
+        ]
+      },
+      "matching": {
+        "keywords_ar": [
+          "أشتري",
+          "هدايا",
+          "تذكارية",
+          "منتجات"
+        ],
+        "keywords_en": [
+          "buy",
+          "gifts",
+          "souvenirs",
+          "products"
+        ],
+        "entities": [
+          "neighborhood"
+        ]
+      },
+      "answer": {
+        "type": "dynamic",
+        "handler": "city_answer",
+        "responses": {
+          "ar": [
+            "في «السوق» منتجات محلية تقدر تطلبها."
+          ],
+          "en": [
+            "The Market has local products you can request."
+          ]
+        },
+        "result_shape": "city"
+      },
+      "context": {
+        "applicable_pages": [
+          "*"
+        ],
+        "followup_keys": []
+      },
+      "priority": 90
+    },
+    {
+      "id": "market_services",
+      "category": "opportunities",
+      "purpose": "Explain how to request a service (guides, transport, hospitality, translation) from the Market.",
+      "examples": {
+        "ar": [
+          "كيف أطلب خدمة",
+          "أبغى أطلب خدمة",
+          "وين الخدمات في السوق",
+          "أبي أطلب مرشد من السوق"
+        ],
+        "en": [
+          "how do I request a service",
+          "I want to request a service",
+          "where are the services in the market",
+          "order a service"
+        ]
+      },
+      "matching": {
+        "keywords_ar": [
+          "أطلب خدمة",
+          "الخدمات"
+        ],
+        "keywords_en": [
+          "request a service",
+          "services"
+        ],
+        "entities": [
+          "neighborhood"
+        ]
+      },
+      "answer": {
+        "type": "dynamic",
+        "handler": "city_answer",
+        "responses": {
+          "ar": [
+            "الخدمات في «السوق» تُطلب من صفحتها."
+          ],
+          "en": [
+            "Services in the Market are requested from their page."
+          ]
+        },
+        "result_shape": "city"
+      },
+      "context": {
+        "applicable_pages": [
+          "*"
+        ],
+        "followup_keys": []
+      },
+      "priority": 90
     }
   ]
 }
