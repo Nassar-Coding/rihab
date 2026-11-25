@@ -60,7 +60,14 @@ const offers = m.DEALS.map((d) => ({
   title: pair(d.title), start: ksaDate(d.start), end: ksaDate(d.end),
 }));
 
-const communities = m.COMMUNITIES.map((c) => ({ id: c.id, family: c.family, kind: c.kind, nb: c.nb, members: c.members, name: both(() => c.name) }));
+/* language communities are named in their own language in the app; the dashboards name them in the reader's */
+const COMMUNITY_AR = { "visitors-en": "الزوار — بالإنجليزية", "visitors-id": "الزوار — بالإندونيسية", "visitors-ur": "الزوار — بالأردية" };
+const COMMUNITY_EN = { "visitors-en": "Visitors — English", "visitors-id": "Visitors — Indonesian", "visitors-ur": "Visitors — Urdu" };
+const communities = m.COMMUNITIES.map((c) => {
+  const name = both(() => c.name);
+  return { id: c.id, family: c.family, kind: c.kind, nb: c.nb, members: c.members,
+    name: COMMUNITY_AR[c.id] ? { ar: COMMUNITY_AR[c.id], en: COMMUNITY_EN[c.id] } : name };
+});
 const families = m.FAMILIES.map((f) => ({ id: f.id, name: both(() => f.name) }));
 const clubs = m.CLUBS.map((c) => ({ id: c.id, community: c.community, members: c.members, activity: c.activity, name: both(() => c.name) }));
 const contributionTypes = {};
