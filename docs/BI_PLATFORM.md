@@ -1,25 +1,58 @@
-# The Business Intelligence platform
+# Rihab Business Intelligence
 
-`bi/` is a separate web platform: executive dashboards about Ruh Al Madinah. It does not
-replace the app or change it. It reads the app's content, simulates how people use it, and
-presents that in twelve dashboards, in Arabic (right to left) and English (left to right).
+`bi/` is Rihab's Business Intelligence platform: executive dashboards about Rihab Makkah and
+Rihab Madinah. It does not change the apps. It reads each app's content, simulates how people
+use it, and presents that in twelve dashboards, in Arabic (right to left) and English (left to
+right).
+
+**One entry, two cities, each in its own identity.**
+- `/` is the Rihab BI sign-in: the same Rihab entry as the app (the «رحاب» wordmark, night ink,
+  Kiswa gold and marble), in business mode. Business accounts are kept apart from the app's
+  resident and visitor accounts: an app account cannot sign in here, and the BI account cannot
+  sign in to the app.
+- After sign-in, the city picker opens `/makkah/` or `/madinah/`.
+- Each city's dashboards take that city's identity:
+  - Rihab Makkah: Makkah green `#17463A`, brass, Warm Ivory, Tajawal / Inter, and the
+    "Rihab Makkah" wordmark;
+  - Rihab Madinah: Noor (Marble, a Night Noor sidebar, Grove and Fajr Blue), IBM Plex Sans
+    Arabic / IBM Plex Sans, and the Naskh wordmark «رحاب المدينة».
+- The sidebar switches to the other city on the same dashboard with the same filters, or goes
+  back to the city picker. Signing out returns to `/`. There is no combined view of both cities.
 
 It is a **demo**:
 - The names, areas, categories, places, activities, offers, communities, Market products,
-  homes and business opportunities are the app's own.
+  homes and business opportunities are each app's own.
 - Every figure is simulated. The same filters always give the same figures.
 - The screens say so. Money values and Visitor Center operations carry their own demo labels.
 
+## Files
+
+| Path | What it is |
+|---|---|
+| `bi/shared/` | The dashboards' code (`js/`), styles and "Ask the data" (`agent/`), shared by both cities |
+| `bi/<city>/city.js` | `window.RIHAB_BI_CITY`: the city's names, wordmark, palette, "Ask the data" aliases, and the simulation's city-specific behaviour (seasons, visitor interest by area, landmarks, the hosted experience, house hunting by area, the Visitor Centers) |
+| `bi/<city>/theme.css` | The city's identity on top of the shared styles (Madinah's is the default) |
+| `bi/<city>/data/content.js` | The content snapshot exported from that city's app |
+| `bi/page.html` | The page template for both cities; `build/build.mjs` fills in each city's title, fonts and colours |
+| `tools/bi_rihab.py` | The record of the changes made to the shared code, from the Rihab Madinah platform |
+
+**How Makkah differs from Madinah in the simulation.** Pilgrims fill Makkah for Ramadan's
+last ten nights and through the Hajj days, where Madinah eases during the Hajj days. Visitor
+interest centres on the area around the Haram, Ajyad and Al-Misfalah; residents look for homes
+in Al-Awali, Al-Naseem and Al-Shawqiyah. Landmarks are the Grand Mosque, Jabal Al-Nour, the
+Kiswa complex and Hira. Makkah's homes are to rent, own or stay in longer.
+
 ## 1. Where it comes from
 
-The platform is built on the EyeMakkah BI platform (the `BI-Platform` branch of the EyeMakkah
-repository, folder `bi/`), adapted to Ruh Al Madinah.
+The platform is built on the Ruh Al Madinah BI platform (the `bi-platform` branch of the
+ruhalmadinah repository), itself built on the EyeMakkah BI platform. Rihab makes it serve two
+cities from one code base.
 
 **Reused and adapted**
 - The architecture: a static, dependency-free page that draws HTML and SVG into one root, and
   deploys to Vercel with no build.
-- The entry: welcome → language → demo sign-in → dashboards. The session stays for the tab;
-  the language stays on the device.
+- The entry is now the Rihab BI sign-in and city picker. The session stays on the device until
+  sign-out; the language is shared with the Rihab entry.
 - One row of shared filters (period, area, category, audience) that recalculates every chart.
 - The chart family: KPI tiles, bar lists, funnels, lines, donuts, bubbles, retention cohorts
   and heatmaps. Each was rewritten to the mark rules in section 5.
@@ -28,9 +61,7 @@ repository, folder `bi/`), adapted to Ruh Al Madinah.
   keywords, that answers from the dashboard data. It is reworked as "Ask the data" (section 6).
 
 **Changed or added**
-- **Identity.** Noor: Marble surfaces, a Night Noor sidebar, Grove for residents, Fajr Blue
-  for visitors, IBM Plex Sans Arabic / IBM Plex Sans, and the Naskh wordmark «روح المدينة» with
-  its point of light.
+- **Identity.** Per city (see above).
 - **Language.** Every string is written in both languages (`t(ar, en)`) instead of being
   translated afterwards. Charts mirror in Arabic. Numbers use Arabic digits in Arabic, and
   dates use the Gregorian calendar, with the Hijri date beside today's date.
@@ -43,25 +74,23 @@ repository, folder `bi/`), adapted to Ruh Al Madinah.
 - **Charts.** New: stacked areas with season bands, a Sankey of journeys, a Voronoi district
   map, a calendar heatmap, a treemap, a waterfall, bullets, gauges, dot plots, a butterfly
   chart and small multiples. Every chart has a table view that can be exported as CSV.
-- **Deep links.** `#/market?period=12m&area=quba&audience=visitor` opens a dashboard with its
+- **Deep links.** `/madinah/#/market?period=12m&area=quba&audience=visitor` opens a dashboard with its
   filters. Back and forward move between dashboards.
 - **QA.** `scripts/bi-check.mjs` (section 7).
 
 ## 2. Running and deploying
 
 ```bash
-npx serve bi                 # or any static server; open http://localhost:3000
-npm run bi:content           # refresh bi/data/content.js after changing the app's content
-npm run bi:check             # the QA suite (add --quick for a short run)
-npm run bi:package           # release/RuhAlMadinah_BI_Vercel_DragDrop(.zip)
+node scripts/bi-content.mjs makkah      # refresh a city's snapshot after changing its app's content
+node build/build.mjs bi                 # → .out/bi
+python3 -m http.server 8090 -d .out/bi  # then open http://localhost:8090
+node scripts/bi-check.mjs makkah        # the QA suite (add --quick for a short run)
 ```
 
-To deploy, upload the ZIP's folder at **vercel.com/new** (Framework Preset **Other**, empty
-Build Command and Output Directory). Or create a Vercel project from the repository with
-**Root Directory** `bi`. The app's own deployment is unchanged.
+The Vercel package is `Rihab_BI_Vercel.zip` (see the root `README.md`). Upload its folder at
+**vercel.com/new** (Framework Preset **Other**, empty Build Command and Output Directory).
 
-Demo account: `analyst@ruhalmadinah.demo`, password `demo`. Both are filled in on the
-sign-in screen, and a wrong password is refused with a message.
+The business demo account is listed in `docs/ACCOUNTS.md`.
 
 ## 3. The dashboards
 
@@ -89,9 +118,9 @@ sign-in screen, and a wrong password is refused with a message.
 
 ## 4. The data
 
-**Content (real, from the app).** `scripts/bi-content.mjs` bundles `RuhAlMadinah-app.jsx` and
-reads its records through the app's own language layer, in Arabic and English, into
-`bi/data/content.js`:
+**Content (real, from the app).** `scripts/bi-content.mjs makkah|madinah` bundles the city's app
+(`makkah/RihabMakkah-app.jsx` or `madinah/RihabMadinah-app.jsx`) and reads its records through the app's own language layer, in Arabic and English, into
+`bi/<city>/data/content.js`. For Madinah:
 - 54 district records (the 15 home areas with their map positions and descriptions, the other
   districts, and "Madinah" for places located only in the city);
 - 14 categories;
@@ -105,7 +134,7 @@ reads its records through the app's own language layer, in Arabic and English, i
 
 `--check` fails when the snapshot no longer matches the app.
 
-**Figures (simulated).** `bi/js/model.js` builds 730 days of daily facts ending on 27 October
+**Figures (simulated).** `bi/shared/js/model.js` builds 730 days of daily facts ending on 27 October
 2026, the demo's "today". That gives every period a previous period to compare with.
 
 | Measure | Built from |
@@ -208,9 +237,9 @@ of that length. A resident comes back often; a visitor's stay lasts days.
 
 The «اسأل البيانات» drawer answers questions about the dashboards in Arabic or English, in
 the language of the question:
-- **The bank.** `bi/agent/ask-bank.js` holds 34 intents with examples, keywords and aliases
+- **The bank.** `bi/shared/agent/ask-bank.js` holds 34 intents with examples, keywords and aliases
   for areas, categories, audiences and periods.
-- **Matching.** `bi/agent/ask-runtime.js` normalises the question, as the app's Assistant does
+- **Matching.** `bi/shared/agent/ask-runtime.js` normalises the question, as the app's Assistant does
   (diacritics, hamza, ى/ي, ة/ه, Arabic digits). It scores the intents and answers from the
   same model with the current filters. Anything the question names (an area, a period)
   narrows only that answer.
@@ -223,7 +252,8 @@ the language of the question:
 
 ## 7. QA
 
-`node scripts/bi-check.mjs` (about 10 minutes; `--quick` takes about one) checks:
+`node scripts/bi-check.mjs makkah|madinah` (about 10 minutes per city; `--quick` takes about
+one) checks the built site, `.out/bi`:
 
 **The model**, for every period × 4 areas × 4 categories × 3 audiences:
 - every breakdown adds up to its total;
@@ -236,11 +266,12 @@ the language of the question:
 - the content snapshot matches the app.
 
 **The entry**, in both languages:
-- welcome, language and direction;
-- a wrong password is refused;
-- the demo account signs in;
+- the Rihab BI sign-in, language and direction;
+- a wrong password is refused, and an app account is refused;
+- the business account signs in and picks the city;
 - the session and language survive a reload;
-- sign-out returns to sign-in.
+- switching city keeps the dashboard;
+- sign-out returns to the Rihab BI sign-in.
 
 **Every dashboard**, in Arabic and English, under all five periods and eight more filter
 combinations:

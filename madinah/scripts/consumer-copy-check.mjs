@@ -11,6 +11,7 @@
    information isn't available.
 
    Usage: node scripts/consumer-copy-check.mjs   (LANGS=ar,en  WIDTH=390) */
+import { rihabLang, rihabSignIn } from "./lib/rihab-entry.mjs";
 import { launchBrowser, serveBuild, outDir } from "./lib/browser.mjs";
 import { mkdirSync } from "node:fs";
 
@@ -99,11 +100,8 @@ for (const lang of LANGS) {
     const tab = async (id) => { await clearOverlays(); await page.locator(`[data-nav="${id}"]`).first().click(); await W(600); };
 
     await page.goto(site.url, { waitUntil: "networkidle" }); await W(700);
-    await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click(); await W(400);
-    await page.locator(`[data-lang="${lang}"]`).click(); await W(700);
-    await page.locator("[data-auth-email]").fill(`${who}@rihab.demo`);
-    await page.locator("[data-auth-password]").fill("demo");
-    await page.locator("[data-auth-submit]").click();
+        await rihabLang(page, lang); await W(700);
+    await rihabSignIn(page, `${who}@rihab.app`, "demo");
     await page.locator("[data-home-greeting]").waitFor({ timeout: 10000 });
     for (const b of await page.locator("[data-device-message] button[aria-label]").all()) await b.click().catch(() => {});
     await W(500);

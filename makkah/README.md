@@ -8,11 +8,16 @@ This repository holds the **transformation** of Rihab Makkah from the current fo
 prototype into one consumer product for Makkah residents and visitors, following the
 meeting direction and the five transformation groups in `docs/handover/`.
 
+> **Part of Rihab (رحاب).** This folder is Rihab Makkah inside the Rihab repository. People
+> sign in once at the Rihab entry and pick a city; this app then opens signed in, under
+> `/makkah/`. Build, test and package from the repository root — see the root `README.md`.
+> The Rihab demo accounts are listed there too.
+
 ## Deliverables
 
 | Deliverable | Path |
 |---|---|
-| **Zero-build Vercel drag-and-drop ZIP** | `release/Rihab_Vercel_DragDrop.zip` |
+| **Vercel package** | Part of the Rihab app package, built at the repository root (see the root `README.md`) |
 | **Single JSX file for a Claude artifact** | `RihabMakkah-app.jsx` (default export, imports only `react` + `lucide-react`) |
 
 ## What is here
@@ -20,21 +25,18 @@ meeting direction and the five transformation groups in `docs/handover/`.
 | Path | What it is |
 |---|---|
 | `RihabMakkah-app.jsx` | **The product.** One source file — also the Claude artifact deliverable. |
-| `release/` | The packaged drag-and-drop ZIP. |
-| `dist/` | **Zero-build Vercel package** (`index.html` + prebuilt `app.<hash>.js`), the ZIP's contents. |
+| `public/`, `dist/` | The page, `config.js` and `manifest.json` (`public/`), and the build output (`dist/`, published under `/makkah/` by the Rihab build). |
 | `src/main.jsx`, `build/build.mjs`, `build/fingerprint.mjs` | Mount entry + esbuild bundler that produces `dist/app.<hash>.js` and points `index.html` at it. |
-| `scripts/cache-check.mjs` | Checks that one permanent URL serves the latest deployment after a refresh, keeping saved accounts and plans (see "Caching and updates"). |
 | `scripts/verify.mjs` | Runtime verification: creates an account through the sign-up screens and walks 23 journeys. |
 | `scripts/demo-data-check.mjs` | Demo-data checks on the app's own code: the offer calendar and its renewal, the offer day count against the end date at every hour, realistic activity times, weekly meetings under way and paused groups, filtered lists that keep every match, full-name and chain search in Arabic and English, and the Assistant's place and stay answers. |
 | `scripts/opportunities-check.mjs` | Makkah Opportunities («فرص مكة») and My requests («طلباتي»): Home placement, Live and Invest filters, detail pages, demo labels, no prices or financial figures, both request purposes, editing, persistence, Profile, withdrawal and the Assistant — both personas, AR/EN. |
 | `scripts/audit-fixes-check.mjs` | Regression checks for the approved audit corrections (Back state including search results, clock and offers, schedules, prices including stay offers, map with tapped 44 px pin areas, Start now on the page and in My Plan, trip card, community heading, chips and their summary language, ended, paused and inactive items, text direction including the Urdu original, toast language, plurals, Assistant routing, imagery): both personas, AR/EN, 360/390 px, at several pinned times of day. |
 | `scripts/auth-check.mjs`, `scripts/entry-check.mjs` | Account flows in Arabic and English with on-device accounts; the Firebase adapter is checked against `scripts/lib/firebase-test-server.mjs`, a local service with the same REST contract as Firebase. |
-| `scripts/lib/browser.mjs`, `scripts/package.mjs` | The shared Chromium launcher and static server for every QA script (`CHROMIUM_PATH` optional), and the release packager. |
+| `scripts/lib/browser.mjs`, `scripts/lib/rihab-entry.mjs` | The shared Chromium launcher and static server for every QA script (`CHROMIUM_PATH` optional), and the Rihab sign-in they go through. |
 | `scripts/crawl.mjs` | QA crawl for blank screens, dead ends and console errors. |
 | `scripts/shots.mjs` | Screenshot sweep of the main surfaces. |
 | `docs/JOURNEYS.md` | The 48 validated Makkah journeys. |
 | `docs/REAL_PLACES.md` | The real Makkah places (restaurants, cafés, shops, parks, museums, landmarks): each one's district, sources, confidence and photo status, and the candidates left out. |
-| `docs/ACCOUNTS.md`, `dist/config.js` | Accounts: the flows, on-device storage, the starter plan, and the optional Firebase / Google / Apple configuration. |
 | `docs/AGENT_AND_OFFERS.md` | The shared offers model and the free-text Rihab Makkah Assistant (Intent Bank pipeline, follow-ups, actions, limits). |
 | `assets/agent/`, `scripts/agent-sync.mjs` | The four Agent Bank JSON files (150 intents, 2,123 AR/EN examples) and the step that inlines them into the app. |
 | `baseline/` | The canonical **current** Rihab Makkah (`RihabMakkah-app.current.tsx`, `rihab-vercel.current.zip`) kept for comparison. |
@@ -46,7 +48,7 @@ meeting direction and the five transformation groups in `docs/handover/`.
 
 ## Primary navigation
 
-Entry is account-first: **Start → Language → Sign in / Create account → (email, mobile + SMS code, Apple or Google) → Profile setup → Home**, plus *Forgot password*. There is no guest entry. As shipped, accounts run on the device with no external service: hashed passwords, and per-account profile and My Plan. Codes and account emails arrive as notifications on the device. Filling `dist/config.js` switches accounts to Firebase Authentication and Firestore. A new account starts with a starter plan, «خطة مقترحة لك» / *Recommended for you*, built from the inventory. The app shell is not mounted until someone is signed in. See `docs/ACCOUNTS.md`. A permanent review account, `admin@admin.com` / `admin`, is ready on every device (see `docs/ACCOUNTS.md`).
+Entry is the Rihab entry: **Rihab sign-in or a new Rihab account → pick Makkah → Profile setup (first visit only, prefilled from the account) → Home**; *Forgot password* is at Rihab. There is no guest entry. Accounts run on the device with no external service: one Rihab account (hashed password) for both cities, with a profile, My Plan and requests per city. A new account starts with a starter plan, «خطة مقترحة لك» / *Recommended for you*, built from the inventory. The app shell is not mounted until someone is signed in. See `docs/ACCOUNTS.md` at the Rihab repository root.
 
 **One app, two experiences.** In profile setup the person chooses once, and permanently, between **ساكن في مكة** (resident) and **زائر** (visitor).
 - **Residents** get a local-life app: their area, what's new, this week, community, hobbies and initiatives. The palm-green theme.
@@ -55,8 +57,8 @@ Entry is account-first: **Start → Language → Sign in / Create account → (e
 The tabs, Save / Plan / Join / booking hand-off, Community and the Assistant stay one shared system. There is no persona toggle.
 
 Two permanent demo accounts are ready on every device:
-- `resident@rihab.app` / `demo`
-- `visitor@rihab.app` / `demo`
+- `resident@rihab.app`
+- `visitor@rihab.app`
 
 See `docs/DUAL_EXPERIENCE.md`.
 
@@ -100,19 +102,27 @@ Leaving Rihab Makkah for an external provider records `انتقلت لإكمال
 
 ## Build
 
+From the repository root:
+
 ```bash
-npm install
-node scripts/agent-sync.mjs  # inline assets/agent/*.json as AGENT_BANK (after editing the bank)
-npm run build             # → dist/app.<hash>.js, index.html updated to load it
-node scripts/verify.mjs   # 23 runtime journeys in Chromium, fails on any console error
-node scripts/audit-fixes-check.mjs  # the audit corrections, both personas, AR + EN, 360 + 390 px
-node scripts/demo-data-check.mjs    # offer calendar, activity times, search ranking, Assistant place answers
-node scripts/opportunities-check.mjs  # Makkah Opportunities and My requests, both personas, AR + EN
-node scripts/auth-check.mjs   # sign-in / sign-up / recovery / account flows, AR + EN
-node scripts/package.mjs  # refresh release/ and the drag-and-drop ZIP
-node scripts/crawl.mjs    # broad QA crawl for dead ends and blank screens
-node scripts/ui-audit.mjs # screen-by-screen layout/media audit, 7 viewports × AR/EN
+node build/build.mjs app     # → .out/app: the Rihab entry, /makkah/ and /madinah/
 ```
+
+Then, from this folder (`cd makkah`):
+
+```bash
+node scripts/agent-sync.mjs          # inline assets/agent/*.json as AGENT_BANK (after editing the bank)
+node scripts/verify.mjs              # 23 runtime journeys in Chromium, fails on any console error
+node scripts/persona-check.mjs       # resident vs visitor: onboarding, Home, themes, AR + EN
+node scripts/market-check.mjs        # the Market, its requests and the Assistant's links, AR + EN
+node scripts/opportunities-check.mjs # Makkah Opportunities and My requests, both personas, AR + EN
+node scripts/audit-fixes-check.mjs   # the audit corrections, both personas, AR + EN, 360 + 390 px
+node scripts/demo-data-check.mjs     # offer calendar, activity times, search ranking, Assistant place answers
+node scripts/crawl.mjs               # broad QA crawl for dead ends and blank screens
+node scripts/ui-audit.mjs            # screen-by-screen layout/media audit, 7 viewports × AR/EN
+```
+
+The browser scripts serve `.out/app`, sign in at the Rihab entry and open Rihab Makkah.
 
 ## Caching and updates
 
@@ -121,14 +131,13 @@ clearing of browser data.
 - The bundle is published as `app.<content-hash>.js` (`build/fingerprint.mjs`, run by every
   build and by the packager). New code means a new file name no browser has cached;
   `index.html` loads `config.js?v=<content-hash>` too.
-- `vercel.json` re-checks the page, `config.js` and any unhashed `app.js` on every load,
+- Rihab's `vercel.json` re-checks the page, `config.js` and any unhashed `app.js` on every load,
   and lets browsers keep a hashed bundle (its content never changes).
 - This replaces the early packages' `app.js` cached as `immutable` for a year, which kept
   returning browsers on an old version after a redeploy.
 - Browser storage (accounts, sessions, profiles, plans) is never touched; it stays
   with the site's address.
-- Redeploy to the **same Vercel project** to keep the URL. `node scripts/cache-check.mjs`
-  reproduces the old fault and checks consecutive deployments in a real browser profile.
+- Redeploy to the **same Vercel project** to keep the URL.
 
 ## Clock and schedules
 

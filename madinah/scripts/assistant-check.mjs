@@ -25,7 +25,7 @@ const dir = mkdtempSync(join(tmpdir(), "rihab-assistant-"));
 writeFileSync(join(dir, "app.jsx"), readFileSync(SRC, "utf8") +
   "\nexport { initialState, reducer, deriveContext, agentTurn, agentDirect, agentSuggestions, AGENT_SESSION, setLang, getObj, offerFor, distanceKm, MUST_DO_SET, NOT_RUNNING, lifecycleOf };\n");
 await build({ entryPoints: [join(dir, "app.jsx")], bundle: true, platform: "node", format: "esm", jsx: "automatic", outfile: join(dir, "app.mjs"), logLevel: "error",
-  define: { "process.env.NODE_ENV": '"production"' }, nodePaths: [join(REPO, "node_modules")] });
+  define: { "process.env.NODE_ENV": '"production"' }, nodePaths: [join(REPO, "node_modules"), join(REPO, "..", "node_modules")] });
 globalThis.window = { RIHAB_MADINAH_NOW: NOW };
 const m = await import(pathToFileURL(join(dir, "app.mjs")).href);
 
@@ -290,13 +290,13 @@ conv("visitor", "en", "an offer by its own name (en)", [["Family dinner offer", 
 const isKind = (k) => (x) => x.kind === k && x.ids.length > 0;
 conv("resident", "ar", "buy Ajwa dates → Market products", [["أبغى أشتري تمر عجوة", { intent: /^market_products$/, market: (x) => x.kind === "product" && x.ids[0] === "PRD-01", link: /^market:products$/, text: /طلباتي/ }]]);
 conv("visitor", "ar", "gifts from Madinah", [["وين ألقى هدايا من المدينة", { intent: /^market_products$/, market: isKind("product") }]]);
-conv("visitor", "en", "souvenirs to take home", [["souvenirs to take home", { intent: /^market_products$/, market: isKind("product"), text: /demo/i }]]);
+conv("visitor", "en", "souvenirs to take home", [["souvenirs to take home", { intent: /^market_products$/, market: isKind("product"), text: /My requests/, notText: /demo/i }]]);
 conv("resident", "en", "buy oud oil", [["I want to buy oud oil", { intent: /^market_products$/, market: (x) => x.ids.includes("PRD-04") }]]);
 conv("visitor", "ar", "prayer beads", [["أبي أشتري مسبحة", { intent: /^market_products$/, market: (x) => x.ids[0] === "PRD-05" }]]);
 conv("resident", "ar", "what's in the Market", [["وش في السوق؟", { intent: /^market_overview$/, link: /^market:products$/ }]]);
 conv("visitor", "en", "open the market", [["open the market", { intent: /^market_overview$/, link: /^market:services$/ }]]);
 conv("resident", "en", "request a service", [["how do I request a service", { intent: /^market_services$/, cards: 1, link: /^market:services$/ }]]);
-conv("resident", "ar", "apartment for rent in Al-Awali", [["أبغى شقة للإيجار في العوالي", { intent: /^city_housing$/, market: (x) => x.kind === "home" && x.ids[0] === "HOM-01", link: /^city:live$/, text: /بلا (أسعار|سعر)/ }]]);
+conv("resident", "ar", "apartment for rent in Al-Awali", [["أبغى شقة للإيجار في العوالي", { intent: /^city_housing$/, market: (x) => x.kind === "home" && x.ids[0] === "HOM-01", link: /^city:live$/, text: /لا نعرض (له سعرًا|لها أسعارًا)/ }]]);
 conv("visitor", "en", "a villa for sale", [["is there a villa for sale", { intent: /^city_housing$/, market: (x) => x.ids.includes("HOM-03"), notText: /SAR|riyal/i }]]);
 conv("visitor", "ar", "furnished for a few months", [["أبغى شقة مفروشة لعدة أشهر", { intent: /^city_housing$/, market: (x) => x.ids.length > 0 && x.ids.every((id) => ["HOM-04", "HOM-05"].includes(id)) }]]);
 conv("resident", "en", "moving to Madinah", [["I'm moving to Madinah, where can I live", { intent: /^city_housing$/, market: isKind("home") }]]);

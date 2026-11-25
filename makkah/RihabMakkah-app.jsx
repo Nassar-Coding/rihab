@@ -6191,7 +6191,7 @@ function deriveContext(state, extra = {}) {
      appleRedirectUri      return URL registered for that Services ID
      authEmulatorHost      local Firebase Auth emulator (development only)
      firestoreEmulatorHost local Firestore emulator (development only)
-   See docs/ACCOUNTS.md.
+   See docs/ACCOUNTS.md at the Rihab repository root.
    ═══════════════════════════════════════════════════════════════════════════ */
 const ACCOUNT_CFG = (() => {
   try { return (typeof window !== "undefined" && window.RIHAB_MAKKAH_CONFIG && window.RIHAB_MAKKAH_CONFIG.auth) || {}; }
@@ -6662,14 +6662,13 @@ const normEmail = (e) => String(e || "").trim().toLowerCase();
 /* an account answers to its email and to any earlier address kept as an alias */
 const hasEmail = (u, em) => u.email === em || (u.aliases || []).includes(em);
 
-/* Permanent review accounts, present on every device and restored on every launch
+/* The Rihab demo accounts, present on every device and restored on every launch
    (also after site data is cleared). They are ordinary accounts — no extra
    privileges — whose passwords are stored, like every other, only as a salted
    PBKDF2 hash. Sign-up rules for new passwords are unchanged.
-   · admin@admin.com — the general review account
    · resident@rihab.app — the resident experience (Al-Awali)
    · visitor@rihab.app — the visitor experience (3–5 days, family with children)
-   Their earlier addresses (…@rihab.demo) still sign in, as aliases. Passwords: docs/ACCOUNTS.md. */
+   See docs/ACCOUNTS.md at the Rihab repository root. */
 const SEEDED_ACCOUNTS = [
   { account: { uid: "local-demo-resident", email: "resident@rihab.app", providers: ["password"], emailVerified: true,
       salt: "a3f19c6e7b204d58b1e6c9d02f4a7e31", hash: "12f6418e3bccd0a4f5277b7b9eac6ea6e494cdf8bcd9ffb9315d954dc5b98878", createdAt: "2026-10-05T00:00:00.000Z" },

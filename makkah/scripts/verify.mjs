@@ -1,5 +1,6 @@
 /* Runtime verification: boots the built app in Chromium, walks core journeys,
    fails on any console error or unhandled rejection. */
+import { RIHAB_APP, rihabFile, rihabLang } from "./lib/rihab-entry.mjs";
 import { launchBrowser, outDir } from "./lib/browser.mjs";
 import { prepareQaAccount, signInQa, closeQaServer } from "./lib/qa-session.mjs";
 import { createServer } from "node:http";
@@ -7,13 +8,13 @@ import { readFile } from "node:fs/promises";
 import { extname, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = process.env.ROOT || resolve(dirname(fileURLToPath(import.meta.url)), "..", "dist");
+const root = process.env.ROOT || RIHAB_APP;
 const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".json": "application/json", ".txt": "text/plain" };
 const shotDir = process.env.SHOT_DIR || outDir("shots");
 
 const server = createServer(async (req, res) => {
   const p = req.url.split("?")[0];
-  const file = resolve(root, p === "/" ? "index.html" : "." + p);
+  const file = rihabFile(root, p);
   try {
     const buf = await readFile(file);
     res.writeHead(200, { "Content-Type": MIME[extname(file)] || "application/octet-stream" });
@@ -61,12 +62,11 @@ const openByName = async (name) => {
 
 if (!page.__qa) await prepareQaAccount(page);
 
-await page.goto("http://127.0.0.1:4321/", { waitUntil: "networkidle" });
+await page.goto("http://127.0.0.1:4321/makkah/", { waitUntil: "networkidle" });
 await page.waitForTimeout(700);
 // Entry flow: Landing -> Language -> Login (seeded test account) -> app
-await page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first().click();
 await page.waitForTimeout(600);
-await page.locator('[data-lang="ar"]').click();
+await rihabLang(page, "ar");
 await signInQa(page);
 
 const steps = JSON.parse(process.env.STEPS || "[]");

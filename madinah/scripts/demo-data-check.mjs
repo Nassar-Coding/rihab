@@ -24,7 +24,7 @@ const entry = join(dir, "app.jsx"), out = join(dir, "app.mjs");
 writeFileSync(entry, readFileSync(join(REPO, "RihabMadinah-app.jsx"), "utf8") +
   "\nexport { INVENTORY, DEALS, OFFER_SLOTS, liveOffers, lifecycleOf, nextOccurrence, setLang, searchAll, initialState, deriveContext, agentTurn, AGENT_SESSION, offerExpiry, canStartNow, scoreObject, rank, isPromotable, getObj };\n");
 await build({ entryPoints: [entry], bundle: true, platform: "node", format: "esm", jsx: "automatic", outfile: out, logLevel: "error",
-  define: { "process.env.NODE_ENV": '"production"' }, nodePaths: [join(REPO, "node_modules")] });
+  define: { "process.env.NODE_ENV": '"production"' }, nodePaths: [join(REPO, "node_modules"), join(REPO, "..", "node_modules")] });
 
 let pass = 0, fail = 0;
 const ok = (name, cond, detail = "") => { if (cond) { pass++; console.log(`✓ ${name}`); } else { fail++; console.log(`✗ ${name}${detail ? " — " + detail : ""}`); } };

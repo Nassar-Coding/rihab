@@ -1,12 +1,13 @@
+import { RIHAB_APP, rihabFile, rihabLang } from "./lib/rihab-entry.mjs";
 import { launchBrowser, outDir, REPO } from "./lib/browser.mjs";
 import { prepareQaAccount, signInQa, closeQaServer } from "./lib/qa-session.mjs";
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
-const root = `${REPO}/dist`;                      // this repository's own build
+const root = RIHAB_APP;                      // the Rihab build (node build/build.mjs app)
 const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8" };
 const server = createServer(async (req, res) => {
-  const f = resolve(root, req.url === "/" ? "index.html" : "." + req.url.split("?")[0]);
+  const f = rihabFile(root, req.url);
   try { const b = await readFile(f); res.writeHead(200, { "Content-Type": MIME[extname(f)] || "text/plain" }); res.end(b); }
   catch { res.writeHead(404); res.end(); }
 });
@@ -15,11 +16,10 @@ const out = process.env.OUT || outDir("final");
 const browser = await launchBrowser();
 const page = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
 if (!page.__qa) await prepareQaAccount(page);
-await page.goto("http://127.0.0.1:4467/", { waitUntil: "networkidle" });
+await page.goto("http://127.0.0.1:4467/madinah/", { waitUntil: "networkidle" });
 await page.waitForTimeout(800);
-await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click();
 await page.waitForTimeout(600);
-await page.locator(`[data-lang="${process.env.LANG_PICK || "ar"}"]`).click();
+await rihabLang(page, process.env.LANG_PICK || "ar");
 await signInQa(page);
 await page.waitForTimeout(1000);
 const shot = (n) => page.screenshot({ path: `${out}/${n}.png` });

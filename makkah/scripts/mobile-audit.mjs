@@ -1,14 +1,15 @@
 /* Mobile-native audit: walks the app at real phone widths and fails on horizontal
    overflow, unreachable rail content, or controls that are too small to tap. */
+import { RIHAB_APP, rihabFile, rihabLang } from "./lib/rihab-entry.mjs";
 import { launchBrowser, outDir } from "./lib/browser.mjs";
 import { prepareQaAccount, signInQa, closeQaServer } from "./lib/qa-session.mjs";
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
-const root = "/home/user/Rihab Makkah/dist";
+const root = RIHAB_APP;                          // the Rihab build (node build/build.mjs app)
 const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8" };
 const server = createServer(async (req, res) => {
-  const f = resolve(root, req.url === "/" ? "index.html" : "." + req.url.split("?")[0]);
+  const f = rihabFile(root, req.url);
   try { const b = await readFile(f); res.writeHead(200, { "Content-Type": MIME[extname(f)] || "text/plain" }); res.end(b); }
   catch { res.writeHead(404); res.end(); }
 });
@@ -91,11 +92,10 @@ for (const vp of [{ width: 390, height: 844, name: "390" }, { width: 360, height
   const page = await browser.newPage({ viewport: { width: vp.width, height: vp.height }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
   page.on("pageerror", (e) => findings.push(`${vp.name} pageerror: ${e.message}`));
   if (!page.__qa) await prepareQaAccount(page);
-  await page.goto("http://127.0.0.1:4488/", { waitUntil: "networkidle" });
+  await page.goto("http://127.0.0.1:4488/makkah/", { waitUntil: "networkidle" });
   await page.waitForTimeout(600);
-  await page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first().click();
-  await page.waitForTimeout(500);
-  await page.locator('[data-lang="ar"]').click();
+    await page.waitForTimeout(500);
+  await rihabLang(page, "ar");
   await signInQa(page);
   await page.waitForTimeout(900);
   await page.waitForTimeout(700);

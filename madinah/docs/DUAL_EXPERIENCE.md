@@ -68,11 +68,10 @@ only difference: titles, modules, copy and icons also differ.
 ## Demo accounts
 
 These on-device accounts are present on every launch, including after storage is cleared.
-Sign-up rules are unchanged. See `docs/ACCOUNTS.md`.
+Sign-up rules are unchanged. See `docs/ACCOUNTS.md` at the Rihab repository root.
 
-- `resident@rihab.app` / `demo`: أمل الحربي, Al-Awali, family.
-- `visitor@rihab.app` / `demo`: يوسف الأنصاري, no area, 3–5 days with children.
-- `admin@admin.com` / `admin`: review account, a resident.
+- `resident@rihab.app`: أمل الحربي, Al-Awali, family.
+- `visitor@rihab.app`: يوسف الأنصاري, no area, 3–5 days with children.
 
 ## QA
 

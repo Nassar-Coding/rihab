@@ -1,11 +1,12 @@
 {
   "package": "رحاب مكة — مجتمع مكة الرقمي",
-  "date": "2026-10-04",
+  "date": "2026-11-25",
   "zero_build": true,
   "deploy": "Vercel drag-and-drop",
   "navigation": [
     "الرئيسية",
     "اكتشف",
+    "السوق",
     "المجتمع",
     "خطتي"
   ],
@@ -23,21 +24,19 @@
   "files": [
     "index.html",
     "config.js",
-    "app.js",
-    "vercel.json",
-    "robots.txt",
-    "README.md",
-    "PHOTO_SOURCES.md",
+    "app.<hash>.js",
     "manifest.json"
   ],
   "offers": "59 offer records (57 running) on one shared model, attached only to Rihab Makkah's own listings — never to a real place; shown on cards, decision pages, Home/Discover deal rails, My Plan and the Assistant; prepared content, not live commercial offers",
   "assistant": "Free-text Rihab Makkah Assistant over the four-part Intent Bank (153 intents, 2,159 AR/EN examples) — deterministic, on-device, no LLM or external API",
-  "entry": "Account-first: Start → Language → Sign in / Create account (email, mobile + code, Apple, Google) → Profile setup → Home; Forgot password; no guest entry",
-  "accounts": "On-device by default (hashed passwords, per-account profile and My Plan, codes and emails delivered as device notifications; no external service). Optional Firebase Authentication + Firestore via config.js",
+  "entry": "Rihab entry: one Rihab sign-in (or a new Rihab account) at the site root, then the city picker; this app opens signed in. A city has no sign-in screens of its own. The first visit to a city asks for its own profile (resident or visitor, chosen once per city), prefilled from the account",
+  "accounts": "One Rihab account for both cities, on the device (hashed passwords; rihab.accounts.v1). Each city keeps its own profile, plan, communities and requests for the account",
   "starter_plan": "New accounts start with «خطة مقترحة لك» / Recommended for you: 3–4 planned items from the inventory, chosen per persona (resident: participation, food, own interest, getting out; visitor: an editorial must-do, food, two interests), using interests, area and language; real places are preferred where they fit",
   "real_places": "178 real Makkah places (165 venues added 4 Oct 2026: 91 food, 27 cafés, 23 shopping, 11 parks, 5 walkways/sports, culture and heritage sites), each in the district its public sources give, with sources and confidence kept in the data and docs (never shown in the app); no hours, prices, ratings or offers stated; visuals: 66 place photos (60 supplied photographs reused across a brand's branches, plus 2 library photos), 67 brand logos (39 supplied, 3 Simple Icons marks), 1 context photo, 44 drawn category tiles; no stock imagery, and no tier is labelled or explained in the app — see docs/REAL_PLACES.md",
-  "review_account": "One general review account — a normal on-device account present on every launch, also after storage is cleared. Sign-in details: docs/ACCOUNTS.md in the repository (not published with the app).",
-  "experiences": "One app, two experiences chosen once at profile setup and never changeable: resident (ساكن في مكة — local life, palm-green theme) and visitor (زائر — trip companion, brass theme, no neighbourhood required). Same four tabs and one shared Save/Plan/Join/hand-off/Community/Assistant system — see docs/DUAL_EXPERIENCE.md",
-  "demo_accounts": "Two ready accounts — a Makkah resident (Al-Awali) and a visiting family (3–5 days) — normal on-device accounts with complete profiles and a prepared history (plan, saved places, communities, posts, requests), present on every launch. Sign-in details: docs/ACCOUNTS.md in the repository.",
-  "makkah_opportunities": "«فرص مكة» on Home: Live in Makkah (7 homes to rent, own or stay in longer) and Invest in Makkah (7 business opportunities); register interest or request details, tracked in «طلباتي» / My requests on the device — see docs/CITY_OPPORTUNITIES.md"
+  "experiences": "One app, two experiences chosen once at profile setup and never changeable: resident (ساكن في مكة — local life, palm-green theme) and visitor (زائر — trip companion, brass theme, no neighbourhood required). Same five tabs and one shared Save/Plan/Join/hand-off/Community/Assistant system — see docs/DUAL_EXPERIENCE.md",
+  "demo_accounts": "Two Rihab demo accounts, a resident and a visitor in both cities, normal on-device accounts present on every launch; sign-in details are in the Rihab repository's README, not published with the app",
+  "makkah_opportunities": "«فرص مكة» on Home: Live in Makkah (7 homes to rent, own or stay in longer) and Invest in Makkah (7 business opportunities); register interest or request details, tracked in «طلباتي» / My requests on the device — see docs/CITY_OPPORTUNITIES.md",
+  "platform": "Part of Rihab (رحاب): one entry for Rihab Makkah and Rihab Madinah, served under /makkah/",
+  "market": "«السوق» / Market tab: experiences and services from the shared inventory (booked or requested from their own pages) and 10 Makkah products (dates, gifts, crafts, perfumes) with indicative prices and a request sheet",
+  "requests": "«طلباتي» / My requests: product and service requests, home details requests and registered interest, kept per account on the device only and never sent to any seller, provider or organisation; no payments"
 }

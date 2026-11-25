@@ -8,6 +8,7 @@
    · a request it doesn't understand still offers a way on
    · no runtime errors, nothing wider than the screen
    Usage: node scripts/assistant-ui-check.mjs   (WIDTH=390) */
+import { rihabLang, rihabSignIn } from "./lib/rihab-entry.mjs";
 import { launchBrowser, serveBuild } from "./lib/browser.mjs";
 
 const WIDTH = Number(process.env.WIDTH || 390);
@@ -25,12 +26,8 @@ async function open(persona, lang) {
   page.on("console", (m) => { if (m.type() === "error" && !/Failed to load resource|ERR_|net::/.test(m.text())) runtime.push(`${persona}/${lang}: ${m.text()}`); });
   await page.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
   await page.goto(site.url, { waitUntil: "domcontentloaded" });
-  await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click();
-  await page.locator(`[data-lang="${lang}"]`).click();
-  await page.locator('[data-auth-screen="login"]').waitFor(); await W(page, 300);
-  await page.locator("[data-auth-email]").fill(`${persona}@rihab.demo`);
-  await page.locator("[data-auth-password]").fill("demo");
-  await page.locator("[data-auth-submit]").click();
+    await rihabLang(page, lang);
+    await rihabSignIn(page, `${persona}@rihab.app`, "demo");
   await page.locator("[data-home-greeting]").waitFor({ timeout: 10000 }); await W(page, 400);
   page.ctx = ctx;
   return page;

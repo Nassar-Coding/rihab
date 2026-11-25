@@ -1,14 +1,15 @@
 /* Broad QA crawl: opens a wide sample of objects, communities, families, clubs and
    threads, and fails on runtime errors, blank screens or dead ends. */
+import { RIHAB_APP, rihabFile, rihabLang } from "./lib/rihab-entry.mjs";
 import { launchBrowser, outDir, REPO } from "./lib/browser.mjs";
 import { prepareQaAccount, signInQa, closeQaServer } from "./lib/qa-session.mjs";
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
-const root = `${REPO}/dist`;                      // this repository's own build
+const root = RIHAB_APP;                      // the Rihab build (node build/build.mjs app)
 const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8" };
 const server = createServer(async (req, res) => {
-  const f = resolve(root, req.url === "/" ? "index.html" : "." + req.url.split("?")[0]);
+  const f = rihabFile(root, req.url);
   try { const b = await readFile(f); res.writeHead(200, { "Content-Type": MIME[extname(f)] || "text/plain" }); res.end(b); }
   catch { res.writeHead(404); res.end(); }
 });
@@ -21,10 +22,9 @@ page.on("console", (m) => { if (m.type() === "error") { const t = m.text(); if (
 page.on("pageerror", (e) => errors.push("pageerror: " + e.message));
 const txt = () => page.evaluate(() => document.querySelector(".app")?.innerText || "");
 if (!page.__qa) await prepareQaAccount(page);
-await page.goto("http://127.0.0.1:4455/", { waitUntil: "networkidle" });
+await page.goto("http://127.0.0.1:4455/madinah/", { waitUntil: "networkidle" });
 await page.waitForTimeout(700);
-await page.getByText(/^ابدأ$/).first().click();
-await page.locator('[data-lang="ar"]').click();
+await rihabLang(page, "ar");
 await signInQa(page);
 
 /* Crawl by driving the app's own navigation through the search box, which is the

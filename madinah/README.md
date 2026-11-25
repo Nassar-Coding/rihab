@@ -12,11 +12,16 @@ Assistant.
 The name and the wordmark are **provisional**. There is no official logo, and the app
 claims no affiliation with any authority or organisation.
 
+> **Part of Rihab (رحاب).** This folder is Rihab Madinah inside the Rihab repository. People
+> sign in once at the Rihab entry and pick a city; this app then opens signed in, under
+> `/madinah/`. Build, test and package from the repository root — see the root `README.md`.
+
 ## What it does
 
-- **Account-first entry.** Start → Language → Sign in / Create account (email, mobile + SMS
-  code, Apple or Google) → Profile setup → Home, plus *Forgot password*. There is no guest
-  entry.
+- **The Rihab entry.** Sign-in, account creation and password reset happen once at Rihab,
+  for both cities. Without a session, `/madinah/` sends the visitor to the Rihab sign-in. The
+  first visit to Rihab Madinah asks for this city's profile, prefilled from the account. There
+  is no guest entry.
 - **One app, two experiences.** In profile setup the person chooses once, and permanently,
   between **ساكن في المدينة** (resident) and **زائر** (visitor).
   - Residents get a local-life app: their area, what's new, this week, community, hobbies and
@@ -41,45 +46,11 @@ claims no affiliation with any authority or organisation.
   so every time. See `docs/MARKET_AND_OPPORTUNITIES.md`.
 - **Offers.** One shared offers model is read by cards, decision pages, Home, Discover,
   My Plan and the Assistant. Offers sit on illustrative records only, never on a real business.
-- **Accounts on the device.** Hashed passwords, a per-account profile and My Plan, and a
-  starter plan («خطة مقترحة لك» / *Recommended for you*) for every new account. Filling
-  `dist/config.js` switches accounts to Firebase Authentication and Firestore.
+- **One Rihab account, a profile per city.** Accounts are kept on the device with hashed
+  passwords. Each city keeps its own profile, My Plan and requests for the account, and every
+  new account starts with a plan («خطة مقترحة لك» / *Recommended for you*).
 
-Three accounts are ready on every device, even after browser data is cleared (see
-`docs/ACCOUNTS.md`):
-
-| Account | Password | Experience |
-|---|---|---|
-| `admin@admin.com` | `admin` | Review account (resident) |
-| `resident@rihab.app` | `demo` | Resident |
-| `visitor@rihab.app` | `demo` | Visitor |
-
-## Content
-
-All content comes from the project's content workbook (kept outside this repository), with
-its record ids kept as the app's ids (`PLC-`, `ACT-`, `OFR-`, `COM-P`).
-
-| Content | Count |
-|---|---|
-| Places | 257: **197 real Madinah places** + 60 illustrative sample places |
-| Activities | 89: 29 experiences, 22 events, 19 activities, 19 recurring sessions |
-| Offers | 73: 64 deals + 9 offer pages, all on illustrative records only |
-| Community | 178 records: 8 families, 55 communities, 10 clubs, 18 author personas, 85 posts, 2 trust-demo claims |
-| Geography | 53 districts, 15 of them selectable home areas |
-| Market | 10 demo products; the inventory's experiences and services |
-| City Opportunities | 5 demo homes, 5 demo business opportunities (no prices, no financial figures) |
-| Assistant | 156 intents, 2,413 Arabic and English example phrasings, 12 alias groups |
-
-Map positions are schematic (a district's approximate direction and distance from the
-Prophet's Mosque), never GPS. A place whose district the sources don't give shows the city
-as its area and has no pin.
-
-Real places show only what their sources state, with no invented hours, prices, ratings or
-offers. Each one shows its own photograph (154), its brand's logo (29: 25 supplied, reused
-across a brand's branches, and 4 Simple Icons marks), or a drawn category tile (14).
-Illustrative records use a 50-photo generic library or their category tile; the Market's
-products and City Opportunities use photos from the same library. No photograph of
-Makkah is used. Sources are listed in `PHOTO_SOURCES.md` and are never shown in the app.
+The Rihab demo accounts (a resident and a visitor) are listed in the root `README.md`.
 
 ## Project structure
 
@@ -87,9 +58,8 @@ Makkah is used. Sources are listed in `PHOTO_SOURCES.md` and are never shown in 
 |---|---|
 | `RihabMadinah-app.jsx` | **The app.** One React source file (default export; imports only `react` and `lucide-react`). It also works as a Claude artifact. Content, screens, the Assistant and the theme all live here. |
 | `src/main.jsx` | Mounts the app in the page. |
-| `build/build.mjs`, `build/fingerprint.mjs` | The esbuild bundler. It writes `dist/app.<content-hash>.js` and points `dist/index.html` at it. |
-| `dist/` | **The zero-build Vercel package**: `index.html`, the prebuilt bundle, `config.js`, `vercel.json`, `robots.txt`, a deployment `README.md` (Arabic), `manifest.json`, `PHOTO_SOURCES.md` and `BUILD_INFO.txt`. |
-| `release/` | `Rihab_Vercel_DragDrop.zip` and its unpacked folder, made from `dist/` by `scripts/package.mjs`. |
+| `build/build.mjs`, `build/fingerprint.mjs` | The esbuild bundler. It writes `dist/app.<content-hash>.js` and points `dist/index.html` at it. The Rihab build (`build/build.mjs` at the repository root) runs it and publishes the result under `/madinah/`. |
+| `public/` | The page, `config.js` and `manifest.json`, copied into `dist/` by the build. |
 | `i18n/en.json` | The English dictionary. Arabic is the source language. |
 | `assets/agent/` | The Assistant's Intent Bank, in four JSON files (core, discovery, actions and business, context). |
 | `assets/madinah/` | The Madinah photo collection: 162 source files (156 photographs, 6 logos), `SOURCES.csv` and `MISSING.txt`. |
@@ -97,26 +67,21 @@ Makkah is used. Sources are listed in `PHOTO_SOURCES.md` and are never shown in 
 | `assets/photos/`, `assets/photo-data.js` | The 50-photo generic library (`manifest.json` lists sources), and its inlined data. |
 | `scripts/*-sync.mjs` | Steps that inline a source into the app (see *Editing content*). |
 | `scripts/*.py` | Image builders for the two photo sets (Python 3 with Pillow). |
-| `scripts/*-check.mjs`, other `scripts/*.mjs` | The QA suite, the release packager and screenshot helpers. `scripts/lib/` holds the shared Chromium launcher, static server, QA accounts and a Firebase test double. |
+| `scripts/*-check.mjs`, other `scripts/*.mjs` | The QA suite and screenshot helpers. `scripts/lib/` holds the shared Chromium launcher, the static server, the Rihab entry (`rihab-entry.mjs`), QA accounts and a Firebase test double. |
 | `PHOTO_SOURCES.md` | Every photograph and logo the app can render, and where it came from. |
 | `docs/` | Product and technical documentation (see *Documentation*). |
 
 ## Local development
 
-Requirements:
-- **Node.js 20 or later** and npm.
-- **Python 3 with Pillow**, only to rebuild images.
-- **`zip`**, only to package a release.
-
-The QA scripts use Playwright's Chromium.
+Install, build and serve from the repository root (Node.js 20 or later):
 
 ```bash
-npm ci                                    # install the exact locked dependencies
-npm run build                             # → dist/app.<hash>.js, and dist/index.html updated to load it
-python3 -m http.server 8080 -d dist       # then open http://localhost:8080
+npm ci
+node build/build.mjs app                  # → .out/app: the Rihab entry, /makkah/ and /madinah/
+python3 -m http.server 8080 -d .out/app   # then open http://localhost:8080
 ```
 
-`npm run check` parses and bundles the app without writing anything.
+Python 3 with Pillow is needed only to rebuild images.
 
 ### Editing content
 
@@ -161,9 +126,10 @@ The visual identity is «نور» Noor:
 
 ## Testing
 
-The scripts test the built app, so run `npm run build` first. The browser scripts serve `dist/` and
-fail on any console error. QA pins the clock through `scripts/lib/browser.mjs`
-(`QA_NOW=<ISO time>`, or `QA_NOW=real`).
+The scripts test the built Rihab app, so run `node build/build.mjs app` at the repository root
+first, then run them from this folder (`node scripts/<name>.mjs`). The browser scripts serve
+`.out/app`, sign in at the Rihab entry, open Rihab Madinah and fail on any console error. QA pins
+the clock through `scripts/lib/browser.mjs` (`QA_NOW=<ISO time>`, or `QA_NOW=real`).
 
 | Script | What it checks |
 |---|---|
@@ -172,18 +138,14 @@ fail on any console error. QA pins the clock through `scripts/lib/browser.mjs`
 | `scripts/assistant-check.mjs` | 154 Assistant conversations over both experiences, in Arabic and English, including the Market and City Opportunities. It also taps every suggestion chip, and checks the bank regenerates identically |
 | `scripts/assistant-ui-check.mjs` | The Assistant in Chromium: chips, card buttons, a day plan into My Plan, directions, the composer |
 | `scripts/persona-check.mjs` | Resident vs visitor: onboarding, Home, themes, Arabic and English, at 360 and 390 px |
-| `scripts/auth-check.mjs` | Sign-in, sign-up, recovery and account flows, on the device and against a Firebase test double |
-| `scripts/entry-check.mjs` | Start → language → sign-in, the wordmark, the text direction and the five tabs |
 | `scripts/audit-fixes-check.mjs` | The interface rules in `docs/PRODUCT_RULES.md`, for both experiences and languages |
 | `scripts/real-visuals-check.mjs` | Every real place's photograph or logo follows the photo rules |
 | `scripts/consumer-copy-check.mjs` | No sourcing, provenance or prototype language on screen |
 | `scripts/i18n-scan.mjs` | Arabic left on English screens |
 | `scripts/mobile-audit.mjs` | Overflow, clipping and touch targets on phone widths |
 | `scripts/media-check.mjs` | Every image decodes, and content media are photographs or drawn tiles |
-| `scripts/cache-check.mjs` | One URL serves the latest deployment after a refresh |
 | `scripts/crawl.mjs` | A broad crawl for dead ends and blank screens |
-| `scripts/market-check.mjs` | The Market and City Opportunities: five tabs, the three Market categories, products, service requests, homes and opportunities with their demo labels, no prices or financial figures, requests that persist and can be withdrawn, and the Assistant's links |
-| `scripts/package-qa.mjs` | The extracted release ZIP: `ROOT=<extracted folder> node scripts/package-qa.mjs` |
+| `scripts/market-check.mjs` | The Market and City Opportunities: five tabs, the three Market categories, products, service requests, homes and opportunities with no demo labels, no prices or financial figures, requests that persist and can be withdrawn, and the Assistant's links |
 
 Two more scripts:
 - `scripts/ui-audit.mjs` walks every screen at seven viewports (360, 375, 390, 393, 412 and
@@ -194,18 +156,7 @@ Two more scripts:
 
 ## Deployment
 
-```bash
-npm run build
-npm run package          # refresh release/ and release/Rihab_Vercel_DragDrop.zip from dist/
-```
-
-To deploy, upload the ZIP's folder at **vercel.com/new** with the Framework Preset **Other**
-and an empty Build Command and Output Directory. `dist/README.md` gives the steps in Arabic.
-
-Redeploy to the **same Vercel project** to keep the URL. The bundle's name carries its content
-hash, and `vercel.json` re-checks the page and `config.js` on every load. A refresh therefore
-shows the latest deployment, and browser storage (accounts, sessions, profiles, plans) is never
-touched.
+Rihab Madinah ships inside the Rihab app package. See *Deployment* in the root `README.md`.
 
 ## Clock and schedules
 
@@ -222,7 +173,6 @@ another period of the same length, so the demo always has offers running.
 | `docs/DUAL_EXPERIENCE.md` | One app, two experiences (resident and visitor), and the Noor themes |
 | `docs/AGENT_AND_OFFERS.md` | The shared offers model and the Assistant pipeline |
 | `docs/MARKET_AND_OPPORTUNITIES.md` | The Market, City Opportunities, My requests and their Assistant intents |
-| `docs/ACCOUNTS.md` | Account flows, on-device storage, the starter plan, and optional Firebase / Google / Apple setup |
 | `docs/JOURNEYS.md` | The 55 validated journeys |
 | `docs/REAL_PLACES.md` | The 197 real places: district, kind, sources, confidence and visual |
 | `PHOTO_SOURCES.md` | The source of every photograph and logo |

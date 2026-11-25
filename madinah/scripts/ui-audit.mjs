@@ -5,13 +5,14 @@
    small tap targets, broken images and drawn (non-photo) content media. Screenshots
    of every state are written for visual review.
    Env: VPS=360,390 (subset) LANGS=ar,en OUT=dir ROOT=dist-dir JSON=report.json ONLY=state-regex */
+import { RIHAB_APP, rihabFile, rihabLang, rihabSignIn } from "./lib/rihab-entry.mjs";
 import { launchBrowser, outDir } from "./lib/browser.mjs";
 import { prepareQaAccount, signInQa, closeQaServer } from "./lib/qa-session.mjs";
 import { createServer } from "node:http";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { extname, resolve } from "node:path";
 
-const ROOT = process.env.ROOT || resolve("dist");
+const ROOT = process.env.ROOT || RIHAB_APP;
 const OUT = process.env.OUT || "/tmp/ui-audit";
 const PORT = +(process.env.PORT || 4640);
 const ALL_VPS = [
@@ -31,7 +32,7 @@ await mkdir(OUT, { recursive: true });
 
 const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".json": "application/json" };
 const server = createServer(async (req, res) => {
-  const f = resolve(ROOT, req.url === "/" ? "index.html" : "." + req.url.split("?")[0]);
+  const f = rihabFile(ROOT, req.url);
   try { const b = await readFile(f); res.writeHead(200, { "Content-Type": MIME[extname(f)] || "text/plain" }); res.end(b); }
   catch { res.writeHead(404); res.end(); }
 });
@@ -142,10 +143,10 @@ for (const lang of LANGS) {
 
     if (!page.__qa) await prepareQaAccount(page);
 
-    await page.goto(`http://127.0.0.1:${PORT}/`, { waitUntil: "networkidle" }); await W(700);
+    await page.goto(`http://127.0.0.1:${PORT}/madinah/`, { waitUntil: "networkidle" }); await W(700);
     await step("01-landing", async () => {});
-    await step("02-language", async () => { await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click(); await W(600); });
-    await step("02b-login", async () => { await page.locator(`[data-lang="${lang}"]`).click(); await page.locator('[data-auth-screen="login"]').waitFor(); await W(700); });
+    await step("02-language", async () => { });
+    await step("02b-login", async () => { await rihabLang(page, lang); });
     await signInQa(page);
     await step("03-home", async () => {});
     await step("03-home-b", async () => scrollTo(0.33));
@@ -244,8 +245,7 @@ for (const lang of LANGS) {
     await step("11-home-visitor", async () => {
       await tab("home"); await page.getByLabel(T("حسابي", "Profile"), { exact: true }).first().click(); await W(400);
       await page.locator("[data-account-signout]").click(); await W(300); await page.locator("[data-confirm-signout]").click();
-      await page.locator('[data-auth-screen="login"]').waitFor();
-      await page.locator("[data-auth-email]").fill("visitor@rihab.app"); await page.locator("[data-auth-password]").fill("demo"); await page.locator("[data-auth-submit]").click();
+            await rihabSignIn(page, "visitor@rihab.app", "demo");
       await page.locator("[data-home-greeting]").waitFor(); await W(700);
     });
     await step("11-home-visitor-b", async () => scrollTo(0.4));

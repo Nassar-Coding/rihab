@@ -1,7 +1,8 @@
 /* One way for every QA script to start Chromium and serve a build.
    Chromium: CHROMIUM_PATH if set; otherwise a Chromium already installed under
    PLAYWRIGHT_BROWSERS_PATH (or ~/.cache/ms-playwright); otherwise Playwright's own
-   resolution. Builds are served from ROOT (default: dist/). */
+   resolution. Builds are served from ROOT (default: the Rihab app, .out/app, with this city
+   at /<city>/ — build it first with node build/build.mjs app at the repository root). */
 import { chromium } from "playwright";
 import { createServer } from "node:http";
 import { existsSync, readdirSync } from "node:fs";
@@ -9,6 +10,7 @@ import { readFile } from "node:fs/promises";
 import { extname, join, resolve, dirname } from "node:path";
 import { homedir, tmpdir } from "node:os";
 import { fileURLToPath } from "node:url";
+import { CITY, RIHAB_APP, rihabFile } from "./rihab-entry.mjs";
 
 export const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "..", "..");
 
@@ -54,15 +56,15 @@ const MIME = {
   ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".json": "application/json",
   ".css": "text/css", ".svg": "image/svg+xml", ".png": "image/png", ".jpg": "image/jpeg", ".webp": "image/webp", ".txt": "text/plain",
 };
-/* static server for a build; returns { url, close } */
-export async function serveBuild(root = process.env.ROOT || join(REPO, "dist"), port = 0) {
+/* static server for a build; returns { url (this city), origin (the Rihab entry), close } */
+export async function serveBuild(root = process.env.ROOT || RIHAB_APP, port = 0) {
   const server = createServer(async (req, res) => {
-    const path = decodeURIComponent((req.url || "/").split("?")[0]);
-    const f = resolve(root, path === "/" ? "index.html" : "." + path);
+    const f = rihabFile(root, req.url || "/");
     if (!f.startsWith(resolve(root))) { res.writeHead(403); res.end(); return; }
     try { const b = await readFile(f); res.writeHead(200, { "Content-Type": MIME[extname(f)] || "application/octet-stream" }); res.end(b); }
     catch { res.writeHead(404); res.end(); }
   });
   await new Promise((r) => server.listen(port, "127.0.0.1", r));
-  return { url: `http://127.0.0.1:${server.address().port}`, close: () => new Promise((r) => server.close(r)), port: server.address().port };
+  const origin = `http://127.0.0.1:${server.address().port}`;
+  return { url: `${origin}/${CITY}/`, origin, close: () => new Promise((r) => server.close(r)), port: server.address().port };
 }

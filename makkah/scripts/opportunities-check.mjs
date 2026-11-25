@@ -1,5 +1,5 @@
 /* «فرص مكة» / Makkah Opportunities, in Chromium, for both experiences in Arabic and English:
-   · the four bottom tabs are unchanged; Makkah Opportunities is a Home section (after "This week"
+   · the five bottom tabs (with the Market in the middle); Makkah Opportunities is a Home section (after "This week"
      for a resident, after "Build your trip" for a visitor) with two separate cards, never a tab
    · Live in Makkah: rent / own / extended stay, attribute and area filters (combined), the area's own
      description, a detail page with rooms, size, terms and features; no demo or sample wording
@@ -14,6 +14,7 @@
      question with the matching items and a link to the right screen, and still treats a hotel as a stay
    Accounts are created through the real sign-up screens, one per persona and language.
    Usage: node scripts/opportunities-check.mjs   (LANGS=ar,en  WIDTH=390) */
+import { rihabSignIn, rihabSignUp } from "./lib/rihab-entry.mjs";
 import { launchBrowser, serveBuild, outDir } from "./lib/browser.mjs";
 import { mkdirSync } from "node:fs";
 
@@ -58,14 +59,7 @@ for (const lang of LANGS) {
     const email = `opps.${who}.${lang}.${Date.now()}@example.com`, password = "opps-makkah-2026";
     const dismiss = async () => { for (const b of await page.locator("[data-device-message] button[aria-label]").all()) await b.click().catch(() => {}); };
     const signUp = async () => {
-      await page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first().click(); await W(500);
-      await page.locator(`[data-lang="${lang}"]`).click(); await page.locator("[data-auth-email]").waitFor();
-      await page.locator("[data-create-account]").click();
-      await page.locator('[data-signup-method="email"]').click();
-      await page.locator("[data-signup-email]").fill(email);
-      await page.locator("[data-signup-password]").fill(password);
-      await page.locator("[data-signup-confirm]").fill(password);
-      await page.locator("[data-signup-submit]").click();
+      await rihabSignUp(page, { firstName: T("سارة", "Sara"), lastName: T("القرشي", "Al-Qurashi"), email, password, lang });
       await page.locator('[data-auth-screen="profile-setup"]').waitFor({ timeout: 10000 });
       await page.locator("#profile-firstName").fill(T("سارة", "Sara"));
       await page.locator("#profile-lastName").fill(T("القرشي", "Al-Qurashi"));
@@ -84,11 +78,7 @@ for (const lang of LANGS) {
     };
     const signIn = async () => {
       if (await page.locator("[data-home-greeting]").count()) return;
-      const start = page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first();
-      if (await start.count()) { await start.click(); await W(500); }
-      const pickLang = page.locator(`[data-lang="${lang}"]`); if (await pickLang.count()) await pickLang.click();
-      await page.locator("[data-auth-email]").waitFor();
-      await page.locator("[data-auth-email]").fill(email); await page.locator("[data-auth-password]").fill(password); await page.locator("[data-auth-submit]").click();
+      await rihabSignIn(page, email, password, { lang });
       await page.locator("[data-home-greeting]").waitFor({ timeout: 10000 }); await W(600); await dismiss();
     };
     const homeCount = () => page.locator("[data-home]").count();
@@ -101,7 +91,7 @@ for (const lang of LANGS) {
       /* tabs and Home */
       stage = "home";
       const navs = await page.$$eval("[data-nav]", (els) => els.map((e) => e.getAttribute("data-nav")).join(","));
-      ok(`${tag}: the four bottom tabs are unchanged`, navs === "home,discover,community,plan", navs);
+      ok(`${tag}: the five bottom tabs, Opportunities not among them`, navs === "home,discover,market,community,plan", navs);
       const mods = await page.$$eval("[data-home-module]", (els) => els.map((e) => e.getAttribute("data-home-module")));
       const after = who === "visitor" ? "build-trip" : "this-week";
       ok(`${tag}: Makkah Opportunities on Home, after ${after}`, mods.includes("city-ops") && (!mods.includes(after) || mods.indexOf("city-ops") === mods.indexOf(after) + 1), mods.join(","));

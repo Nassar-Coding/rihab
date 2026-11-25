@@ -265,7 +265,7 @@ function App() {
         <div className="top">
           {session ? <Wordmark small /> : <span />}
           <div className="who">
-            <button className="pill" onClick={() => setLang(lang === "ar" ? "en" : "ar")} lang={lang === "ar" ? "en" : "ar"}>{t.lang}</button>
+            <button className="pill" data-rihab-lang onClick={() => setLang(lang === "ar" ? "en" : "ar")} lang={lang === "ar" ? "en" : "ar"}>{t.lang}</button>
             {session && <button className="av" aria-label={t.menu} aria-expanded={menu} onClick={() => setMenu((m) => !m)}>{((lang === "en" && user?.firstNameEn) || user?.firstName || "؟").slice(0, 1)}</button>}
           </div>
         </div>
@@ -292,13 +292,13 @@ function App() {
               <button className="btn" disabled={busy} data-rihab-submit>{t.enter}</button>
               {!BI && <>
               <div className="or">{t.or}</div>
-              <button type="button" className="btn ghost" onClick={() => setView("signup")}>{t.create}</button>
+              <button type="button" className="btn ghost" data-rihab-create onClick={() => setView("signup")}>{t.create}</button>
               </>}
             </form>
           )}
 
           {view === "signup" && (
-            <form className="card" onSubmit={signUp} noValidate>
+            <form className="card" onSubmit={signUp} noValidate data-rihab-signup>
               <h1 className="h1">{t.createTitle}</h1>
               <p className="sub">{t.createSub}</p>
               <div className="row2">

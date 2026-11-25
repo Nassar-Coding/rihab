@@ -7,6 +7,7 @@
    · a new visitor signs up without being asked for a neighbourhood
    · real places stay honest (no hours or offers claimed) and carry no source/photo talk
    Usage: node scripts/persona-check.mjs   (LANGS=ar,en  WIDTHS=360,390) */
+import { rihabLang, rihabSignIn, rihabSignUp } from "./lib/rihab-entry.mjs";
 import { launchBrowser, serveBuild } from "./lib/browser.mjs";
 
 const LANGS = (process.env.LANGS || "ar,en").split(",");
@@ -33,22 +34,17 @@ async function newPage(width, lang) {
 }
 async function start(page) {
   await page.goto(site.url, { waitUntil: "domcontentloaded" });
-  await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click();
-  await page.locator(`[data-lang="${page.lang}"]`).click();
-  await page.locator('[data-auth-screen="login"]').waitFor(); await W(page, 300);
+  await rihabLang(page, page.lang);
 }
 async function signIn(page, email, password) {
-  await page.locator("[data-auth-email]").fill(email);
-  await page.locator("[data-auth-password]").fill(password);
-  await page.locator("[data-auth-submit]").click();
+  await rihabSignIn(page, email, password);
   await page.locator("[data-home-greeting]").waitFor({ timeout: 10000 }); await W(page, 500);
 }
 async function signOut(page) {
   await page.locator('[data-nav="home"]').click(); await W(page, 250);
   await page.locator("[data-profile-entry]").click(); await W(page);
   await page.locator("[data-account-signout]").click(); await W(page);
-  await page.locator("[data-confirm-signout]").click(); await page.locator('[data-auth-screen="login"]').waitFor(); await W(page, 300);
-}
+  await page.locator("[data-confirm-signout]").click(); }
 const tab = async (page, t) => { await page.locator(`[data-nav="${t}"]`).click(); await W(page, 600); };
 const modules = (page) => page.$$eval("[data-home-module]", (els) => els.map((e) => e.getAttribute("data-home-module")));
 const theme = (page) => page.evaluate(() => { const r = document.querySelector("[data-app]"); const cs = getComputedStyle(r); return { persona: r.getAttribute("data-persona"), accent: cs.getPropertyValue("--accent-primary").trim(), deep: cs.getPropertyValue("--accent-deep").trim() }; });
@@ -72,7 +68,7 @@ for (const width of WIDTHS) for (const lang of LANGS) {
   /* resident demo */
   let page = await newPage(width, lang);
   await start(page);
-  ok(`${tag}: shared entry (no persona theme before sign-in)`, (await theme(page)).persona === "entry");
+  ok(`${tag}: the Rihab entry before sign-in (no city persona yet)`, (await page.locator("[data-rihab-signin]").count()) === 1 && !(await page.locator("[data-app]").count()));
   await signIn(page, "resident@rihab.app", "demo");
   const rTheme = await theme(page);
   ok(`${tag}: resident theme is Grove (Daylight)`, rTheme.persona === "resident" && rTheme.accent.toUpperCase() === "#1E6A60" && rTheme.deep.toUpperCase() === "#154C45", JSON.stringify(rTheme));
@@ -98,7 +94,8 @@ for (const width of WIDTHS) for (const lang of LANGS) {
   await page.getByLabel(/^(رجوع|Back)$/).first().click(); await W(page, 300);
   await page.getByLabel(/^(رجوع|Back)$/).first().click().catch(() => {}); await W(page, 300);
   await signOut(page);
-  ok(`${tag}: theme returns to the shared brand after sign-out`, (await theme(page)).persona === "entry");
+  await page.locator("[data-rihab-signin]").waitFor({ timeout: 15000 }).catch(() => {});
+  ok(`${tag}: signing out returns to the Rihab entry`, (await page.locator("[data-rihab-signin]").count()) === 1);
 
   /* visitor demo, same browser profile */
   await signIn(page, "visitor@rihab.app", "demo");
@@ -160,12 +157,8 @@ for (const width of WIDTHS) for (const lang of LANGS) {
   /* a new visitor: no neighbourhood question, interests + duration + company required */
   page = await newPage(width, lang);
   await start(page);
-  await page.locator("[data-create-account]").click(); await page.locator('[data-signup-method="email"]').click(); await W(page);
   const email = `visitor.${lang}.${width}.${Date.now()}@example.com`;
-  await page.locator("[data-signup-email]").fill(email);
-  await page.locator("[data-signup-password]").fill("madinah2026");
-  await page.locator("[data-signup-confirm]").fill("madinah2026");
-  await page.locator("[data-signup-submit]").click();
+  await rihabSignUp(page, { firstName: en ? "Lina" : "لينا", lastName: en ? "Saleh" : "صالح", email, password: "madinah2026" });
   await page.locator('[data-auth-screen="profile-setup"]').waitFor();
   await page.locator("#profile-firstName").fill(en ? "Lina" : "لينا");
   await page.locator("#profile-lastName").fill(en ? "Saleh" : "صالح");

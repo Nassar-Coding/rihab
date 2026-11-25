@@ -1,13 +1,14 @@
 /* The Market and City Opportunities, in Chromium, for both experiences in Arabic and English:
    · five bottom tabs, with «السوق» / Market in the middle; City Opportunities on Home, not a tab
    · the Market's three categories: experiences and services are the shared inventory (their own
-     decision pages, booking or a service request), products are a demo catalogue with a request sheet
-   · Live in Madinah and Invest in Madinah: every home and opportunity carries the demo label; no price
+     decision pages, booking or a service request), products are a catalogue with a request sheet
+   · Live in Madinah and Invest in Madinah: no demo labels anywhere; no price
      on a home, and no amount, return, ranking or usufruct wording anywhere on an opportunity
    · requests and registered interest are recorded on the device, say so, show their status, survive a
      reload and sign-in, can be withdrawn, and are reachable from the Market and from Profile
    · the Assistant answers a product, a home and an opportunity question with a link to the right screen
    Usage: node scripts/market-check.mjs   (LANGS=ar,en  WIDTH=390) */
+import { rihabLang, rihabSignIn } from "./lib/rihab-entry.mjs";
 import { launchBrowser, serveBuild, outDir } from "./lib/browser.mjs";
 import { mkdirSync } from "node:fs";
 
@@ -34,8 +35,8 @@ for (const lang of LANGS) {
     page.on("console", (m) => { if (m.type() === "error" && !/fonts\.g|ERR_|net::|Failed to load resource/.test(m.text())) runtime.push(`${tag}: console ${m.text()}`); });
     const W = (n = 400) => page.waitForTimeout(n);
     const text = () => page.locator("[data-screen]").innerText();
-    /* the screen without its marked demo notices (which name what is *not* shown: amounts, returns) */
-    const plain = () => page.evaluate(() => { const c = document.querySelector("[data-screen]")?.cloneNode(true); if (!c) return ""; c.querySelectorAll("[data-demo]").forEach((e) => e.remove()); return c.textContent || ""; });
+    /* the screen without its notes (which name what is *not* shown: amounts, returns) */
+    const plain = () => page.evaluate(() => { const c = document.querySelector("[data-screen]")?.cloneNode(true); if (!c) return ""; c.querySelectorAll("[data-demo], [data-info-note]").forEach((e) => e.remove()); return c.textContent || ""; });
     const chip = (label) => page.locator(".rail button").filter({ hasText: new RegExp(`^${label}$`) }).first();
     let stage = "start";
     const back = async () => { await page.getByLabel(T("رجوع", "Back"), { exact: true }).first().click(); await W(); };
@@ -49,9 +50,7 @@ for (const lang of LANGS) {
       }
     };
     const signIn = async () => {
-      await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click(); await W(500);
-      await page.locator(`[data-lang="${lang}"]`).click(); await page.locator('[data-auth-screen="login"]').waitFor();
-      await page.locator("[data-auth-email]").fill(`${who}@rihab.demo`); await page.locator("[data-auth-password]").fill("demo"); await page.locator("[data-auth-submit]").click();
+      await rihabLang(page, lang); await rihabSignIn(page, `${who}@rihab.app`, "demo");
       await page.locator("[data-home-greeting]").waitFor({ timeout: 10000 }); await W(600);
       for (const b of await page.locator("[data-device-message] button[aria-label]").all()) await b.click().catch(() => {});
     };
@@ -87,7 +86,7 @@ for (const lang of LANGS) {
       stage = "services"; await chip(T("ترجمة", "Translation")).click(); await W();
       await page.locator("[data-screen] .lift").first().click(); await W(700);
       await page.getByRole("button", { name: T("اطلب الخدمة", "Request this service") }).click(); await W(400);
-      ok(`${tag}: the service request sheet says it stays on the device`, (await page.locator('[data-request-sheet="service"]').count()) === 1 && new RegExp(T("لا يُرسل", "not sent")).test(await page.locator("[data-demo]").last().innerText()));
+      ok(`${tag}: the service request sheet says where the request is kept`, (await page.locator('[data-request-sheet="service"]').count()) === 1 && (await page.locator("[data-info-note]").last().innerText()).includes(T("طلباتي", "My requests")));
       await page.locator("[data-request-submit]").click(); await W(400);
       ok(`${tag}: service request recorded`, (await page.locator("[data-request-done]").count()) === 1);
       await page.getByText(T("تم", "Done"), { exact: true }).click(); await W(300);
@@ -98,12 +97,12 @@ for (const lang of LANGS) {
       await page.locator('[data-market-tab="products"]').click(); await W();
       const products = await page.locator("[data-product]").count();
       ok(`${tag}: ten products`, products === 10, String(products));
-      ok(`${tag}: every product carries the demo label`, (await page.locator("[data-product] [data-demo]").count()) === products);
+      ok(`${tag}: no product carries a demo label`, (await page.locator("[data-product] [data-demo]").count()) === 0);
       stage = "products"; await chip(T("تمور", "Dates")).click(); await W();
       ok(`${tag}: the Dates filter`, (await page.locator("[data-product]").count()) === 3);
       await page.locator('[data-product="PRD-01"]').click(); await W(600);
       const pp = await text();
-      ok(`${tag}: a product page shows its price as a demo price`, PRICE.test(await page.locator("[data-product-price]").innerText()) && new RegExp(T("سعر للعرض التجريبي", "Demo price")).test(pp));
+      ok(`${tag}: a product page shows an indicative price`, PRICE.test(await page.locator("[data-product-price]").innerText()) && new RegExp(T("سعر تقديري", "Indicative price")).test(pp));
       await page.locator('[data-request-open="product"]').click(); await W(400);
       await page.getByLabel(T("أكثر", "More"), { exact: true }).click(); await page.getByLabel(T("أكثر", "More"), { exact: true }).click(); await W(150);
       ok(`${tag}: quantity stepper`, /(٣|3)/.test(await page.locator("[data-request-qty]").innerText()));
@@ -113,13 +112,13 @@ for (const lang of LANGS) {
       await page.getByText(T("اعرض طلباتي", "View my requests"), { exact: true }).click(); await W(500);
       const reqText = await text();
       ok(`${tag}: My requests lists the product with its quantity and note`, (await page.locator('[data-request-row="product"]').count()) === 1 && /(٣|3)/.test(await page.locator('[data-request-row="product"]').innerText()) && reqText.includes(T("للهدية لو سمحت", "As a gift, please")));
-      ok(`${tag}: My requests says it is a demo kept on the device`, (await page.locator("[data-requests] [data-demo]").count()) >= 1);
+      ok(`${tag}: My requests explains how requests are kept`, (await page.locator("[data-requests] [data-info-note]").count()) >= 1);
 
       /* Live in Madinah */
       await tab("home");
       await page.locator('[data-city-card="live"]').scrollIntoViewIfNeeded(); await page.locator('[data-city-card="live"]').click(); await W(600);
       ok(`${tag}: Live in Madinah opens with five homes`, (await page.locator("[data-home]").count()) === 5);
-      ok(`${tag}: every home carries the demo label`, (await page.locator("[data-home] [data-demo]").count()) === 5);
+      ok(`${tag}: no home carries a demo label`, (await page.locator("[data-home] [data-demo]").count()) === 0);
       ok(`${tag}: no price on any home`, !PRICE.test(await text()));
       stage = "live"; await chip(T("للإيجار", "For rent")).click(); await W();
       ok(`${tag}: the For rent filter`, (await page.locator("[data-home]").count()) === 1);
@@ -136,7 +135,7 @@ for (const lang of LANGS) {
       /* Invest in Madinah */
       await page.locator('[data-city-tab="invest"]').click(); await W(500);
       ok(`${tag}: five opportunities`, (await page.locator("[data-opp]").count()) === 5);
-      ok(`${tag}: every opportunity carries the demo label`, (await page.locator("[data-opp] [data-demo]").count()) === 5);
+      ok(`${tag}: no opportunity carries a demo label`, (await page.locator("[data-opp] [data-demo]").count()) === 0);
       stage = "invest"; const inv = await plain();
       ok(`${tag}: the directory says it is not an investment service`, new RegExp(T("ليس جهة استثمار", "not an investment company")).test(await text()));
       ok(`${tag}: no amount, return, ranking or usufruct on the directory`, !MONEY_ON_OPPS.test(inv), (inv.match(MONEY_ON_OPPS) || [])[0]);
@@ -169,7 +168,7 @@ for (const lang of LANGS) {
         [T("فرص استثمارية في المدينة", "investment opportunities in Madinah"), T("افتح «استثمر في المدينة»", "Open Invest in Madinah"), '[data-city-tab="invest"][aria-pressed="true"]']]) {
         await page.locator("form input").fill(q); await page.locator("form button[type=submit]").click(); await W(900);
         const bubble = await page.locator("[data-screen] .up").last().innerText();
-        ok(`${tag}: Assistant «${q}» answers with the demo items`, (await page.locator("[data-screen] .up").last().locator("[data-agent-market] [data-demo]").count()) >= 1, bubble.slice(0, 120));
+        ok(`${tag}: Assistant «${q}» answers with the items`, (await page.locator("[data-screen] .up").last().locator("[data-agent-market]").count()) >= 1 && !/(تجريبي|demo)/i.test(bubble), bubble.slice(0, 120));
         await page.locator("[data-screen]").getByRole("button", { name: link, exact: true }).last().click(); await W(600);
         ok(`${tag}: Assistant link «${link}» opens the screen`, (await page.locator(expect).count()) === 1);
         await back();

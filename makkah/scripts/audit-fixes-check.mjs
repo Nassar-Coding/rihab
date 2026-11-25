@@ -3,6 +3,7 @@
    moment the sample schedules were written around (see lib/browser.mjs), except where a
    check sets its own moment to test real dates.
    Usage: node scripts/audit-fixes-check.mjs   (LANGS=ar,en  WIDTHS=360,390) */
+import { rihabLang, rihabSignIn } from "./lib/rihab-entry.mjs";
 import { launchBrowser, serveBuild, REPO } from "./lib/browser.mjs";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -33,12 +34,8 @@ async function newPage(width, lang, now) {
 }
 async function signIn(page, who) {
   await page.goto(site.url, { waitUntil: "domcontentloaded" });
-  await page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first().click();
-  await page.locator(`[data-lang="${page.lang}"]`).click();
-  await page.locator('[data-auth-screen="login"]').waitFor(); await W(page, 300);
-  await page.locator("[data-auth-email]").fill(`${who}@rihab.demo`);
-  await page.locator("[data-auth-password]").fill("demo");
-  await page.locator("[data-auth-submit]").click();
+    await rihabLang(page, page.lang);
+    await rihabSignIn(page, `${who}@rihab.app`, "demo");
   await page.locator("[data-home-greeting]").waitFor({ timeout: 10000 }); await W(page, 500);
   for (const b of await page.locator("[data-device-message] button[aria-label]").all()) await b.click().catch(() => {});
 }

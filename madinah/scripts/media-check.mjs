@@ -2,16 +2,17 @@
    main surfaces and several decision pages, records which kind of visual each page
    shows (photo, logo, category tile) and that no page explains it, and reports broken
    images, drawn (non-photographic) media and runtime errors — all must be zero. */
+import { RIHAB_APP, rihabFile, rihabLang } from "./lib/rihab-entry.mjs";
 import { launchBrowser, outDir } from "./lib/browser.mjs";
 import { prepareQaAccount, signInQa, closeQaServer } from "./lib/qa-session.mjs";
 import { createServer } from "node:http";
 import { readFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
-const root = process.env.ROOT || resolve("dist");
+const root = process.env.ROOT || RIHAB_APP;
 const out = process.env.OUT || "/tmp/audit/shots";
 const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".json": "application/json" };
 const server = createServer(async (req, res) => {
-  const f = resolve(root, req.url === "/" ? "index.html" : "." + req.url.split("?")[0]);
+  const f = rihabFile(root, req.url);
   try { const b = await readFile(f); res.writeHead(200, { "Content-Type": MIME[extname(f)] || "text/plain" }); res.end(b); } catch { res.writeHead(404); res.end(); }
 });
 await new Promise((r) => server.listen(4620, r));
@@ -49,11 +50,10 @@ const open = async (name, label) => {
   await shot(label);
 };
 if (!page.__qa) await prepareQaAccount(page);
-await page.goto("http://127.0.0.1:4620/", { waitUntil: "networkidle" }); await page.waitForTimeout(900);
+await page.goto("http://127.0.0.1:4620/madinah/", { waitUntil: "networkidle" }); await page.waitForTimeout(900);
 await shot("01-landing");
-await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click(); await page.waitForTimeout(700);
 await shot("02-language");
-await page.locator('[data-lang="ar"]').click(); await page.waitForTimeout(1100);
+await rihabLang(page, "ar"); await page.waitForTimeout(1100);
 await signInQa(page);
 await shot("03-home");
 await page.mouse.move(195, 500); await page.mouse.wheel(0, 1500); await shot("04-home-scrolled");
