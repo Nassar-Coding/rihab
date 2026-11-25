@@ -1,6 +1,6 @@
 # Real Madinah places
 
-Ruh Al Madinah lists 197 real places in Madinah (the content workbook's real places, with its ids). Each sits in the
+Rihab Madinah lists 197 real places in Madinah (the content workbook's real places, with its ids). Each sits in the
 district its sources give; places the sources locate only as "in Madinah" show the city as their area and put no pin on
 the map. Map positions are schematic (a district's approximate direction and distance from the Prophet's Mosque), never GPS.
 

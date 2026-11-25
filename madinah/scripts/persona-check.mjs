@@ -33,7 +33,7 @@ async function newPage(width, lang) {
 }
 async function start(page) {
   await page.goto(site.url, { waitUntil: "domcontentloaded" });
-  await page.getByText(/^(ابدأ|Enter Ruh Al Madinah)$/).first().click();
+  await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click();
   await page.locator(`[data-lang="${page.lang}"]`).click();
   await page.locator('[data-auth-screen="login"]').waitFor(); await W(page, 300);
 }
@@ -73,7 +73,7 @@ for (const width of WIDTHS) for (const lang of LANGS) {
   let page = await newPage(width, lang);
   await start(page);
   ok(`${tag}: shared entry (no persona theme before sign-in)`, (await theme(page)).persona === "entry");
-  await signIn(page, "resident@ruhalmadinah.demo", "demo");
+  await signIn(page, "resident@rihab.app", "demo");
   const rTheme = await theme(page);
   ok(`${tag}: resident theme is Grove (Daylight)`, rTheme.persona === "resident" && rTheme.accent.toUpperCase() === "#1E6A60" && rTheme.deep.toUpperCase() === "#154C45", JSON.stringify(rTheme));
   ok(`${tag}: resident Home title`, (await page.locator("[data-home-title]").getAttribute("data-home-title")) === "resident");
@@ -101,7 +101,7 @@ for (const width of WIDTHS) for (const lang of LANGS) {
   ok(`${tag}: theme returns to the shared brand after sign-out`, (await theme(page)).persona === "entry");
 
   /* visitor demo, same browser profile */
-  await signIn(page, "visitor@ruhalmadinah.demo", "demo");
+  await signIn(page, "visitor@rihab.app", "demo");
   const vTheme = await theme(page);
   ok(`${tag}: visitor theme is Fajr Blue on Night Noor (Evening light)`, vTheme.persona === "visitor" && vTheme.accent.toUpperCase() === "#24548A" && vTheme.deep.toUpperCase() === "#172A46" && vTheme.accent.toUpperCase() !== rTheme.accent.toUpperCase(), JSON.stringify(vTheme));
   ok(`${tag}: visitor Home title`, (await page.locator("[data-home-title]").getAttribute("data-home-title")) === "visitor");
@@ -131,7 +131,7 @@ for (const width of WIDTHS) for (const lang of LANGS) {
   await page.getByLabel(/^(رجوع|Back)$/).first().click(); await W(page, 300);
   await page.getByLabel(/^(رجوع|Back)$/).first().click().catch(() => {}); await W(page, 300);
   await signOut(page);
-  await signIn(page, "visitor@ruhalmadinah.demo", "demo");
+  await signIn(page, "visitor@rihab.app", "demo");
   ok(`${tag}: persona survives sign-out / sign-in`, (await page.locator("[data-home-title]").getAttribute("data-home-title")) === "visitor" && (await theme(page)).persona === "visitor");
 
   /* real places stay honest */
@@ -147,10 +147,10 @@ for (const width of WIDTHS) for (const lang of LANGS) {
   /* demo accounts after the browser's storage is cleared */
   await page.evaluate(() => localStorage.clear());
   await start(page);
-  await signIn(page, "resident@ruhalmadinah.demo", "demo");
+  await signIn(page, "resident@rihab.app", "demo");
   ok(`${tag}: resident demo works after storage is cleared`, (await page.locator("[data-home-title]").getAttribute("data-home-title")) === "resident");
   await signOut(page);
-  await signIn(page, "visitor@ruhalmadinah.demo", "demo");
+  await signIn(page, "visitor@rihab.app", "demo");
   ok(`${tag}: visitor demo works after storage is cleared`, (await page.locator("[data-home-title]").getAttribute("data-home-title")) === "visitor");
   await page.locator('[data-nav="plan"]').click(); await W(page, 400);
   const plan = await page.evaluate(() => { const uid = JSON.parse(localStorage.getItem("rihab.session.v1")).uid; return JSON.parse(localStorage.getItem(`rihab.madinah.plan.v1.${uid}`)).plan.map((p) => `${p.state}:${p.source}`); });

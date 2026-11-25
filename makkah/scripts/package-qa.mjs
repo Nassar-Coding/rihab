@@ -1,12 +1,12 @@
 /* QA of the drag-and-drop package exactly as shipped (its own, empty config.js):
    it boots, shows Landing → Language → Login in both languages, refuses unknown
    credentials, and a new account can be created and used with no external service.
-   ROOT=<unzipped package folder> (default: release/EyeMakkah_Vercel_DragDrop) */
+   ROOT=<unzipped package folder> (default: release/Rihab_Vercel_DragDrop) */
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { launchBrowser, serveBuild, REPO } from "./lib/browser.mjs";
 
-const root = process.env.ROOT || join(REPO, "release", "EyeMakkah_Vercel_DragDrop");
+const root = process.env.ROOT || join(REPO, "release", "Rihab_Vercel_DragDrop");
 const bundle = (readFileSync(join(root, "index.html"), "utf8").match(/src="\.\/(app\.[0-9a-f]{10}\.js)"/) || [])[1] || "app.<hash>.js";
 const files = ["index.html", bundle, "config.js", "vercel.json", "robots.txt", "README.md", "PHOTO_SOURCES.md", "manifest.json", "BUILD_INFO.txt"];
 const missing = files.filter((f) => !existsSync(join(root, f)));
@@ -21,8 +21,8 @@ for (const lang of ["ar", "en"]) {
   await page.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
   await page.goto(site.url, { waitUntil: "networkidle" });
   await page.waitForTimeout(600);
-  results.push([`${lang}: landing first`, /(ابدأ|Enter EyeMakkah)/.test(await page.locator(".em").innerText())]);
-  await page.getByText(/^(ابدأ|Enter EyeMakkah)$/).first().click();
+  results.push([`${lang}: landing first`, /(ابدأ|Enter رحاب مكة)/.test(await page.locator(".em").innerText())]);
+  await page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first().click();
   await page.locator(`[data-lang="${lang}"]`).click();
   await page.locator('[data-auth-screen="login"]').waitFor();
   results.push([`${lang}: login direction`, (await page.locator("[data-auth-screen] section").getAttribute("dir")) === (lang === "ar" ? "rtl" : "ltr")]);

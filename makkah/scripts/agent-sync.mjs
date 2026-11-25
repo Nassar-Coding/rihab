@@ -1,10 +1,10 @@
-/* Inlines the four EyeMakkah Agent Bank files (assets/agent/*.json) into the
+/* Inlines the four Rihab Makkah Agent Bank files (assets/agent/*.json) into the
    single-file app as a compact AGENT_BANK, so the artifact stays self-contained.
    All 153 intents, every AR/EN example, keyword, response variant, the follow-up
    routing, confidence thresholds, contextual suggestions and alias groups are kept. */
 import { readFile, writeFile, readdir } from "node:fs/promises";
 const DIR = "assets/agent";
-const files = (await readdir(DIR)).filter((f) => /^eyemakkah_app_agent_bank_\d+_.*\.json$/.test(f)).sort();
+const files = (await readdir(DIR)).filter((f) => /^rihab_makkah_app_agent_bank_\d+_.*\.json$/.test(f)).sort();
 if (files.length !== 4) throw new Error(`expected 4 bank files in ${DIR}, found ${files.length}`);
 const parts = await Promise.all(files.map(async (f) => JSON.parse(await readFile(`${DIR}/${f}`, "utf8"))));
 const intents = parts.flatMap((p) => p.intents || []).map((it) => ({

@@ -26,7 +26,7 @@ let pass = 0, fail = 0;
 const ok = (name, cond, detail = "") => { if (cond) { pass++; console.log(`✓ ${name}`); } else { fail++; console.log(`✗ ${name}${detail ? " — " + detail : ""}`); } };
 const hashOf = (b) => createHash("sha256").update(b).digest("hex").slice(0, 10);
 const DIST = join(REPO, "dist");
-const work = mkdtempSync(join(tmpdir(), "eyemakkah-cache-"));
+const work = mkdtempSync(join(tmpdir(), "rihab-cache-"));
 
 /* ── 1. the package ── */
 const html = readFileSync(join(DIST, "index.html"), "utf8");
@@ -113,9 +113,9 @@ async function profile() {
 const build = (page) => page.evaluate(() => window.__EM_BUILD || null);
 const signedIn = (page) => page.locator("[data-home-greeting]").waitFor({ timeout: 10000 }).then(() => true, () => false);
 async function signIn(page) {
-  await page.getByText(/^(ابدأ|Enter EyeMakkah)$/).first().click();
+  await page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first().click();
   await page.locator('[data-lang="ar"]').click();
-  await page.locator("[data-auth-email]").fill("resident@eyemakkah.demo");
+  await page.locator("[data-auth-email]").fill("resident@rihab.app");
   await page.locator("[data-auth-password]").fill("demo");
   await page.locator("[data-auth-submit]").click();
   return signedIn(page);

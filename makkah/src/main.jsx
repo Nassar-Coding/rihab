@@ -1,5 +1,5 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import EyeMakkahApp from "../RihabMakkah-app.jsx";
+import RihabMakkahApp from "../RihabMakkah-app.jsx";
 
-createRoot(document.getElementById("root")).render(<EyeMakkahApp />);
+createRoot(document.getElementById("root")).render(<RihabMakkahApp />);

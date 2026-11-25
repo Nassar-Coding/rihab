@@ -42,8 +42,8 @@ export function fingerprint(dir) {
   html = html
     .replace(/<script src="\.\/app(?:\.[0-9a-f]{10})?\.js"><\/script>/, `<script src="./${app}"></script>`)
     .replace(/<script src="\.\/config\.js(?:\?v=[0-9a-f]{10})?"><\/script>/, `<script src="./config.js?v=${configVersion}"></script>`)
-    .replace(/<meta name="ruhalmadinah-build" content="[^"]*"\/>\n?/, "")
-    .replace(/<meta charset="utf-8"\/>\n/, `<meta charset="utf-8"/>\n<meta name="ruhalmadinah-build" content="${version}"/>\n`);
+    .replace(/<meta name="rihab-madinah-build" content="[^"]*"\/>\n?/, "")
+    .replace(/<meta charset="utf-8"\/>\n/, `<meta charset="utf-8"/>\n<meta name="rihab-madinah-build" content="${version}"/>\n`);
   if (!html.includes(`src="./${app}"`) || !html.includes(`config.js?v=${configVersion}`)) throw new Error("index.html: script tags not found");
   if (html !== before) writeFileSync(indexPath, html);
   return { app, version, configVersion, bytes: code.length };

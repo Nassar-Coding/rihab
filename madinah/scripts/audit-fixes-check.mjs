@@ -25,7 +25,7 @@ if (SACRED.length !== 2) throw new Error("holy-mosque photographs not found in t
 
 async function newPage(width, lang, now) {
   const ctx = await browser.newContext({ viewport: { width, height: 800 }, isMobile: true, hasTouch: true, deviceScaleFactor: 1 });
-  if (now !== undefined) await ctx.addInitScript((n) => { window.RUHALMADINAH_NOW = n; }, now);
+  if (now !== undefined) await ctx.addInitScript((n) => { window.RIHAB_MADINAH_NOW = n; }, now);
   const page = await ctx.newPage();
   page.on("pageerror", (e) => runtime.push(`${lang}@${width}: ${e.message}`));
   await page.route(/fonts\.(googleapis|gstatic)\.com/, (r) => r.abort());
@@ -34,10 +34,10 @@ async function newPage(width, lang, now) {
 }
 async function signIn(page, who) {
   await page.goto(site.url, { waitUntil: "domcontentloaded" });
-  await page.getByText(/^(ابدأ|Enter Ruh Al Madinah)$/).first().click();
+  await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click();
   await page.locator(`[data-lang="${page.lang}"]`).click();
   await page.locator('[data-auth-screen="login"]').waitFor(); await W(page, 300);
-  await page.locator("[data-auth-email]").fill(`${who}@ruhalmadinah.demo`);
+  await page.locator("[data-auth-email]").fill(`${who}@rihab.demo`);
   await page.locator("[data-auth-password]").fill("demo");
   await page.locator("[data-auth-submit]").click();
   await page.locator("[data-home-greeting]").waitFor({ timeout: 10000 }); await W(page, 500);
@@ -66,7 +66,7 @@ async function openByName(page, name, query = name, nth = null) {
 async function ask(page, q) {
   await tab(page, "home");
   await page.locator("[data-assistant-card] button").last().click(); await W(page, 600);
-  const input = page.getByLabel(/^(اسأل روح المدينة|Ask Ruh Al Madinah)$/).first();
+  const input = page.getByLabel(/^(اسأل رحاب المدينة|Ask Rihab Madinah)$/).first();
   await input.fill(q); await input.press("Enter"); await W(page, 1000);
   const msgs = await page.locator("[data-screen]").innerText();
   await back(page);
@@ -354,7 +354,7 @@ for (const width of WIDTHS) for (const lang of LANGS) {
   /* the real clock: the app opens and reads today's date */
   const real = await newPage(width, lang, null);
   await signIn(real, "visitor");
-  ok(`${lang}@${width}/real-clock: app runs on the real clock`, (await real.evaluate(() => window.RUHALMADINAH_NOW)) == null && (await screenText(real)).length > 200);
+  ok(`${lang}@${width}/real-clock: app runs on the real clock`, (await real.evaluate(() => window.RIHAB_MADINAH_NOW)) == null && (await screenText(real)).length > 200);
   await real.ctx.close();
 }
 

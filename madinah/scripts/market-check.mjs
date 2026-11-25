@@ -49,9 +49,9 @@ for (const lang of LANGS) {
       }
     };
     const signIn = async () => {
-      await page.getByText(/^(ابدأ|Enter Ruh Al Madinah)$/).first().click(); await W(500);
+      await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click(); await W(500);
       await page.locator(`[data-lang="${lang}"]`).click(); await page.locator('[data-auth-screen="login"]').waitFor();
-      await page.locator("[data-auth-email]").fill(`${who}@ruhalmadinah.demo`); await page.locator("[data-auth-password]").fill("demo"); await page.locator("[data-auth-submit]").click();
+      await page.locator("[data-auth-email]").fill(`${who}@rihab.demo`); await page.locator("[data-auth-password]").fill("demo"); await page.locator("[data-auth-submit]").click();
       await page.locator("[data-home-greeting]").waitFor({ timeout: 10000 }); await W(600);
       for (const b of await page.locator("[data-device-message] button[aria-label]").all()) await b.click().catch(() => {});
     };

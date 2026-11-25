@@ -1,16 +1,16 @@
 {
- "file": "ruhalmadinah_app_agent_bank_01_core.json",
+ "file": "rihab_madinah_app_agent_bank_01_core.json",
  "version": "1.1.0",
  "phase": 1,
  "part": "01_core",
  "product": {
-  "name_ar": "روح المدينة",
-  "name_en": "Ruh Al Madinah",
-  "assistant_name_ar": "مساعد روح المدينة",
-  "assistant_name_en": "Ruh Al Madinah Assistant"
+  "name_ar": "رحاب المدينة",
+  "name_en": "Rihab Madinah",
+  "assistant_name_ar": "مساعد رحاب المدينة",
+  "assistant_name_en": "Rihab Madinah Assistant"
  },
  "source_alignment": {
-  "app": "RuhAlMadinah-app.jsx",
+  "app": "RihabMadinah-app.jsx",
   "inlined_by": "scripts/agent-sync.mjs, as AGENT_BANK",
   "scope_reviewed": [
    "Home",
@@ -24,7 +24,7 @@
   ],
   "note": "This file is a source: edit it, then run `node scripts/agent-sync.mjs` to inline the four parts into the app."
  },
- "purpose": "Core bilingual intents of the Ruh Al Madinah Assistant: social conversation, identity and limits, app help, the person's context, fallbacks and out-of-scope handling. Deterministic and on-device: no LLM or external API.",
+ "purpose": "Core bilingual intents of the Rihab Madinah Assistant: social conversation, identity and limits, app help, the person's context, fallbacks and out-of-scope handling. Deterministic and on-device: no LLM or external API.",
  "integration_contract": {
   "languages": [
    "ar",
@@ -40,7 +40,7 @@
    "fallback"
   ],
   "fixed_responses": "Select among response variants to reduce scripted repetition.",
-  "dynamic_responses": "Resolve {{placeholder}} values from current Ruh Al Madinah state.",
+  "dynamic_responses": "Resolve {{placeholder}} values from current Rihab Madinah state.",
   "action_intents": "Actions describe future integration behavior and should update only the relevant user context while preserving unrelated context.",
   "truthfulness": [
    "Do not claim live LLM/API connectivity when none exists.",
@@ -195,12 +195,12 @@
     "handler": null,
     "responses": {
      "ar": [
-      "هلا والله، أنا مساعد روح المدينة. وش ودك تسوي في المدينة اليوم؟",
+      "هلا والله، أنا مساعد رحاب المدينة. وش ودك تسوي في المدينة اليوم؟",
       "أهلًا وسهلًا. قل لي بطريقتك وش تحتاج — مكان، أكل، نشاط أو ترتيب يومك.",
       "يا هلا. أقدر أساعدك تلقى مكان أو تجربة أو عرض أو مجتمع، أو أرتّب لك خطتك."
      ],
      "en": [
-      "Hello, I'm the Ruh Al Madinah assistant. What would you like to do in Madinah today?",
+      "Hello, I'm the Rihab Madinah assistant. What would you like to do in Madinah today?",
       "Welcome. Tell me what you need in your own words — a place, food, an activity or a plan for your day.",
       "Hi there. I can help you find a place, an experience, an offer or a community, or put together your plan."
      ]
@@ -259,12 +259,12 @@
      "ar": [
       "بخير وجاهز أساعدك. وش ودك تسوي أو تعرف في المدينة؟",
       "تمام، وأنا حاضر. اكتب اللي في بالك بطريقتك.",
-      "كل شيء تمام. وش تحتاج من روح المدينة؟"
+      "كل شيء تمام. وش تحتاج من رحاب المدينة؟"
      ],
      "en": [
       "I'm well and ready to help. What would you like to do or find out in Madinah?",
       "All good, and I'm here. Write what's on your mind in your own way.",
-      "All is well. What do you need from Ruh Al Madinah?"
+      "All is well. What do you need from Rihab Madinah?"
      ]
     }
    },
@@ -798,11 +798,11 @@
     "responses": {
      "ar": [
       "ما عندي حالة الطقس الحية. أقدر أقترح لك شيء داخلي أو خارجي حسب اللي تفضّله ووقتك.",
-      "ما عندي طقس مباشر، لكن أقدر أعطيك تجارب داخلية أو خارجية من روح المدينة."
+      "ما عندي طقس مباشر، لكن أقدر أعطيك تجارب داخلية أو خارجية من رحاب المدينة."
      ],
      "en": [
       "I don't have live weather. I can suggest something indoors or outdoors, depending on what you prefer and the time you have.",
-      "I don't have live weather, but I can suggest indoor or outdoor experiences from Ruh Al Madinah."
+      "I don't have live weather, but I can suggest indoor or outdoor experiences from Rihab Madinah."
      ]
     }
    },
@@ -859,12 +859,12 @@
     "handler": null,
     "responses": {
      "ar": [
-      "أنا مساعد روح المدينة. أساعد السكان والزوار يكتشفون أماكن وتجارب وأنشطة وعروض ومجتمعات، ويرتبون خطتهم باستخدام محتوى روح المدينة وسياقهم الحالي.",
-      "أنا المساعد داخل تطبيق روح المدينة. اكتب لي وش تحتاج بطريقتك، وأنا أحاول أوصلك لأفضل خيار أو خطوة داخل التطبيق."
+      "أنا مساعد رحاب المدينة. أساعد السكان والزوار يكتشفون أماكن وتجارب وأنشطة وعروض ومجتمعات، ويرتبون خطتهم باستخدام محتوى رحاب المدينة وسياقهم الحالي.",
+      "أنا المساعد داخل تطبيق رحاب المدينة. اكتب لي وش تحتاج بطريقتك، وأنا أحاول أوصلك لأفضل خيار أو خطوة داخل التطبيق."
      ],
      "en": [
-      "I'm the Ruh Al Madinah assistant. I help residents and visitors discover places, experiences, activities, offers and communities, and arrange their plan using Ruh Al Madinah's content and their current context.",
-      "I'm the assistant inside the Ruh Al Madinah app. Tell me what you need in your own way, and I'll try to get you to the best option or next step in the app."
+      "I'm the Rihab Madinah assistant. I help residents and visitors discover places, experiences, activities, offers and communities, and arrange their plan using Rihab Madinah's content and their current context.",
+      "I'm the assistant inside the Rihab Madinah app. Tell me what you need in your own way, and I'll try to get you to the best option or next step in the app."
      ]
     }
    },
@@ -987,12 +987,12 @@
     "handler": null,
     "responses": {
      "ar": [
-      "أنا مخصص لتجربة روح المدينة وما أختلق بيانات غير موجودة. ما أقدر أؤكد طقسًا أو ازدحامًا أو توفرًا أو حجزًا حيًا إذا التطبيق ما عنده مصدر فعلي لها.",
-      "نطاقي هو محتوى روح المدينة وسياق الاستخدام الحالي. إذا طلبت شيء خارج البيانات المتاحة، أقول لك مباشرة بدل ما أخمّن."
+      "أنا مخصص لتجربة رحاب المدينة وما أختلق بيانات غير موجودة. ما أقدر أؤكد طقسًا أو ازدحامًا أو توفرًا أو حجزًا حيًا إذا التطبيق ما عنده مصدر فعلي لها.",
+      "نطاقي هو محتوى رحاب المدينة وسياق الاستخدام الحالي. إذا طلبت شيء خارج البيانات المتاحة، أقول لك مباشرة بدل ما أخمّن."
      ],
      "en": [
-      "I'm built for the Ruh Al Madinah experience and I don't make up data that isn't there. I can't confirm live weather, crowding, availability or bookings if the app has no real source for them.",
-      "My scope is Ruh Al Madinah's content and your current context. If you ask for something outside the available data, I'll tell you directly instead of guessing."
+      "I'm built for the Rihab Madinah experience and I don't make up data that isn't there. I can't confirm live weather, crowding, availability or bookings if the app has no real source for them.",
+      "My scope is Rihab Madinah's content and your current context. If you ask for something outside the available data, I'll tell you directly instead of guessing."
      ]
     }
    },
@@ -1051,11 +1051,11 @@
     "handler": null,
     "responses": {
      "ar": [
-      "إجاباتي تعتمد على محتوى روح المدينة داخل التطبيق: الأماكن والتجارب والأنشطة والعروض والمجتمعات و«خطتي» وسياق المستخدم، مع معلومات مصدر/حداثة عندما تكون متاحة. وهي ليست بيانات حية لحظية، وبعض العروض والأنشطة المعروضة أمثلة لتجربة التطبيق ولا تُنسب لجهات حقيقية.",
+      "إجاباتي تعتمد على محتوى رحاب المدينة داخل التطبيق: الأماكن والتجارب والأنشطة والعروض والمجتمعات و«خطتي» وسياق المستخدم، مع معلومات مصدر/حداثة عندما تكون متاحة. وهي ليست بيانات حية لحظية، وبعض العروض والأنشطة المعروضة أمثلة لتجربة التطبيق ولا تُنسب لجهات حقيقية.",
       "أستخدم محتوى التطبيق الحالي وبياناته، وليس شبكة بيانات تشغيلية حية."
      ],
      "en": [
-      "My answers rely on Ruh Al Madinah's content inside the app: places, experiences, activities, offers, communities, My Plan and the user's context, with source and freshness information where available. It isn't live, real-time data, and some of the offers and activities shown are examples of how the app works and are not attributed to real organisations.",
+      "My answers rely on Rihab Madinah's content inside the app: places, experiences, activities, offers, communities, My Plan and the user's context, with source and freshness information where available. It isn't live, real-time data, and some of the offers and activities shown are examples of how the app works and are not attributed to real organisations.",
       "I use the app's current content and data, not a live operational data network."
      ]
     }
@@ -1113,12 +1113,12 @@
     "handler": null,
     "responses": {
      "ar": [
-      "المساعد هنا يعمل بقواعد ومنطق سياقي مرتبطين بمحتوى روح المدينة، وليس مرتبطًا بنموذج ذكاء اصطناعي توليدي حي أو واجهة برمجية في الخلفية.",
-      "أفهم طلبك وأجاوبك من محتوى روح المدينة وقواعد محددة، وليس من نموذج توليدي حي."
+      "المساعد هنا يعمل بقواعد ومنطق سياقي مرتبطين بمحتوى رحاب المدينة، وليس مرتبطًا بنموذج ذكاء اصطناعي توليدي حي أو واجهة برمجية في الخلفية.",
+      "أفهم طلبك وأجاوبك من محتوى رحاب المدينة وقواعد محددة، وليس من نموذج توليدي حي."
      ],
      "en": [
-      "The assistant here works with rules and contextual logic tied to Ruh Al Madinah's content; it isn't connected to a live generative AI model or an API in the background.",
-      "I understand your request and answer from Ruh Al Madinah's content and defined rules, not from a live generative model."
+      "The assistant here works with rules and contextual logic tied to Rihab Madinah's content; it isn't connected to a live generative AI model or an API in the background.",
+      "I understand your request and answer from Rihab Madinah's content and defined rules, not from a live generative model."
      ]
     }
    },
@@ -1260,37 +1260,37 @@
    "priority": 90
   },
   {
-   "id": "app_what_is_ruhalmadinah",
+   "id": "app_what_is_rihab",
    "category": "app_help",
-   "purpose": "Explain the current Ruh Al Madinah consumer app.",
+   "purpose": "Explain the current Rihab Madinah consumer app.",
    "examples": {
     "ar": [
-     "وش هي روح المدينة",
-     "ايش روح المدينة",
+     "وش هي رحاب المدينة",
+     "ايش رحاب المدينة",
      "وش التطبيق",
      "ايش هذا التطبيق",
-     "ما هي روح المدينة",
-     "اشرح لي روح المدينة",
+     "ما هي رحاب المدينة",
+     "اشرح لي رحاب المدينة",
      "وش هدف التطبيق",
-     "وش فكرة روح المدينة"
+     "وش فكرة رحاب المدينة"
     ],
     "en": [
-     "what is Ruh Al Madinah",
+     "what is Rihab Madinah",
      "what is this app",
-     "explain Ruh Al Madinah",
+     "explain Rihab Madinah",
      "what is the purpose of the app",
-     "what is Ruh Al Madinah for"
+     "what is Rihab Madinah for"
     ]
    },
    "matching": {
     "keywords_ar": [
-     "روح المدينة",
+     "رحاب المدينة",
      "التطبيق",
      "هدف",
      "فكرة"
     ],
     "keywords_en": [
-     "Ruh Al Madinah",
+     "Rihab Madinah",
      "app",
      "purpose"
     ],
@@ -1301,12 +1301,12 @@
     "handler": null,
     "responses": {
      "ar": [
-      "روح المدينة مجتمع رقمي للمدينة المنورة يساعد السكان والزوار يكتشفون أماكن وتجارب وخدمات ومجتمعات، ينتقلون من الاكتشاف إلى المشاركة، ويحافظون على قراراتهم داخل «خطتي».",
-      "فكرة روح المدينة مو مجرد دليل أماكن؛ هي تجربة تربط الاكتشاف بالمجتمع والمشاركة والخطة، وتتحسن حسب سياق واستخدام الشخص."
+      "رحاب المدينة مجتمع رقمي للمدينة المنورة يساعد السكان والزوار يكتشفون أماكن وتجارب وخدمات ومجتمعات، ينتقلون من الاكتشاف إلى المشاركة، ويحافظون على قراراتهم داخل «خطتي».",
+      "فكرة رحاب المدينة مو مجرد دليل أماكن؛ هي تجربة تربط الاكتشاف بالمجتمع والمشاركة والخطة، وتتحسن حسب سياق واستخدام الشخص."
      ],
      "en": [
-      "Ruh Al Madinah is a digital community for Al-Madinah Al-Munawwarah that helps residents and visitors discover places, experiences, services and communities, move from discovery to taking part, and keep their decisions inside My Plan.",
-      "The idea behind Ruh Al Madinah isn't just a places guide; it's an experience that links discovery with community, participation and your plan, and gets better with the person's context and use."
+      "Rihab Madinah is a digital community for Al-Madinah Al-Munawwarah that helps residents and visitors discover places, experiences, services and communities, move from discovery to taking part, and keep their decisions inside My Plan.",
+      "The idea behind Rihab Madinah isn't just a places guide; it's an experience that links discovery with community, participation and your plan, and gets better with the person's context and use."
      ]
     }
    },
@@ -1361,11 +1361,11 @@
     "handler": null,
     "responses": {
      "ar": [
-      "التنقل الرئيسي في روح المدينة أربع مناطق: «الرئيسية» للاقتراحات والسياق، «اكتشف» للتصفح والبحث، «المجتمع» للأسئلة والتوصيات والمشاركة، و«خطتي» لما حفظته أو تنوي فعله أو أكملته.",
+      "التنقل الرئيسي في رحاب المدينة أربع مناطق: «الرئيسية» للاقتراحات والسياق، «اكتشف» للتصفح والبحث، «المجتمع» للأسئلة والتوصيات والمشاركة، و«خطتي» لما حفظته أو تنوي فعله أو أكملته.",
       "عندك أربع تبويبات رئيسية: الرئيسية، اكتشف، المجتمع، خطتي. والحساب موجود خلف صورة الملف الشخصي."
      ],
      "en": [
-      "The main navigation in Ruh Al Madinah has four areas: “Home” for suggestions and context, “Discover” for browsing and search, “Community” for questions, recommendations and participation, and “My Plan” for what you've saved, intend to do or have completed.",
+      "The main navigation in Rihab Madinah has four areas: “Home” for suggestions and context, “Discover” for browsing and search, “Community” for questions, recommendations and participation, and “My Plan” for what you've saved, intend to do or have completed.",
       "You have four main tabs: Home, Discover, Community, My Plan. Your account is behind the profile picture."
      ]
     }
@@ -1637,11 +1637,11 @@
     "handler": null,
     "responses": {
      "ar": [
-      "البحث في روح المدينة مو للأماكن فقط؛ يقدر يرجع أماكن ومطاعم وتجارب وأنشطة ومجتمعات وخدمات ومساهمات مرتبطة بما كتبته.",
+      "البحث في رحاب المدينة مو للأماكن فقط؛ يقدر يرجع أماكن ومطاعم وتجارب وأنشطة ومجتمعات وخدمات ومساهمات مرتبطة بما كتبته.",
       "اكتب الشيء بطريقتك مثل «قهوة هادئة»، «قباء»، «للعائلة» أو «تطوع»، والبحث يحاول يطابق أكثر من نوع محتوى."
      ],
      "en": [
-      "Search in Ruh Al Madinah isn't only for places; it can return places, restaurants, experiences, activities, communities, services and contributions related to what you typed.",
+      "Search in Rihab Madinah isn't only for places; it can return places, restaurants, experiences, activities, communities, services and contributions related to what you typed.",
       "Type it in your own way, such as “quiet coffee”, “Quba”, “for families” or “volunteer”, and search tries to match more than one type of content."
      ]
     }
@@ -1697,11 +1697,11 @@
     "responses": {
      "ar": [
       "لا. «حفظ» يعني احتفظت بالشيء للرجوع له. «أضف إلى خطتي» خطوة أقوى وتدخل العنصر في مسار التخطيط والاستمرارية. الحفظ ≠ الخطة ≠ الانضمام ≠ الحجز.",
-      "إذا حفظت شيئًا ما، فهذا لا يعني أنك قررت تروح له أو حجزته. روح المدينة يحافظ على هذه الحالات منفصلة."
+      "إذا حفظت شيئًا ما، فهذا لا يعني أنك قررت تروح له أو حجزته. رحاب المدينة يحافظ على هذه الحالات منفصلة."
      ],
      "en": [
       "No. “Save” means you kept the item to come back to. “Add to My Plan” is a stronger step and puts the item into planning and follow-through. Saved ≠ Planned ≠ Joined ≠ Booked.",
-      "Saving something doesn't mean you've decided to go or that you've booked it. Ruh Al Madinah keeps these states separate."
+      "Saving something doesn't mean you've decided to go or that you've booked it. Rihab Madinah keeps these states separate."
      ]
     }
    },
@@ -1723,7 +1723,7 @@
      "هل تحجزون من التطبيق",
      "إذا ضغطت حجز يعني تم",
      "وش يعني انتقلت لإكمال الحجز",
-     "هل روح المدينة يؤكد الحجز",
+     "هل رحاب المدينة يؤكد الحجز",
      "الحجز داخل التطبيق ولا برا"
     ],
     "en": [
@@ -1731,7 +1731,7 @@
      "do you book inside the app",
      "if I tap book is it confirmed",
      "what does left to complete booking mean",
-     "does Ruh Al Madinah confirm bookings",
+     "does Rihab Madinah confirm bookings",
      "is booking inside or outside the app"
     ]
    },
@@ -1754,11 +1754,11 @@
     "handler": null,
     "responses": {
      "ar": [
-      "بعض الحجوزات تنتقل لمقدم الخدمة أو منصة خارجية. روح المدينة يسجل «انتقلت لإكمال الحجز» فقط، ولا يعتبر الحجز مؤكدًا إلا إذا وصل تأكيد فعلي أو أكده المستخدم صراحة.",
+      "بعض الحجوزات تنتقل لمقدم الخدمة أو منصة خارجية. رحاب المدينة يسجل «انتقلت لإكمال الحجز» فقط، ولا يعتبر الحجز مؤكدًا إلا إذا وصل تأكيد فعلي أو أكده المستخدم صراحة.",
       "الضغط على زر حجز خارجي مو نفسه «تم الحجز». التطبيق يحافظ على الفرق بين الانتقال للحجز والتأكيد."
      ],
      "en": [
-      "Some bookings move over to the provider or an external platform. Ruh Al Madinah only records “went to complete booking”, and doesn't treat a booking as confirmed unless a real confirmation arrives or the user explicitly confirms it.",
+      "Some bookings move over to the provider or an external platform. Rihab Madinah only records “went to complete booking”, and doesn't treat a booking as confirmed unless a real confirmation arrives or the user explicitly confirms it.",
       "Tapping an external booking button isn't the same as “booked”. The app keeps the difference between moving to booking and confirmation."
      ]
     }
@@ -1817,11 +1817,11 @@
     "handler": null,
     "responses": {
      "ar": [
-      "روح المدينة يوضح مصدر المعلومة عندما يكون متاحًا: رسمي، من مقدّم الخدمة، أو من المجتمع، ويعرض تاريخها.",
+      "رحاب المدينة يوضح مصدر المعلومة عندما يكون متاحًا: رسمي، من مقدّم الخدمة، أو من المجتمع، ويعرض تاريخها.",
       "إذا اختلفت المصادر، يعرضها التطبيق جنب بعض مع تواريخها بدل ما يختار واحد بدون دليل."
      ],
      "en": [
-      "Ruh Al Madinah shows where information comes from when it's available — official, the provider or the community — and how recent it is.",
+      "Rihab Madinah shows where information comes from when it's available — official, the provider or the community — and how recent it is.",
       "If sources differ, the app shows them side by side with their dates instead of picking one without evidence."
      ]
     }
@@ -1873,11 +1873,11 @@
     "handler": null,
     "responses": {
      "ar": [
-      "اختيار «ساكن في المدينة» أو «زائر» يعطي روح المدينة سياقًا أفضل. ساكن المدينة غالبًا يحتاج اكتشافًا متجددًا وحياة يومية ومجتمعات محلية، والزائر قد يحتاج تجربة أوضح حسب الوقت والزيارة والخطة.",
+      "اختيار «ساكن في المدينة» أو «زائر» يعطي رحاب المدينة سياقًا أفضل. ساكن المدينة غالبًا يحتاج اكتشافًا متجددًا وحياة يومية ومجتمعات محلية، والزائر قد يحتاج تجربة أوضح حسب الوقت والزيارة والخطة.",
       "الاختيار يساعد في الترتيب فقط، وما يمنعك من اكتشاف أي نوع محتوى داخل التطبيق."
      ],
      "en": [
-      "Choosing “Madinah resident” or “visitor” gives Ruh Al Madinah better context. A Madinah resident usually needs fresh discovery, daily life and local communities, while a visitor may need a clearer experience based on time, visit and plan.",
+      "Choosing “Madinah resident” or “visitor” gives Rihab Madinah better context. A Madinah resident usually needs fresh discovery, daily life and local communities, while a visitor may need a clearer experience based on time, visit and plan.",
       "The choice only helps with ordering, and it doesn't stop you from discovering any type of content in the app."
      ]
     }
@@ -1936,11 +1936,11 @@
     "responses": {
      "ar": [
       "التخصيص يعتمد على سياق صريح وسلوك مفيد داخل التطبيق مثل ما حفظته أو أضفته لخطتك أو أكملته، بدون افتراض صفات حساسة عنك. وتقدر تصحح اهتماماتك من الحساب.",
-      "روح المدينة ما يفترض أن كل مشاهدة تعني اهتمام قوي، وما يحول رفضًا واحدًا إلى كراهية دائمة."
+      "رحاب المدينة ما يفترض أن كل مشاهدة تعني اهتمام قوي، وما يحول رفضًا واحدًا إلى كراهية دائمة."
      ],
      "en": [
       "Personalisation relies on explicit context and useful behaviour inside the app, such as what you saved, added to your plan or completed, without assuming sensitive traits about you. You can correct your interests from your account.",
-      "Ruh Al Madinah doesn't assume that every view means strong interest, and doesn't turn a single dismissal into a permanent dislike."
+      "Rihab Madinah doesn't assume that every view means strong interest, and doesn't turn a single dismissal into a permanent dislike."
      ]
     }
    },
@@ -1996,11 +1996,11 @@
     "handler": null,
     "responses": {
      "ar": [
-      "الموقع اختياري. روح المدينة يشتغل بالحي أو المنطقة اللي تختارها، وما يعرض موقعك لأحد.",
+      "الموقع اختياري. رحاب المدينة يشتغل بالحي أو المنطقة اللي تختارها، وما يعرض موقعك لأحد.",
       "تقدر تستخدم التطبيق بدون إذن الموقع، وتختار منطقتك يدويًا."
      ],
      "en": [
-      "Location is optional. Ruh Al Madinah works from the neighbourhood or area you choose, and never shows your location to anyone.",
+      "Location is optional. Rihab Madinah works from the neighbourhood or area you choose, and never shows your location to anyone.",
       "You can use the app without location permission and choose your area yourself."
      ]
     }
@@ -2057,11 +2057,11 @@
     "handler": null,
     "responses": {
      "ar": [
-      "في روح المدينة عروض وخصومات على مطاعم ومقاهٍ وإقامة وتجارب وأنشطة ومتاجر وخدمات — خصم مباشر أو باقة عائلية أو سعر خاص — ومعها شروط العرض وتاريخ انتهائه.",
+      "في رحاب المدينة عروض وخصومات على مطاعم ومقاهٍ وإقامة وتجارب وأنشطة ومتاجر وخدمات — خصم مباشر أو باقة عائلية أو سعر خاص — ومعها شروط العرض وتاريخ انتهائه.",
       "تشوف العرض على بطاقة المكان في «اكتشف» وفي صفحته. للاستفادة افتح صفحة المكان واتبع طريقة الاستفادة المكتوبة مع العرض."
      ],
      "en": [
-      "Ruh Al Madinah has offers and discounts on restaurants, cafés, stays, experiences, activities, shops and services — a straight discount, a family package or a special price — with their terms and end date.",
+      "Rihab Madinah has offers and discounts on restaurants, cafés, stays, experiences, activities, shops and services — a straight discount, a family package or a special price — with their terms and end date.",
       "You'll see an offer on the place's card in Discover and on its page. To use it, open the place's page and follow the redemption steps shown with the offer."
      ]
     }
@@ -2117,11 +2117,11 @@
     "handler": null,
     "responses": {
      "ar": [
-      "أستخدم فقط السياق المتاح داخل روح المدينة مثل كونك ساكنًا في المدينة أو زائرًا لها، الحي المختار، الوقت المتاح، فرد/عائلة/أطفال/مجموعة، الاهتمامات، متطلبات الوصول، وما عندك في «خطتي».",
+      "أستخدم فقط السياق المتاح داخل رحاب المدينة مثل كونك ساكنًا في المدينة أو زائرًا لها، الحي المختار، الوقت المتاح، فرد/عائلة/أطفال/مجموعة، الاهتمامات، متطلبات الوصول، وما عندك في «خطتي».",
       "السياق يساعدني أرتب الخيارات، لكنه ما يخليني أفترض معلومات حساسة غير موجودة."
      ],
      "en": [
-      "I only use the context available inside Ruh Al Madinah, such as whether you're a Madinah resident or a visitor, your chosen neighbourhood, the time you have, solo/family/children/group, interests, accessibility needs, and what's in My Plan.",
+      "I only use the context available inside Rihab Madinah, such as whether you're a Madinah resident or a visitor, your chosen neighbourhood, the time you have, solo/family/children/group, interests, accessibility needs, and what's in My Plan.",
       "Context helps me order the options, but it doesn't let me assume sensitive information that isn't there."
      ]
     }
@@ -3009,12 +3009,12 @@
     "handler": null,
     "responses": {
      "ar": [
-      "هذا خارج نطاق مساعد روح المدينة داخل التطبيق. أقدر أساعدك في المدينة من خلال الأماكن والتجارب والمطاعم والعروض والمجتمعات و«خطتي».",
-      "سؤالك عام وخارج نطاق تجربة روح المدينة الحالية."
+      "هذا خارج نطاق مساعد رحاب المدينة داخل التطبيق. أقدر أساعدك في المدينة من خلال الأماكن والتجارب والمطاعم والعروض والمجتمعات و«خطتي».",
+      "سؤالك عام وخارج نطاق تجربة رحاب المدينة الحالية."
      ],
      "en": [
-      "That's outside the scope of the Ruh Al Madinah assistant inside the app. I can help you in Madinah through places, experiences, restaurants, offers, communities and My Plan.",
-      "Your question is general and outside the current Ruh Al Madinah experience."
+      "That's outside the scope of the Rihab Madinah assistant inside the app. I can help you in Madinah through places, experiences, restaurants, offers, communities and My Plan.",
+      "Your question is general and outside the current Rihab Madinah experience."
      ]
     }
    },
@@ -3068,11 +3068,11 @@
     "handler": null,
     "responses": {
      "ar": [
-      "الأخبار الحية مو ضمن بيانات مساعد روح المدينة. إذا فيه فعالية أو تحديث موجود داخل محتوى التطبيق أقدر أساعدك فيه.",
+      "الأخبار الحية مو ضمن بيانات مساعد رحاب المدينة. إذا فيه فعالية أو تحديث موجود داخل محتوى التطبيق أقدر أساعدك فيه.",
       "ما عندي أخبار حية حاليًا."
      ],
      "en": [
-      "Live news isn't part of the Ruh Al Madinah assistant's data. If there's an event or update inside the app's content, I can help with that.",
+      "Live news isn't part of the Rihab Madinah assistant's data. If there's an event or update inside the app's content, I can help with that.",
       "I don't have a live news feed right now."
      ]
     }
@@ -3202,11 +3202,11 @@
     "handler": null,
     "responses": {
      "ar": [
-      "ما أقدر أكشف مواقع المستخدمين أو هويات الحضور أو بيانات شخصية/حساسة. روح المدينة مصمم للمجتمع والمشاركة بدون تحويله لتتبع أشخاص.",
+      "ما أقدر أكشف مواقع المستخدمين أو هويات الحضور أو بيانات شخصية/حساسة. رحاب المدينة مصمم للمجتمع والمشاركة بدون تحويله لتتبع أشخاص.",
       "أقدر أساعدك بمعلومات النشاط أو المجتمع نفسه، لكن مو ببيانات خاصة عن أشخاص آخرين."
      ],
      "en": [
-      "I can't reveal users' locations, attendees' identities or personal/sensitive data. Ruh Al Madinah is designed for community and participation, not for tracking people.",
+      "I can't reveal users' locations, attendees' identities or personal/sensitive data. Rihab Madinah is designed for community and participation, not for tracking people.",
       "I can help with information about the activity or community itself, but not with private data about other people."
      ]
     }
@@ -3222,7 +3222,7 @@
   {
    "id": "out_of_scope_external_confirmation_or_authority",
    "category": "out_of_scope",
-   "purpose": "Avoid pretending Ruh Al Madinah can authoritatively confirm external transactions or official/religious decisions it does not own.",
+   "purpose": "Avoid pretending Rihab Madinah can authoritatively confirm external transactions or official/religious decisions it does not own.",
    "examples": {
     "ar": [
      "أكد لي حجزي",
@@ -3274,11 +3274,11 @@
     "handler": null,
     "responses": {
      "ar": [
-      "روح المدينة ما يقدر يصدر تأكيدًا رسميًا أو دينيًا من نفسه. للحجز أو الدخول أو الحكم الشرعي، أعرض لك ما هو موجود في التطبيق وأوجهك للمصدر المختص عند الحاجة.",
+      "رحاب المدينة ما يقدر يصدر تأكيدًا رسميًا أو دينيًا من نفسه. للحجز أو الدخول أو الحكم الشرعي، أعرض لك ما هو موجود في التطبيق وأوجهك للمصدر المختص عند الحاجة.",
       "إذا كان الشيء يحتاج تأكيد جهة رسمية أو مقدم خدمة أو مرجع ديني مختص، ما راح أستبدل ذلك بتخمين من المساعد."
      ],
      "en": [
-      "Ruh Al Madinah can't issue an official or religious confirmation by itself. For a booking, entry or a religious ruling, I show you what's in the app and point you to the competent source when needed.",
+      "Rihab Madinah can't issue an official or religious confirmation by itself. For a booking, entry or a religious ruling, I show you what's in the app and point you to the competent source when needed.",
       "If something needs confirmation from an official body, a provider or a qualified religious authority, I won't replace that with a guess from the assistant."
      ]
     }

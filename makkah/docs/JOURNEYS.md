@@ -1,4 +1,4 @@
-# EyeMakkah — journey coverage
+# Rihab Makkah — journey coverage
 
 The cumulative product is validated against **48 Makkah journeys**. Each one is a real
 path through the shipped app, not a showcase state. Journeys marked ✅ are also walked

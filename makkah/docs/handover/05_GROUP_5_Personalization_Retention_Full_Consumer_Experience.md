@@ -1,12 +1,12 @@
 > **STATUS — UPCOMING VISION / TRANSFORMATION**  
-> This is **not** the current live EyeMakkah product. It is part of the proposed transformation that follows the meeting direction captured in `../00_MEETING_NOTES_VERBATIM.md`.  
+> This is **not** the current live Rihab Makkah product. It is part of the proposed transformation that follows the meeting direction captured in `../00_MEETING_NOTES_VERBATIM.md`.  
 > The two canonical current files are in `01_CURRENT_VERSION__CANONICAL/`.
 
 # New Group 5 — Personalization, Retention & Full Consumer Experience
 
 ## Objective
 
-Complete EyeMakkah as a mature consumer product that learns from meaningful behavior, brings people back for useful reasons, supports providers/hosts, and covers the non-happy-path product states required for a believable application.
+Complete Rihab Makkah as a mature consumer product that learns from meaningful behavior, brings people back for useful reasons, supports providers/hosts, and covers the non-happy-path product states required for a believable application.
 
 ## Cumulative rule
 
@@ -22,7 +22,7 @@ This is the final product layer. It must preserve and integrate everything from:
 
 AI is horizontal and largely invisible.
 
-**You don't go to the AI in EyeMakkah. The AI works quietly across EyeMakkah for you.**
+**You don't go to the AI in Rihab Makkah. The AI works quietly across Rihab Makkah for you.**
 
 Avoid a separate AI destination unless a specific product function genuinely requires it.
 

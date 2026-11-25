@@ -1,12 +1,12 @@
 > **STATUS — UPCOMING VISION / TRANSFORMATION**  
-> This is **not** the current live EyeMakkah product. It is part of the proposed transformation that follows the meeting direction captured in `../00_MEETING_NOTES_VERBATIM.md`.  
+> This is **not** the current live Rihab Makkah product. It is part of the proposed transformation that follows the meeting direction captured in `../00_MEETING_NOTES_VERBATIM.md`.  
 > The two canonical current files are in `01_CURRENT_VERSION__CANONICAL/`.
 
 # New Group 1 — Living Makkah / Content & Discovery Foundation
 
 ## Objective
 
-Make EyeMakkah feel like a rich, living consumer product rather than a prototype with a handful of repeated objects.
+Make Rihab Makkah feel like a rich, living consumer product rather than a prototype with a handful of repeated objects.
 
 This group builds the content/data foundation first, then rebuilds the high-traffic consumer surfaces on top of it.
 

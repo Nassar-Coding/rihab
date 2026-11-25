@@ -1,12 +1,12 @@
 > **STATUS — UPCOMING VISION / TRANSFORMATION**  
-> This is **not** the current live EyeMakkah product. It is part of the proposed transformation that follows the meeting direction captured in `../00_MEETING_NOTES_VERBATIM.md`.  
+> This is **not** the current live Rihab Makkah product. It is part of the proposed transformation that follows the meeting direction captured in `../00_MEETING_NOTES_VERBATIM.md`.  
 > The two canonical current files are in `01_CURRENT_VERSION__CANONICAL/`.
 
 # New Group 3 — Participation, Going Out & Plan
 
 ## Objective
 
-Turn discovery and community into real participation. EyeMakkah should help someone move from “this looks interesting” to actually going, joining, completing and continuing.
+Turn discovery and community into real participation. Rihab Makkah should help someone move from “this looks interesting” to actually going, joining, completing and continuing.
 
 ## Cumulative rule
 
@@ -67,7 +67,7 @@ Home should support low-friction prompts such as:
 - عندك ساعتين؟
 - وش تسوي الليلة؟
 
-EyeMakkah can assemble combinations like:
+Rihab Makkah can assemble combinations like:
 
 - قهوة → ورشة → عشاء
 - معرض → مشي قصير → مطعم قريب

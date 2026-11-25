@@ -82,7 +82,7 @@ general location, description, what the opportunity involves and a photo:
 - an owner or partner who isn't genuinely identified (none is shown);
 - the term حقوق الانتفاع (usufruct).
 
-Every screen says Ruh Al Madinah is not an investment company, financial adviser or broker.
+Every screen says Rihab Madinah is not an investment company, financial adviser or broker.
 
 ## 3. Requests — «طلباتي» / My requests
 
@@ -94,7 +94,7 @@ Every screen says Ruh Al Madinah is not an investment company, financial adviser
 
 **What is stored.** One record per item (requesting it again updates it): kind, item,
 quantity (products only), optional note and time. The records are kept per account in
-`ruhalmadinah.requests.v1.<uid>`, apart from My Plan. They survive sign-out and sign-in and
+`rihab.requests.v1.<uid>`, apart from My Plan. They survive sign-out and sign-in and
 are deleted with the account.
 
 **Wording.** The sheet, the confirmation and «طلباتي» all say the request is saved on this
@@ -125,7 +125,7 @@ A hotel or a stay is still answered as a stay, and offers on apartments are stil
 
 ## 5. Implementation notes
 
-- **Where the code is.** The data and screens are in one section of `RuhAlMadinah-app.jsx`
+- **Where the code is.** The data and screens are in one section of `RihabMadinah-app.jsx`
   (*MARKET & CITY OPPORTUNITIES*), built from the existing components: `Photo`, `RowCard`,
   `Chip`, `Pill`, `Sheet`, `FactRow` and the decision-page layout.
 - **Language.** Text is bilingual through `[ar, en]` pairs and `tx`, so Arabic RTL and

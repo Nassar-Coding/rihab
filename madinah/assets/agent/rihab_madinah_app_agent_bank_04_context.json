@@ -1,26 +1,26 @@
 {
- "file": "ruhalmadinah_app_agent_bank_04_context.json",
+ "file": "rihab_madinah_app_agent_bank_04_context.json",
  "version": "1.1.0",
  "phase": 1,
  "part": "04_context",
  "product": {
-  "name_ar": "روح المدينة",
-  "name_en": "Ruh Al Madinah",
-  "assistant_name_ar": "مساعد روح المدينة",
-  "assistant_name_en": "Ruh Al Madinah Assistant"
+  "name_ar": "رحاب المدينة",
+  "name_en": "Rihab Madinah",
+  "assistant_name_ar": "مساعد رحاب المدينة",
+  "assistant_name_en": "Rihab Madinah Assistant"
  },
  "source_alignment": {
-  "app": "RuhAlMadinah-app.jsx",
+  "app": "RihabMadinah-app.jsx",
   "inlined_by": "scripts/agent-sync.mjs, as AGENT_BANK",
   "parts": [
-   "ruhalmadinah_app_agent_bank_01_core.json",
-   "ruhalmadinah_app_agent_bank_02_discovery.json",
-   "ruhalmadinah_app_agent_bank_03_actions_business.json",
-   "ruhalmadinah_app_agent_bank_04_context.json"
+   "rihab_madinah_app_agent_bank_01_core.json",
+   "rihab_madinah_app_agent_bank_02_discovery.json",
+   "rihab_madinah_app_agent_bank_03_actions_business.json",
+   "rihab_madinah_app_agent_bank_04_context.json"
   ],
   "note": "This file is a source: edit it, then run `node scripts/agent-sync.mjs` to inline the four parts into the app."
  },
- "purpose": "Conversation context for the Ruh Al Madinah Assistant: follow-up routing, entity aliases, contextual suggestions and short-session memory.",
+ "purpose": "Conversation context for the Rihab Madinah Assistant: follow-up routing, entity aliases, contextual suggestions and short-session memory.",
  "integration_contract": {
   "free_text_first": true,
   "suggestions_are_optional": true,
@@ -974,11 +974,11 @@
    ],
    "app_exclusive": [
     "حصري التطبيق",
-    "حصري روح المدينة",
+    "حصري رحاب المدينة",
     "من التطبيق",
     "app exclusive",
     "app-only",
-    "Ruh Al Madinah exclusive"
+    "Rihab Madinah exclusive"
    ],
    "limited_time": [
     "لفترة محدودة",

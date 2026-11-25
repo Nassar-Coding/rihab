@@ -1,6 +1,6 @@
 # Accounts — sign-in, sign-up, recovery and the account profile
 
-EyeMakkah has two interchangeable account services behind one interface (`Auth`).
+Rihab Makkah has two interchangeable account services behind one interface (`Auth`).
 `config.js` decides which one runs; it loads before `app.js` and needs no rebuild.
 
 | `config.js` | Account service |
@@ -15,11 +15,11 @@ entry: the app is account-first.
 
 | Data | Stored as |
 |---|---|
-| Accounts | `localStorage["eyemakkah.accounts.v1"]`, holding email or phone and the linked Apple / Google identity. Passwords are never stored: only a PBKDF2-SHA-256 hash (120,000 rounds) with a per-account salt. Five wrong passwords lock that email for five minutes. |
-| Session | `eyemakkah.session.v1`, removed on sign-out. |
-| Profile | `eyemakkah.profile.v1.<uid>` |
-| My Plan and saved items | `eyemakkah.plan.v1.<uid>`. Kept on sign-out and restored on the next sign-in. Removed only when the account is deleted. |
-| Language | `eyemakkah.lang` |
+| Accounts | `localStorage["rihab.accounts.v1"]`, holding email or phone and the linked Apple / Google identity. Passwords are never stored: only a PBKDF2-SHA-256 hash (120,000 rounds) with a per-account salt. Five wrong passwords lock that email for five minutes. |
+| Session | `rihab.session.v1`, removed on sign-out. |
+| Profile | `rihab.profile.v1.<uid>` |
+| My Plan and saved items | `rihab.plan.v1.<uid>`. Kept on sign-out and restored on the next sign-in. Removed only when the account is deleted. |
+| Language | `rihab.lang` |
 
 How each delivery and provider flow works on the device:
 - **Mobile:** the 6-digit code arrives as a Messages notification. Tapping it fills the code. A code expires after 10 minutes, and five wrong codes end the attempt.
@@ -35,8 +35,8 @@ connecting Firebase does that.
 | Account | Password | Experience | Profile |
 |---|---|---|---|
 | `admin@admin.com` | `admin` | Resident (ساكن) | حساب المراجعة, Al-Aziziyah; food, family, community |
-| `resident@eyemakkah.demo` | `demo` | Resident (ساكن) | أمل الحربي, Al-Awali; food, family, sport, community, volunteering |
-| `visitor@eyemakkah.demo` | `demo` | Visitor (زائر) | يوسف الأنصاري, no area; culture, heritage, food, markets; staying 3–5 days with children |
+| `resident@rihab.app` | `demo` | Resident (ساكن) | أمل الحربي, Al-Awali; food, family, sport, community, volunteering |
+| `visitor@rihab.app` | `demo` | Visitor (زائر) | يوسف الأنصاري, no area; culture, heritage, food, markets; staying 3–5 days with children |
 
 All three are ready on-device accounts for reviewers:
 - **Always available.** It is written into the device's account list on every launch, so it exists on a fresh browser and again after the browser's storage is cleared. Its password hash is restored on each launch.
@@ -93,7 +93,7 @@ the person later empties stays empty.
 ## Connecting Firebase later (`config.js` next to `index.html`)
 
 ```js
-window.EYEMAKKAH_CONFIG = {
+window.RIHAB_MAKKAH_CONFIG = {
   auth: {
     firebaseApiKey: "…",       // required for any sign-in
     firebaseProjectId: "…",    // account profiles in Firestore users/{uid}
@@ -148,7 +148,7 @@ service is real.
 
 The resident and visitor accounts no longer start from the generic starter plan. The first time
 either opens on a device it receives a prepared history, written once into the same stores every
-account uses (`PREPARED_ACCOUNTS` in `EyeMakkah-app.jsx`, marker `prepared: 1` on the plan record);
+account uses (`PREPARED_ACCOUNTS` in `RihabMakkah-app.jsx`, marker `prepared: 1` on the plan record);
 from then on it behaves like any other account and keeps whatever its owner changes.
 
 - Visitor (family with children, 3–5 days): «رحلتي في مكة» with a completed visit, a registered
@@ -159,8 +159,8 @@ from then on it behaves like any other account and keeps whatever its owner chan
   own; three requests in «طلباتي» (a home and two business opportunities), each with a note.
 
 Communities, follows, a person's own posts and helpful votes are now kept per account on the
-device (`eyemakkah.community.v1.<uid>`), like My Plan and «طلباتي».
+device (`rihab.community.v1.<uid>`), like My Plan and «طلباتي».
 
-The two accounts are shown as `resident@eyemakkah.app` and `visitor@eyemakkah.app`; their earlier
-`…@eyemakkah.demo` addresses still sign in, as aliases, with the same passwords as above. The
+The two accounts are shown as `resident@rihab.app` and `visitor@rihab.app`; their earlier
+`…@rihab.demo` addresses still sign in, as aliases, with the same passwords as above. The
 general review account's display name is now عبدالله المالكي.

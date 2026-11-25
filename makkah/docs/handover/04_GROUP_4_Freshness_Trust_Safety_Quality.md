@@ -1,5 +1,5 @@
 > **STATUS — UPCOMING VISION / TRANSFORMATION**  
-> This is **not** the current live EyeMakkah product. It is part of the proposed transformation that follows the meeting direction captured in `../00_MEETING_NOTES_VERBATIM.md`.  
+> This is **not** the current live Rihab Makkah product. It is part of the proposed transformation that follows the meeting direction captured in `../00_MEETING_NOTES_VERBATIM.md`.  
 > The two canonical current files are in `01_CURRENT_VERSION__CANONICAL/`.
 
 # New Group 4 — Freshness, Trust, Safety & Quality

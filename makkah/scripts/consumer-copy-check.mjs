@@ -102,9 +102,9 @@ for (const lang of LANGS) {
     const tab = async (id) => { await clearOverlays(); await page.locator(`[data-nav="${id}"]`).first().click(); await W(600); };
 
     await page.goto(site.url, { waitUntil: "networkidle" }); await W(700);
-    await page.getByText(/^(ابدأ|Enter EyeMakkah)$/).first().click(); await W(400);
+    await page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first().click(); await W(400);
     await page.locator(`[data-lang="${lang}"]`).click(); await W(700);
-    await page.locator("[data-auth-email]").fill(`${who}@eyemakkah.demo`);
+    await page.locator("[data-auth-email]").fill(`${who}@rihab.demo`);
     await page.locator("[data-auth-password]").fill("demo");
     await page.locator("[data-auth-submit]").click();
     await page.locator("[data-home-greeting]").waitFor({ timeout: 10000 });
@@ -153,7 +153,7 @@ for (const lang of LANGS) {
     await page.locator("[data-assistant-card] button").last().click(); await W(700);
     await scan("assistant (opened)");
     for (const [a, e, asked] of ASK) {
-      const input = page.getByLabel(/^(اسأل EyeMakkah|Ask EyeMakkah)$/).first();
+      const input = page.getByLabel(/^(اسأل رحاب مكة|Ask رحاب مكة)$/).first();
       await input.fill(T(a, e)); await input.press("Enter"); await W(900);
       await scan(`assistant "${T(a, e)}"`, { asked });
     }

@@ -17,7 +17,7 @@ const page = await browser.newPage({ viewport: { width: 390, height: 844 }, devi
 if (!page.__qa) await prepareQaAccount(page);
 await page.goto("http://127.0.0.1:4467/", { waitUntil: "networkidle" });
 await page.waitForTimeout(800);
-await page.getByText(/^(ابدأ|Enter Ruh Al Madinah)$/).first().click();
+await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click();
 await page.waitForTimeout(600);
 await page.locator(`[data-lang="${process.env.LANG_PICK || "ar"}"]`).click();
 await signInQa(page);

@@ -1,4 +1,4 @@
-# Ruh Al Madinah — journey coverage
+# Rihab Madinah — journey coverage
 
 The cumulative product is validated against **55 Madinah journeys**. Each one is a real
 path through the shipped app, not a showcase state. Journeys marked ✅ are also walked

@@ -51,7 +51,7 @@ const open = async (name, label) => {
 if (!page.__qa) await prepareQaAccount(page);
 await page.goto("http://127.0.0.1:4620/", { waitUntil: "networkidle" }); await page.waitForTimeout(900);
 await shot("01-landing");
-await page.getByText(/^(ابدأ|Enter EyeMakkah)$/).first().click(); await page.waitForTimeout(700);
+await page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first().click(); await page.waitForTimeout(700);
 await shot("02-language");
 await page.locator('[data-lang="ar"]').click(); await page.waitForTimeout(1100);
 await signInQa(page);

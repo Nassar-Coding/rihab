@@ -32,7 +32,7 @@ if (!checkOnly) {
   const { app, version, bytes } = fingerprint(resolve(root, "dist"));
   writeFileSync(
     resolve(root, "dist/BUILD_INFO.txt"),
-    `Ruh Al Madinah bundle\nbuilt: ${new Date().toISOString()}\nversion: ${version}\nbundle: ${app}\nbundle bytes: ${bytes}\n`
+    `Rihab Madinah bundle\nbuilt: ${new Date().toISOString()}\nversion: ${version}\nbundle: ${app}\nbundle bytes: ${bytes}\n`
   );
   console.log(`dist/${app} — ${(bytes / 1024).toFixed(1)} KB`);
 } else {

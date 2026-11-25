@@ -144,7 +144,7 @@ for (const lang of LANGS) {
 
     await page.goto(`http://127.0.0.1:${PORT}/`, { waitUntil: "networkidle" }); await W(700);
     await step("01-landing", async () => {});
-    await step("02-language", async () => { await page.getByText(/^(ابدأ|Enter EyeMakkah)$/).first().click(); await W(600); });
+    await step("02-language", async () => { await page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first().click(); await W(600); });
     await step("02b-login", async () => { await page.locator(`[data-lang="${lang}"]`).click(); await page.locator('[data-auth-screen="login"]').waitFor(); await W(700); });
     await signInQa(page);
     await step("03-home", async () => {});
@@ -222,7 +222,7 @@ for (const lang of LANGS) {
       await tab("home"); await page.getByLabel(T("حسابي", "Profile"), { exact: true }).first().click(); await W(400);
       await page.locator("[data-account-signout]").click(); await W(300); await page.locator("[data-confirm-signout]").click();
       await page.locator('[data-auth-screen="login"]').waitFor();
-      await page.locator("[data-auth-email]").fill("visitor@eyemakkah.demo"); await page.locator("[data-auth-password]").fill("demo"); await page.locator("[data-auth-submit]").click();
+      await page.locator("[data-auth-email]").fill("visitor@rihab.app"); await page.locator("[data-auth-password]").fill("demo"); await page.locator("[data-auth-submit]").click();
       await page.locator("[data-home-greeting]").waitFor(); await W(700);
     });
     await step("11-home-visitor-b", async () => scrollTo(0.4));

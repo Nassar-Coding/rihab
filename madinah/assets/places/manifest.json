@@ -1,5 +1,5 @@
 {
- "_about": "Place photographs and brand logos for Ruh Al Madinah's real places: Madinah photographs and logos collected for the project (assets/madinah/, sources in assets/madinah/SOURCES.csv) and brand logos carried over from the earlier prototype. One asset per brand or place; `ids` are the content-workbook records (PLC-…) that show it — every branch of a brand. kind: photo = photograph, logo = brand mark on a plain surface. Built by scripts/place-assets-build.py.",
+ "_about": "Place photographs and brand logos for Rihab Madinah's real places: Madinah photographs and logos collected for the project (assets/madinah/, sources in assets/madinah/SOURCES.csv) and brand logos carried over from the earlier prototype. One asset per brand or place; `ids` are the content-workbook records (PLC-…) that show it — every branch of a brand. kind: photo = photograph, logo = brand mark on a plain surface. Built by scripts/place-assets-build.py.",
  "44x_specialty_coffee": {
   "kind": "photo",
   "ar": "44X للقهوة المختصة",

@@ -1,4 +1,4 @@
-# Ruh Al Madinah — product rules
+# Rihab Madinah — product rules
 
 These rules shape every screen and the Assistant. The QA scripts enforce most of them, and
 `scripts/audit-fixes-check.mjs` covers the interface corrections listed below.

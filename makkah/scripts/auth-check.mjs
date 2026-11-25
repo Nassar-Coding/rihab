@@ -50,7 +50,7 @@ const shot = (page, name) => page.screenshot({ path: `${OUT}/${page.lang}-${name
 const clearMessages = async (page) => { for (const b of await page.locator("[data-device-message] button[aria-label]").all()) await b.click().catch(() => {}); };
 async function start(page) {
   await page.goto(site.url, { waitUntil: "domcontentloaded" });
-  await page.getByText(/^(ابدأ|Enter EyeMakkah)$/).first().click();
+  await page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first().click();
   await page.locator(`[data-lang="${page.lang}"]`).click();
   await page.locator('[data-auth-screen="login"]').waitFor();
   await W(page, 450);

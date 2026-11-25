@@ -24,7 +24,7 @@ only = next((a.split("=", 1)[1] if "=" in a else sys.argv[i + 1]
 only = set(filter(None, only.split(",")))
 
 def fetch(url, dest):
-    req = urllib.request.Request(url, headers={"User-Agent": "EyeMakkah-prototype/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "Rihab Makkah-prototype/1.0"})
     with urllib.request.urlopen(req, timeout=90) as r, open(dest, "wb") as f:
         f.write(r.read())
 

@@ -1,10 +1,10 @@
 # One app, two experiences — resident and visitor
 
-Ruh Al Madinah has one app, one set of tabs (الرئيسية · اكتشف · السوق · المجتمع · خطتي) and one shared
+Rihab Madinah has one app, one set of tabs (الرئيسية · اكتشف · السوق · المجتمع · خطتي) and one shared
 system for Save, Plan, Join, booking hand-off, Community and the Assistant. What changes
 between a **ساكن في المدينة** (resident) and a **زائر** (visitor) is the information
 architecture, ranking, copy and theme. These all come from one persona layer in
-`RuhAlMadinah-app.jsx`:
+`RihabMadinah-app.jsx`:
 - `personaOf`, `INTERESTS`, `STAY_OPTS`, `PARTY_OPTS`, `MUST_DO` and `PERSONA_WEIGHT`;
 - `PERSONA_THEME` and `applyTheme`.
 
@@ -60,7 +60,7 @@ The identity is Direction A «نور» *Noor* (the light of al-Munawwarah). Shar
 
 Every pair meets WCAG AA (the identity research's contrast table). The pre-sign-in screens (splash, language, sign in,
 create account, profile setup) keep the brand theme: Night Noor with a soft Canopy Light glow and the typographic
-wordmark «روح المدينة» with its point of light — a provisional wordmark, not a logo, using no official mark. The root carries `data-persona` and the CSS
+wordmark «رحاب المدينة» with its point of light — a provisional wordmark, not a logo, using no official mark. The root carries `data-persona` and the CSS
 variables (`--accent-primary`, `--accent-secondary`, `--accent-deep`, `--on-accent`,
 `--accent-text`, `--surface-base`, `--text-primary`, `--border-soft`). Colour is never the
 only difference: titles, modules, copy and icons also differ.
@@ -70,8 +70,8 @@ only difference: titles, modules, copy and icons also differ.
 These on-device accounts are present on every launch, including after storage is cleared.
 Sign-up rules are unchanged. See `docs/ACCOUNTS.md`.
 
-- `resident@ruhalmadinah.demo` / `demo`: أمل الحربي, Al-Awali, family.
-- `visitor@ruhalmadinah.demo` / `demo`: يوسف الأنصاري, no area, 3–5 days with children.
+- `resident@rihab.app` / `demo`: أمل الحربي, Al-Awali, family.
+- `visitor@rihab.app` / `demo`: يوسف الأنصاري, no area, 3–5 days with children.
 - `admin@admin.com` / `admin`: review account, a resident.
 
 ## QA

@@ -10,8 +10,8 @@ Two experiences opened from Home, for residents and visitors alike:
 Both feed «طلباتي» / My requests, which tracks what the person recorded.
 
 The feature follows the City Opportunities functionality of Ruh Al Madinah (same cards, detail
-pages, filters, request sheet and request store), adapted to EyeMakkah: Makkah areas and content,
-EyeMakkah's tokens and persona themes, and a few additions the brief asked for (an attribute
+pages, filters, request sheet and request store), adapted to Rihab Makkah: Makkah areas and content,
+Rihab Makkah's tokens and persona themes, and a few additions the brief asked for (an attribute
 filter, a location filter for opportunities, a second action on every detail page, and request
 filters in My requests). The Ruh Al Madinah repository was read, not changed.
 
@@ -22,7 +22,7 @@ filters in My requests). The Ruh Al Madinah repository was read, not changed.
   "example" labels; they describe each item plainly.
 - No home shows a price. No opportunity shows an amount, a return, a guarantee, a rating, a ranking
   or an owner.
-- EyeMakkah is not a property broker, an investment company, a financial adviser or a broker, and
+- Rihab Makkah is not a property broker, an investment company, a financial adviser or a broker, and
   says so on the home pages, the Invest listing, every opportunity page and in the Assistant. A
   question about returns gets no figures and no advice.
 - A request is a record on this device, in «طلباتي». The app tells the person it is saved there and
@@ -42,7 +42,7 @@ filters in My requests). The Ruh Al Madinah repository was read, not changed.
 The four bottom tabs are unchanged. The listing and My requests keep the bottom navigation; the
 two detail pages hide it, like a place page, and end with their actions.
 
-## Data (`EyeMakkah-app.jsx`, section "MAKKAH OPPORTUNITIES")
+## Data (`RihabMakkah-app.jsx`, section "MAKKAH OPPORTUNITIES")
 
 Homes — `HOMES`, 7 records, `HOME_DEALS` (rent · own · extended stay), `HOME_ATTRS` (furnished ·
 family-sized (3+ rooms) · close to the Haram · parking):
@@ -92,8 +92,8 @@ level; see "Makkah Opportunities" in `PHOTO_SOURCES.md`.
    `state.requests`; doing it again updates that record in place (`at` changes, `first` stays).
    `request_remove` withdraws it. Both are logged like every other action.
 4. `RequestStore` saves the list per account in `localStorage` under
-   `eyemakkah.requests.v1.<uid>`, the same way `PlanStore` keeps My Plan
-   (`eyemakkah.plan.v1.<uid>`), and apart from it. It is restored at sign-in, survives a reload and
+   `rihab.requests.v1.<uid>`, the same way `PlanStore` keeps My Plan
+   (`rihab.plan.v1.<uid>`), and apart from it. It is restored at sign-in, survives a reload and
    sign-out, and is deleted with the account.
 5. «طلباتي» lists the records newest first, filtered by All · Homes · Business opportunities. Each
    row shows the kind, the purpose, the status ("Recorded on this device" and when it was recorded
@@ -102,7 +102,7 @@ level; see "Makkah Opportunities" in `PHOTO_SOURCES.md`.
 
 ## The Assistant
 
-Three intents in `assets/agent/eyemakkah_app_agent_bank_03_actions_business.json` (category
+Three intents in `assets/agent/rihab_makkah_app_agent_bank_03_actions_business.json` (category
 `opportunities`, handler `city_answer`, part version 1.1.0): `city_housing`, `city_invest`,
 `city_my_requests`. `cityAsk()` decides whether a request is about Makkah Opportunities at all, so
 the intents never take a lookalike sentence: a hotel or a place to stay tonight stays a stay

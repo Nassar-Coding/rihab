@@ -1,9 +1,9 @@
-# Ruh Al Madinah — روح المدينة
+# Rihab Madinah — رحاب المدينة
 
-> **روح المدينة مجتمع رقمي لسكان المدينة المنورة وزوارها**: مكان واحد لاكتشاف الأماكن
+> **رحاب المدينة مجتمع رقمي لسكان المدينة المنورة وزوارها**: مكان واحد لاكتشاف الأماكن
 > والتجارب، والتفاعل مع المجتمع، وبناء خطة شخصية.
 
-Ruh Al Madinah is a working product demo for the people of Madinah and its visitors. It
+Rihab Madinah is a working product demo for the people of Madinah and its visitors. It
 brings together real Madinah places, activities, community groups and offers in one
 Arabic-first app (with full English), with a personal plan, a Market for experiences,
 services and local products, City Opportunities for homes and business, and an on-device
@@ -29,7 +29,7 @@ claims no affiliation with any authority or organisation.
   - The Market gathers experiences, services and local products to book or request.
   - Community holds families, communities, clubs and posts.
   - My Plan keeps saved, planned, joined and booked items.
-- **The Ruh Al Madinah Assistant.** It opens from the Home assistant card and from search,
+- **The Rihab Madinah Assistant.** It opens from the Home assistant card and from search,
   as one free-text conversation in Arabic or English. It runs on the device: a deterministic
   Intent Bank with no generative model and no external API. It answers from the same places,
   offers and plan state as the rest of the app, and can save, plan and build day plans.
@@ -51,8 +51,8 @@ Three accounts are ready on every device, even after browser data is cleared (se
 | Account | Password | Experience |
 |---|---|---|
 | `admin@admin.com` | `admin` | Review account (resident) |
-| `resident@ruhalmadinah.demo` | `demo` | Resident |
-| `visitor@ruhalmadinah.demo` | `demo` | Visitor |
+| `resident@rihab.app` | `demo` | Resident |
+| `visitor@rihab.app` | `demo` | Visitor |
 
 ## Content
 
@@ -85,11 +85,11 @@ Makkah is used. Sources are listed in `PHOTO_SOURCES.md` and are never shown in 
 
 | Path | What it is |
 |---|---|
-| `RuhAlMadinah-app.jsx` | **The app.** One React source file (default export; imports only `react` and `lucide-react`). It also works as a Claude artifact. Content, screens, the Assistant and the theme all live here. |
+| `RihabMadinah-app.jsx` | **The app.** One React source file (default export; imports only `react` and `lucide-react`). It also works as a Claude artifact. Content, screens, the Assistant and the theme all live here. |
 | `src/main.jsx` | Mounts the app in the page. |
 | `build/build.mjs`, `build/fingerprint.mjs` | The esbuild bundler. It writes `dist/app.<content-hash>.js` and points `dist/index.html` at it. |
 | `dist/` | **The zero-build Vercel package**: `index.html`, the prebuilt bundle, `config.js`, `vercel.json`, `robots.txt`, a deployment `README.md` (Arabic), `manifest.json`, `PHOTO_SOURCES.md` and `BUILD_INFO.txt`. |
-| `release/` | `RuhAlMadinah_Vercel_DragDrop.zip` and its unpacked folder, made from `dist/` by `scripts/package.mjs`. |
+| `release/` | `Rihab_Vercel_DragDrop.zip` and its unpacked folder, made from `dist/` by `scripts/package.mjs`. |
 | `i18n/en.json` | The English dictionary. Arabic is the source language. |
 | `assets/agent/` | The Assistant's Intent Bank, in four JSON files (core, discovery, actions and business, context). |
 | `assets/madinah/` | The Madinah photo collection: 162 source files (156 photographs, 6 logos), `SOURCES.csv` and `MISSING.txt`. |
@@ -120,7 +120,7 @@ python3 -m http.server 8080 -d dist       # then open http://localhost:8080
 
 ### Editing content
 
-Content, copy and logic are edited in `RuhAlMadinah-app.jsx`. Four kinds of data are kept in
+Content, copy and logic are edited in `RihabMadinah-app.jsx`. Four kinds of data are kept in
 their own files and inlined into the app by a sync step. Each step replaces its one block,
 so running it twice changes nothing. Each also accepts a copy of the repository as its first
 argument.
@@ -141,11 +141,11 @@ The name and identity are provisional and kept easy to change:
   - `T` holds the shared surface, text and type tokens.
   - `BRAND_THEME` holds the entry screens.
   - `PERSONA_THEME` holds the resident (Daylight) and visitor (Evening light) themes.
-  - All three sit at the top of `RuhAlMadinah-app.jsx`, and `applyTheme` maps them onto the
+  - All three sit at the top of `RihabMadinah-app.jsx`, and `applyTheme` maps them onto the
     components.
 - **Wordmark.** The `Wordmark` component renders it.
 - **Name.**
-  - On screen, the name appears as «روح المدينة» / "Ruh Al Madinah" in the app's copy,
+  - On screen, the name appears as «رحاب المدينة» / "Rihab Madinah" in the app's copy,
     `i18n/en.json` and the Assistant bank (`product` in each `assets/agent` file).
   - In the page and package, it appears in `dist/index.html`, `dist/README.md` and
     `dist/manifest.json`.
@@ -196,7 +196,7 @@ Two more scripts:
 
 ```bash
 npm run build
-npm run package          # refresh release/ and release/RuhAlMadinah_Vercel_DragDrop.zip from dist/
+npm run package          # refresh release/ and release/Rihab_Vercel_DragDrop.zip from dist/
 ```
 
 To deploy, upload the ZIP's folder at **vercel.com/new** with the Framework Preset **Other**

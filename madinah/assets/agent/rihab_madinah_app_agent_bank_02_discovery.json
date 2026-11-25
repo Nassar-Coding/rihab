@@ -1,16 +1,16 @@
 {
- "file": "ruhalmadinah_app_agent_bank_02_discovery.json",
+ "file": "rihab_madinah_app_agent_bank_02_discovery.json",
  "version": "1.1.0",
  "phase": 1,
  "part": "02_discovery",
  "product": {
-  "name_ar": "روح المدينة",
-  "name_en": "Ruh Al Madinah",
-  "assistant_name_ar": "مساعد روح المدينة",
-  "assistant_name_en": "Ruh Al Madinah Assistant"
+  "name_ar": "رحاب المدينة",
+  "name_en": "Rihab Madinah",
+  "assistant_name_ar": "مساعد رحاب المدينة",
+  "assistant_name_en": "Rihab Madinah Assistant"
  },
  "source_alignment": {
-  "app": "RuhAlMadinah-app.jsx",
+  "app": "RihabMadinah-app.jsx",
   "inlined_by": "scripts/agent-sync.mjs, as AGENT_BANK",
   "scope_reviewed": [
    "Home contextual discovery",
@@ -24,7 +24,7 @@
   ],
   "note": "This file is a source: edit it, then run `node scripts/agent-sync.mjs` to inline the four parts into the app."
  },
- "purpose": "Bilingual discovery and recommendation intents for the Ruh Al Madinah Assistant. Answers are built from the app's own inventory and the person's context (persona, area, party, time).",
+ "purpose": "Bilingual discovery and recommendation intents for the Rihab Madinah Assistant. Answers are built from the app's own inventory and the person's context (persona, area, party, time).",
  "integration_contract": {
   "languages": [
    "ar",
@@ -46,7 +46,7 @@
   "distance_rule": "Use selected neighborhood or granted location context when available. The assistant must still work without precise location.",
   "suitability_rule": "Only claim family/kids/solo/women/beginner/accessibility suitability when the object explicitly declares it or has a direct practical fact supporting it.",
   "trust_rule": "If practical information is stale/conflicting, carry the trust/freshness warning into the answer rather than presenting certainty.",
-  "result_rule": "Prefer 1–3 actionable Ruh Al Madinah objects or a composed outing instead of generic paragraphs.",
+  "result_rule": "Prefer 1–3 actionable Rihab Madinah objects or a composed outing instead of generic paragraphs.",
   "truthfulness": [
    "Do not claim live crowding, inventory, seats, parking, or booking availability unless a real source exists.",
    "Do not present a generic/context image as proof of an exact place.",
@@ -2020,11 +2020,11 @@
     "handler": "recommend_after_umrah",
     "responses": {
      "ar": [
-      "بعد زيارة المسجد النبوي، أقدر أقترح لك تجارب ومطاعم وأماكن من روح المدينة تناسب الوقت المتبقي: {{recommendations}}.",
+      "بعد زيارة المسجد النبوي، أقدر أقترح لك تجارب ومطاعم وأماكن من رحاب المدينة تناسب الوقت المتبقي: {{recommendations}}.",
       "لبقية يومك بعد الزيارة: {{recommendations}}."
      ],
      "en": [
-      "After visiting the Prophet's Mosque, I can suggest experiences, restaurants and places from Ruh Al Madinah that fit your remaining time: {{recommendations}}.",
+      "After visiting the Prophet's Mosque, I can suggest experiences, restaurants and places from Rihab Madinah that fit your remaining time: {{recommendations}}.",
       "For the rest of your day after the visit: {{recommendations}}."
      ]
     },

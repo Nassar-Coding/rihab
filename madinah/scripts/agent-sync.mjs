@@ -1,4 +1,4 @@
-/* Inlines the four Ruh Al Madinah Assistant knowledge files (assets/agent/*.json) into the
+/* Inlines the four Rihab Madinah Assistant knowledge files (assets/agent/*.json) into the
    single-file app as a compact AGENT_BANK, so the artifact stays self-contained.
    Every intent, AR/EN example, keyword, response variant, the follow-up routing, confidence
    thresholds, contextual suggestions and alias groups are kept. The JSON files are the only
@@ -11,7 +11,7 @@ import { fileURLToPath } from "node:url";
 /* the repository root (or a copy of it passed as the first argument, as scripts/assistant-check.mjs does) */
 const ROOT = resolve(process.argv[2] || join(dirname(fileURLToPath(import.meta.url)), ".."));
 const DIR = join(ROOT, "assets", "agent");
-const files = (await readdir(DIR)).filter((f) => /^ruhalmadinah_app_agent_bank_\d+_.*\.json$/.test(f)).sort();
+const files = (await readdir(DIR)).filter((f) => /^rihab_madinah_app_agent_bank_\d+_.*\.json$/.test(f)).sort();
 if (files.length !== 4) throw new Error(`expected 4 bank files in ${DIR}, found ${files.length}`);
 const parts = await Promise.all(files.map(async (f) => JSON.parse(await readFile(join(DIR, f), "utf8"))));
 const intents = parts.flatMap((p) => p.intents || []).map((it) => ({

@@ -1,4 +1,4 @@
-# Ruh Al Madinah — photo sources
+# Rihab Madinah — photo sources
 
 Every photograph and logo the application can render is listed here. Nothing is loaded from an image host at run time:
 the library photographs (`assets/photos/`) are inlined by `scripts/photo-sync.mjs` as `PHOTO_DATA`, and the place

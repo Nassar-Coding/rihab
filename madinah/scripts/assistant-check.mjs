@@ -21,12 +21,12 @@ const SRC = args.includes("--src") ? args[args.indexOf("--src") + 1] : join(REPO
 const VERBOSE = args.includes("--verbose");
 const NOW = "2026-10-22T17:30:00+03:00";   // a Thursday, late afternoon
 
-const dir = mkdtempSync(join(tmpdir(), "ruhalmadinah-assistant-"));
+const dir = mkdtempSync(join(tmpdir(), "rihab-assistant-"));
 writeFileSync(join(dir, "app.jsx"), readFileSync(SRC, "utf8") +
   "\nexport { initialState, reducer, deriveContext, agentTurn, agentDirect, agentSuggestions, AGENT_SESSION, setLang, getObj, offerFor, distanceKm, MUST_DO_SET, NOT_RUNNING, lifecycleOf };\n");
 await build({ entryPoints: [join(dir, "app.jsx")], bundle: true, platform: "node", format: "esm", jsx: "automatic", outfile: join(dir, "app.mjs"), logLevel: "error",
   define: { "process.env.NODE_ENV": '"production"' }, nodePaths: [join(REPO, "node_modules")] });
-globalThis.window = { RUHALMADINAH_NOW: NOW };
+globalThis.window = { RIHAB_MADINAH_NOW: NOW };
 const m = await import(pathToFileURL(join(dir, "app.mjs")).href);
 
 const PROFILES = {
@@ -408,7 +408,7 @@ for (const c of C) {
   const src = readFileSync(SRC, "utf8");
   const runs = [];
   for (let i = 0; i < 2; i++) {
-    const w = mkdtempSync(join(tmpdir(), "ruhalmadinah-agentsync-"));
+    const w = mkdtempSync(join(tmpdir(), "rihab-agentsync-"));
     mkdirSync(join(w, "assets"), { recursive: true });
     cpSync(existsSync(join(dirname(SRC), "assets", "agent")) ? join(dirname(SRC), "assets", "agent") : join(REPO, "assets", "agent"), join(w, "assets", "agent"), { recursive: true });
     writeFileSync(join(w, "RihabMadinah-app.jsx"), src);

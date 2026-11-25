@@ -1,8 +1,8 @@
 {
-  "name": "eyemakkah",
+  "name": "rihab",
   "version": "2.0.0",
   "private": true,
-  "description": "EyeMakkah — مجتمع مكة الرقمي. Single-source React prototype (artifact JSX + zero-build Vercel package).",
+  "description": "رحاب مكة — مجتمع مكة الرقمي. Single-source React prototype (artifact JSX + zero-build Vercel package).",
   "type": "module",
   "scripts": {
     "build": "node build/build.mjs",

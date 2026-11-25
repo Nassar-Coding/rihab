@@ -1,5 +1,5 @@
 {
- "_about": "Place and brand visuals supplied by the EyeMakkah project owner (EyeMakkah_Verified_Assets.zip, 5 Oct 2026). One asset per brand or place; `ids` are the inventory records that use it (every branch of a brand). kind: photo = photographic image, logo = brand mark shown on a plain surface. Built by scripts/place-assets-build.py.",
+ "_about": "Place and brand visuals supplied by the Rihab Makkah project owner (Rihab Makkah_Verified_Assets.zip, 5 Oct 2026). One asset per brand or place; `ids` are the inventory records that use it (every branch of a brand). kind: photo = photographic image, logo = brand mark shown on a plain surface. Built by scripts/place-assets-build.py.",
  "abraj_al_bait_mall": {
   "kind": "photo",
   "ar": "مجمع أبراج البيت التجاري",

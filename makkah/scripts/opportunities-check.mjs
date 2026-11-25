@@ -58,7 +58,7 @@ for (const lang of LANGS) {
     const email = `opps.${who}.${lang}.${Date.now()}@example.com`, password = "opps-makkah-2026";
     const dismiss = async () => { for (const b of await page.locator("[data-device-message] button[aria-label]").all()) await b.click().catch(() => {}); };
     const signUp = async () => {
-      await page.getByText(/^(ابدأ|Enter EyeMakkah)$/).first().click(); await W(500);
+      await page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first().click(); await W(500);
       await page.locator(`[data-lang="${lang}"]`).click(); await page.locator("[data-auth-email]").waitFor();
       await page.locator("[data-create-account]").click();
       await page.locator('[data-signup-method="email"]').click();
@@ -84,7 +84,7 @@ for (const lang of LANGS) {
     };
     const signIn = async () => {
       if (await page.locator("[data-home-greeting]").count()) return;
-      const start = page.getByText(/^(ابدأ|Enter EyeMakkah)$/).first();
+      const start = page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first();
       if (await start.count()) { await start.click(); await W(500); }
       const pickLang = page.locator(`[data-lang="${lang}"]`); if (await pickLang.count()) await pickLang.click();
       await page.locator("[data-auth-email]").waitFor();
@@ -140,7 +140,7 @@ for (const lang of LANGS) {
       await page.locator('[data-home="HOM-03"]').scrollIntoViewIfNeeded(); await page.locator('[data-home="HOM-03"]').click(); await W(600);
       const hp = await text();
       ok(`${tag}: a home page shows rooms, size, terms and features`, (await page.locator("[data-estate]").count()) === 1 && hp.includes(T("تفاصيل السكن", "Home details")) && hp.includes(T("تمليك", "Ownership")) && /380/.test(hp.replace(/[٠-٩]/g, (d) => "٠١٢٣٤٥٦٧٨٩".indexOf(d))));
-      ok(`${tag}: a home page has no price and no demo wording, and says EyeMakkah is not a broker`, !PRICE.test(hp) && !DEMO_WORDS.test(hp) && hp.includes(T("ليس وسيطًا عقاريًا", "not a property broker")));
+      ok(`${tag}: a home page has no price and no demo wording, and says Rihab Makkah is not a broker`, !PRICE.test(hp) && !DEMO_WORDS.test(hp) && hp.includes(T("ليس وسيطًا عقاريًا", "not a property broker")));
       await english("a home page");
       ok(`${tag}: the detail page hides the bottom navigation`, (await page.locator("[data-nav]").count()) === 0);
       ok(`${tag}: two actions — register interest and request details`, (await page.locator('[data-request-open="home"]').count()) === 2);

@@ -9,7 +9,7 @@
      area, communities, housing, opportunities and the requests, and its buttons open the screens
    · both: plan management works, changes persist after a reload, and signing out of one account and
      into the other never mixes their data
-   The accounts' sign-in details are in docs/ACCOUNTS.md; their earlier …@eyemakkah.demo addresses still sign in.
+   The accounts' sign-in details are in docs/ACCOUNTS.md; their earlier …@rihab.demo addresses still sign in.
    Usage: node scripts/accounts-check.mjs   (LANGS=ar,en  WHO=visitor,resident  WIDTH=390) */
 import { launchBrowser, serveBuild, outDir } from "./lib/browser.mjs";
 import { mkdirSync } from "node:fs";
@@ -24,7 +24,7 @@ const browser = await launchBrowser();
 const runtime = [];
 let pass = 0, fail = 0;
 const ok = (name, cond, detail = "") => { if (cond) pass++; else fail++; console.log(`${cond ? "✓" : "✗"} ${name}${!cond && detail ? " — " + detail : ""}`); };
-const ACCOUNT = { visitor: "visitor@eyemakkah.app", resident: "resident@eyemakkah.app" };
+const ACCOUNT = { visitor: "visitor@rihab.app", resident: "resident@rihab.app" };
 const PASSWORD = "demo";
 
 for (const lang of LANGS) {
@@ -47,7 +47,7 @@ for (const lang of LANGS) {
     }
   };
   const signIn = async (who) => {
-    const start = page.getByText(/^(ابدأ|Enter EyeMakkah)$/).first();
+    const start = page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first();
     if (await start.count()) { await start.click(); await W(500); }
     const pick = page.locator(`[data-lang="${lang}"]`); if (await pick.count()) await pick.click();
     await page.locator("[data-auth-email]").waitFor();
@@ -200,7 +200,7 @@ for (const lang of LANGS) {
       ok(`${tag}: changes are kept after a reload`, (await cook().count()) === 0);
       stage = "switch accounts"; await signOut();
       /* the earlier address still signs in to the same account */
-      ACCOUNT.resident = "resident@eyemakkah.demo"; await signIn("resident"); ACCOUNT.resident = "resident@eyemakkah.app";
+      ACCOUNT.resident = "resident@rihab.app"; await signIn("resident"); ACCOUNT.resident = "resident@rihab.app";
       await page.locator("[data-profile-entry]").click(); await W(500);
       ok(`${tag}: the earlier address signs in to the same account`, /(٢|2)/.test(await page.locator("[data-profile-requests]").innerText()));
       await signOut();

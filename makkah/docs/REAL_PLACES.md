@@ -1,6 +1,6 @@
 # Real Makkah places
 
-EyeMakkah lists **178 real places in Makkah**: 13 landmarks, museums and sites that were already in the app (now trimmed to what sources state), and **165 venues** added on 4 October 2026 — restaurants, cafés, bakeries and sweets, bookstores, malls, markets, supermarkets, parks, walkways, museums and historic sites.
+Rihab Makkah lists **178 real places in Makkah**: 13 landmarks, museums and sites that were already in the app (now trimmed to what sources state), and **165 venues** added on 4 October 2026 — restaurants, cafés, bakeries and sweets, bookstores, malls, markets, supermarkets, parks, walkways, museums and historic sites.
 
 This file lists every one of them with the sources that place it and its photo status.
 
@@ -85,7 +85,7 @@ A real place shows its own photograph, its brand's logo, or a drawn tile for its
 | 3. Context photo | A verified photo of the district the record says the place is in (متحف القهوة السعودية: Jabal al-Nour, Hira Cultural District) | 1 |
 | 4. Category visual | A drawn tile for the kind of place | 44 |
 
-**Supplied assets.** 99 files supplied by the project owner (`EyeMakkah_Verified_Assets.zip`, 5 Oct 2026): 60 photographs and 39 logos, one per brand or place. `assets/places/manifest.json` lists each one with the records that use it (125 places; a brand's asset serves all of its branches). `scripts/place-assets-build.py` normalises them: photos to WebP with an 820 px long edge, never upscaled; logos trimmed of empty margins, transparency kept, on their own background colour or a light/dark neutral. `scripts/place-sync.mjs` inlines them as `PLACE_ASSETS`. Photos under 640 px wide are shown whole over a soft copy of themselves in large frames rather than enlarged. A supplied asset outranks a context photo or category tile but never replaces a place's own library photograph.
+**Supplied assets.** 99 files supplied by the project owner (`Rihab Makkah_Verified_Assets.zip`, 5 Oct 2026): 60 photographs and 39 logos, one per brand or place. `assets/places/manifest.json` lists each one with the records that use it (125 places; a brand's asset serves all of its branches). `scripts/place-assets-build.py` normalises them: photos to WebP with an 820 px long edge, never upscaled; logos trimmed of empty margins, transparency kept, on their own background colour or a light/dark neutral. `scripts/place-sync.mjs` inlines them as `PLACE_ASSETS`. Photos under 640 px wide are shown whole over a soft copy of themselves in large frames rather than enlarged. A supplied asset outranks a context photo or category tile but never replaces a place's own library photograph.
 
 **Logos (Simple Icons).** Version 16.34.0 (`simple-icons` on npm, CC0-1.0, https://simpleicons.org). The brands' trademarks belong to their owners; a mark only identifies the brand.
 

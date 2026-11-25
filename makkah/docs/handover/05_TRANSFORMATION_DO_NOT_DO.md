@@ -1,6 +1,6 @@
 > **STATUS:** Upcoming transformation guidance — not a description of the current live version.
 
-# EyeMakkah — Do Not Do
+# Rihab Makkah — Do Not Do
 
 Do not:
 
@@ -8,7 +8,7 @@ Do not:
 - deploy to Vercel unless explicitly asked
 - start Deep Research unless explicitly asked
 - replace cumulative work with a smaller visual showcase
-- turn EyeMakkah into a government portal or institutional dashboard
+- turn Rihab Makkah into a government portal or institutional dashboard
 - create a separate AI tab just because AI exists
 - make every section a rounded card
 - use generic “Verified” badges without provenance

@@ -1,4 +1,4 @@
-# EyeMakkah — app quality audit and correction pass
+# Rihab Makkah — app quality audit and correction pass
 
 **Branch:** `claude/upbeat-bell-hkmvzy` (the phone app) · **Baseline:** `edf3858`
 **Scope:** a screen-by-screen visual, responsive, content-presentation and media audit of

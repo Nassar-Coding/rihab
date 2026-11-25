@@ -2,13 +2,13 @@
    only by the QA scripts. It answers the same REST contract the app calls in
    production (identitytoolkit v1, securetoken v1, Firestore v1 documents), so the
    app is configured against it exactly like the official emulators:
-     window.RUHALMADINAH_CONFIG.auth = { firebaseApiKey, firebaseProjectId,
+     window.RIHAB_MADINAH_CONFIG.auth = { firebaseApiKey, firebaseProjectId,
        authEmulatorHost: url, firestoreEmulatorHost: url, ... }
    Test-only helpers live under /__test/. Never deployed. */
 import { createServer } from "node:http";
 import { randomBytes } from "node:crypto";
 
-export async function startFirebaseTestServer({ port = 0, apiKey = "test-api-key", projectId = "ruhalmadinah-test" } = {}) {
+export async function startFirebaseTestServer({ port = 0, apiKey = "test-api-key", projectId = "rihab-test" } = {}) {
   const users = new Map();          // uid → user
   const ids = new Map();            // idToken → { uid, exp }
   const refresh = new Map();        // refreshToken → uid
@@ -185,6 +185,6 @@ export async function startFirebaseTestServer({ port = 0, apiKey = "test-api-key
 export async function useTestConfig(page, auth) {
   await page.route(/\/config\.js(\?.*)?$/, (route) => route.fulfill({
     status: 200, contentType: "text/javascript; charset=utf-8",
-    body: `window.RUHALMADINAH_CONFIG = ${JSON.stringify({ auth })};`,
+    body: `window.RIHAB_MADINAH_CONFIG = ${JSON.stringify({ auth })};`,
   }));
 }

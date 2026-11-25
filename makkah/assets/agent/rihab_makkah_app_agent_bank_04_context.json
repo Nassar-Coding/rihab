@@ -1,24 +1,24 @@
 {
-  "file": "eyemakkah_app_agent_bank_04_context.json",
+  "file": "rihab_makkah_app_agent_bank_04_context.json",
   "version": "1.0.0",
   "phase": 1,
   "part": "04_context",
   "source_alignment": {
     "app_branch": "claude/upbeat-bell-hkmvzy",
     "parts_aligned": [
-      "eyemakkah_app_agent_bank_01_core.json",
-      "eyemakkah_app_agent_bank_02_discovery.json",
-      "eyemakkah_app_agent_bank_03_actions_business.json"
+      "rihab_makkah_app_agent_bank_01_core.json",
+      "rihab_makkah_app_agent_bank_02_discovery.json",
+      "rihab_makkah_app_agent_bank_03_actions_business.json"
     ],
     "note": "This file closes the four-part app-agent bank with short-session context, follow-up routing, aliases, and optional contextual suggestions. No app code is modified here."
   },
   "product": {
-    "name_ar": "تطبيق EyeMakkah",
-    "name_en": "EyeMakkah App",
-    "assistant_name_ar": "مساعد EyeMakkah",
-    "assistant_name_en": "EyeMakkah Assistant"
+    "name_ar": "تطبيق رحاب مكة",
+    "name_en": "Rihab Makkah App",
+    "assistant_name_ar": "مساعد رحاب مكة",
+    "assistant_name_en": "Rihab Makkah Assistant"
   },
-  "purpose": "Conversation context, follow-up routing, entity aliases, contextual suggestions, and short-session memory for the free-text EyeMakkah consumer assistant.",
+  "purpose": "Conversation context, follow-up routing, entity aliases, contextual suggestions, and short-session memory for the free-text Rihab Makkah consumer assistant.",
   "integration_contract": {
     "free_text_first": true,
     "suggestions_are_optional": true,
@@ -884,7 +884,7 @@
       ],
       "app_exclusive": [
         "حصري التطبيق",
-        "حصري EyeMakkah",
+        "حصري رحاب مكة",
         "من التطبيق",
         "app exclusive",
         "app-only"

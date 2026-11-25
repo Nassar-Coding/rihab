@@ -93,7 +93,7 @@ for (const vp of [{ width: 390, height: 844, name: "390" }, { width: 360, height
   if (!page.__qa) await prepareQaAccount(page);
   await page.goto("http://127.0.0.1:4488/", { waitUntil: "networkidle" });
   await page.waitForTimeout(600);
-  await page.getByText(/^(ابدأ|Enter Ruh Al Madinah)$/).first().click();
+  await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click();
   await page.waitForTimeout(500);
   await page.locator('[data-lang="ar"]').click();
   await signInQa(page);

@@ -19,7 +19,7 @@ import { tmpdir } from "node:os";
 import { pathToFileURL } from "node:url";
 import { REPO } from "./lib/browser.mjs";
 
-const dir = mkdtempSync(join(tmpdir(), "ruhalmadinah-data-"));
+const dir = mkdtempSync(join(tmpdir(), "rihab-data-"));
 const entry = join(dir, "app.jsx"), out = join(dir, "app.mjs");
 writeFileSync(entry, readFileSync(join(REPO, "RihabMadinah-app.jsx"), "utf8") +
   "\nexport { INVENTORY, DEALS, OFFER_SLOTS, liveOffers, lifecycleOf, nextOccurrence, setLang, searchAll, initialState, deriveContext, agentTurn, AGENT_SESSION, offerExpiry, canStartNow, scoreObject, rank, isPromotable, getObj };\n");
@@ -28,7 +28,7 @@ await build({ entryPoints: [entry], bundle: true, platform: "node", format: "esm
 
 let pass = 0, fail = 0;
 const ok = (name, cond, detail = "") => { if (cond) { pass++; console.log(`✓ ${name}`); } else { fail++; console.log(`✗ ${name}${detail ? " — " + detail : ""}`); } };
-const load = async (now) => { globalThis.window = { RUHALMADINAH_NOW: now }; return import(pathToFileURL(out).href + "?" + encodeURIComponent(now)); };
+const load = async (now) => { globalThis.window = { RIHAB_MADINAH_NOW: now }; return import(pathToFileURL(out).href + "?" + encodeURIComponent(now)); };
 const mkDate = (d) => new Date(+d + 3 * 3600000).toISOString().slice(0, 10);
 
 /* offers */

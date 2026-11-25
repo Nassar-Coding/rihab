@@ -1,5 +1,5 @@
 {
-  "package": "EyeMakkah — مجتمع مكة الرقمي",
+  "package": "رحاب مكة — مجتمع مكة الرقمي",
   "date": "2026-10-04",
   "zero_build": true,
   "deploy": "Vercel drag-and-drop",
@@ -30,8 +30,8 @@
     "PHOTO_SOURCES.md",
     "manifest.json"
   ],
-  "offers": "59 offer records (57 running) on one shared model, attached only to EyeMakkah's own listings — never to a real place; shown on cards, decision pages, Home/Discover deal rails, My Plan and the Assistant; prepared content, not live commercial offers",
-  "assistant": "Free-text EyeMakkah Assistant over the four-part Intent Bank (153 intents, 2,159 AR/EN examples) — deterministic, on-device, no LLM or external API",
+  "offers": "59 offer records (57 running) on one shared model, attached only to Rihab Makkah's own listings — never to a real place; shown on cards, decision pages, Home/Discover deal rails, My Plan and the Assistant; prepared content, not live commercial offers",
+  "assistant": "Free-text Rihab Makkah Assistant over the four-part Intent Bank (153 intents, 2,159 AR/EN examples) — deterministic, on-device, no LLM or external API",
   "entry": "Account-first: Start → Language → Sign in / Create account (email, mobile + code, Apple, Google) → Profile setup → Home; Forgot password; no guest entry",
   "accounts": "On-device by default (hashed passwords, per-account profile and My Plan, codes and emails delivered as device notifications; no external service). Optional Firebase Authentication + Firestore via config.js",
   "starter_plan": "New accounts start with «خطة مقترحة لك» / Recommended for you: 3–4 planned items from the inventory, chosen per persona (resident: participation, food, own interest, getting out; visitor: an editorial must-do, food, two interests), using interests, area and language; real places are preferred where they fit",

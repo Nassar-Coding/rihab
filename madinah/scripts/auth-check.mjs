@@ -50,7 +50,7 @@ const shot = (page, name) => page.screenshot({ path: `${OUT}/${page.lang}-${name
 const clearMessages = async (page) => { for (const b of await page.locator("[data-device-message] button[aria-label]").all()) await b.click().catch(() => {}); };
 async function start(page) {
   await page.goto(site.url, { waitUntil: "domcontentloaded" });
-  await page.getByText(/^(ابدأ|Enter Ruh Al Madinah)$/).first().click();
+  await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click();
   await page.locator(`[data-lang="${page.lang}"]`).click();
   await page.locator('[data-auth-screen="login"]').waitFor();
   await W(page, 450);
@@ -110,7 +110,7 @@ for (const lang of LANGS) {
   ok(`${lang}: no app shell under landing → language → login`, (await page.evaluate(() => window.__shellFrames)) === 0);
   ok(`${lang}: login direction`, (await page.locator("[data-auth-screen] section").getAttribute("dir")) === (en ? "ltr" : "rtl"));
   ok(`${lang}: no browse-without-account route`, (await page.locator("[data-auth-guest]").count()) === 0 && !/(تصفّح بدون حساب|without an account)/.test(await page.locator("[data-auth-screen]").innerText()));
-  /* the bilingual wordmark lockup («روح المدينة» over "Ruh Al Madinah") is the brand, not copy */
+  /* the bilingual wordmark lockup («رحاب المدينة» over "Rihab Madinah") is the brand, not copy */
   if (en) ok("en: login copy has no Arabic", !arabic(await page.locator("[data-auth-screen] section").evaluate((el) => {
     const c = el.cloneNode(true); c.querySelectorAll("[data-wordmark]").forEach((w) => w.remove()); document.body.appendChild(c);
     const t = c.innerText; c.remove(); return t;

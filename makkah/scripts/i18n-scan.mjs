@@ -4,7 +4,7 @@ import { prepareQaAccount, signInQa, closeQaServer } from "./lib/qa-session.mjs"
 import { createServer } from "node:http";
 import { readFile, writeFile } from "node:fs/promises";
 import { extname, resolve } from "node:path";
-const root = "/home/user/EyeMakkah/dist";
+const root = "/home/user/Rihab Makkah/dist";
 const MIME = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8" };
 const server = createServer(async (req, res) => {
   const f = resolve(root, req.url === "/" ? "index.html" : "." + req.url.split("?")[0]);
@@ -17,7 +17,7 @@ const page = await browser.newPage({ viewport: { width: 390, height: 844 }, isMo
 if (!page.__qa) await prepareQaAccount(page);
 await page.goto("http://127.0.0.1:4520/", { waitUntil: "networkidle" });
 await page.waitForTimeout(700);
-await page.getByText(/^(ابدأ|Enter EyeMakkah)$/).first().click();
+await page.getByText(/^(ابدأ|Enter رحاب مكة)$/).first().click();
 await page.waitForTimeout(600);
 await page.locator('[data-lang="en"]').click();
 await signInQa(page);

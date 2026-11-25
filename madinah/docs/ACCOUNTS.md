@@ -1,6 +1,6 @@
 # Accounts — sign-in, sign-up, recovery and the account profile
 
-Ruh Al Madinah has two interchangeable account services behind one interface (`Auth`).
+Rihab Madinah has two interchangeable account services behind one interface (`Auth`).
 `config.js` decides which one runs; it loads before `app.js` and needs no rebuild.
 
 | `config.js` | Account service |
@@ -15,12 +15,12 @@ entry: the app is account-first.
 
 | Data | Stored as |
 |---|---|
-| Accounts | `localStorage["ruhalmadinah.accounts.v1"]`, holding email or phone and the linked Apple / Google identity. Passwords are never stored: only a PBKDF2-SHA-256 hash (120,000 rounds) with a per-account salt. Five wrong passwords lock that email for five minutes. |
-| Session | `ruhalmadinah.session.v1`, removed on sign-out. |
-| Profile | `ruhalmadinah.profile.v1.<uid>` |
-| My Plan and saved items | `ruhalmadinah.plan.v1.<uid>`. Kept on sign-out and restored on the next sign-in. Removed only when the account is deleted. |
-| My requests («طلباتي») | `ruhalmadinah.requests.v1.<uid>`: requests and registered interest from the Market and City Opportunities. Kept apart from My Plan, on the device only (also with Firebase connected), and removed when the account is deleted. |
-| Language | `ruhalmadinah.lang` |
+| Accounts | `localStorage["rihab.accounts.v1"]`, holding email or phone and the linked Apple / Google identity. Passwords are never stored: only a PBKDF2-SHA-256 hash (120,000 rounds) with a per-account salt. Five wrong passwords lock that email for five minutes. |
+| Session | `rihab.session.v1`, removed on sign-out. |
+| Profile | `rihab.profile.v1.<uid>` |
+| My Plan and saved items | `rihab.plan.v1.<uid>`. Kept on sign-out and restored on the next sign-in. Removed only when the account is deleted. |
+| My requests («طلباتي») | `rihab.requests.v1.<uid>`: requests and registered interest from the Market and City Opportunities. Kept apart from My Plan, on the device only (also with Firebase connected), and removed when the account is deleted. |
+| Language | `rihab.lang` |
 
 How each delivery and provider flow works on the device:
 - **Mobile:** the 6-digit code arrives as a Messages notification. Tapping it fills the code. A code expires after 10 minutes, and five wrong codes end the attempt.
@@ -36,8 +36,8 @@ connecting Firebase does that.
 | Account | Password | Experience | Profile |
 |---|---|---|---|
 | `admin@admin.com` | `admin` | Resident (ساكن) | حساب المراجعة, Al-Aziziyah; food, family, community |
-| `resident@ruhalmadinah.demo` | `demo` | Resident (ساكن) | أمل الحربي, Al-Awali; food, family, sport, community, volunteering |
-| `visitor@ruhalmadinah.demo` | `demo` | Visitor (زائر) | يوسف الأنصاري, no area; culture, heritage, food, markets; staying 3–5 days with children |
+| `resident@rihab.app` | `demo` | Resident (ساكن) | أمل الحربي, Al-Awali; food, family, sport, community, volunteering |
+| `visitor@rihab.app` | `demo` | Visitor (زائر) | يوسف الأنصاري, no area; culture, heritage, food, markets; staying 3–5 days with children |
 
 All three are ready on-device accounts for reviewers:
 - **Always available.** It is written into the device's account list on every launch, so it exists on a fresh browser and again after the browser's storage is cleared. Its password hash is restored on each launch.
@@ -94,7 +94,7 @@ the person later empties stays empty.
 ## Connecting Firebase later (`config.js` next to `index.html`)
 
 ```js
-window.RUHALMADINAH_CONFIG = {
+window.RIHAB_MADINAH_CONFIG = {
   auth: {
     firebaseApiKey: "…",       // required for any sign-in
     firebaseProjectId: "…",    // account profiles in Firestore users/{uid}

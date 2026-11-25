@@ -1,6 +1,6 @@
 > **STATUS:** Upcoming transformation guidance — not a description of the current live version.
 
-# EyeMakkah — Product Rules & State Semantics
+# Rihab Makkah — Product Rules & State Semantics
 
 ## State integrity
 
@@ -16,7 +16,7 @@ Especially:
 
 ## Booking handoff
 
-If EyeMakkah sends a user to another service:
+If Rihab Makkah sends a user to another service:
 
 - log `book_outbound`
 - show `انتقلت لإكمال الحجز`

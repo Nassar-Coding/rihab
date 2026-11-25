@@ -1,5 +1,5 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import RuhAlMadinahApp from "../RihabMadinah-app.jsx";
+import RihabMadinahApp from "../RihabMadinah-app.jsx";
 
-createRoot(document.getElementById("root")).render(<RuhAlMadinahApp />);
+createRoot(document.getElementById("root")).render(<RihabMadinahApp />);

@@ -1,10 +1,10 @@
-# EyeMakkah — مجتمع مكة الرقمي
+# رحاب مكة — مجتمع مكة الرقمي
 
-> **EyeMakkah هو مجتمع رقمي لسكان مكة وزوارها**: مكان واحد لاكتشاف الخدمات والتجارب
+> **رحاب مكة هو مجتمع رقمي لسكان مكة وزوارها**: مكان واحد لاكتشاف الخدمات والتجارب
 > ذات الصلة، والتفاعل مع المجتمع، وبناء خطة شخصية — وتفاعلات ذات معنى تدعم التحليلات
 > وذكاء الأعمال لاحقًا.
 
-This repository holds the **transformation** of EyeMakkah from the current four-portal
+This repository holds the **transformation** of Rihab Makkah from the current four-portal
 prototype into one consumer product for Makkah residents and visitors, following the
 meeting direction and the five transformation groups in `docs/handover/`.
 
@@ -12,14 +12,14 @@ meeting direction and the five transformation groups in `docs/handover/`.
 
 | Deliverable | Path |
 |---|---|
-| **Zero-build Vercel drag-and-drop ZIP** | `release/EyeMakkah_Vercel_DragDrop.zip` |
-| **Single JSX file for a Claude artifact** | `EyeMakkah-app.jsx` (default export, imports only `react` + `lucide-react`) |
+| **Zero-build Vercel drag-and-drop ZIP** | `release/Rihab_Vercel_DragDrop.zip` |
+| **Single JSX file for a Claude artifact** | `RihabMakkah-app.jsx` (default export, imports only `react` + `lucide-react`) |
 
 ## What is here
 
 | Path | What it is |
 |---|---|
-| `EyeMakkah-app.jsx` | **The product.** One source file — also the Claude artifact deliverable. |
+| `RihabMakkah-app.jsx` | **The product.** One source file — also the Claude artifact deliverable. |
 | `release/` | The packaged drag-and-drop ZIP. |
 | `dist/` | **Zero-build Vercel package** (`index.html` + prebuilt `app.<hash>.js`), the ZIP's contents. |
 | `src/main.jsx`, `build/build.mjs`, `build/fingerprint.mjs` | Mount entry + esbuild bundler that produces `dist/app.<hash>.js` and points `index.html` at it. |
@@ -35,9 +35,9 @@ meeting direction and the five transformation groups in `docs/handover/`.
 | `docs/JOURNEYS.md` | The 48 validated Makkah journeys. |
 | `docs/REAL_PLACES.md` | The real Makkah places (restaurants, cafés, shops, parks, museums, landmarks): each one's district, sources, confidence and photo status, and the candidates left out. |
 | `docs/ACCOUNTS.md`, `dist/config.js` | Accounts: the flows, on-device storage, the starter plan, and the optional Firebase / Google / Apple configuration. |
-| `docs/AGENT_AND_OFFERS.md` | The shared offers model and the free-text EyeMakkah Assistant (Intent Bank pipeline, follow-ups, actions, limits). |
+| `docs/AGENT_AND_OFFERS.md` | The shared offers model and the free-text Rihab Makkah Assistant (Intent Bank pipeline, follow-ups, actions, limits). |
 | `assets/agent/`, `scripts/agent-sync.mjs` | The four Agent Bank JSON files (150 intents, 2,123 AR/EN examples) and the step that inlines them into the app. |
-| `baseline/` | The canonical **current** EyeMakkah (`EyeMakkah-app.current.tsx`, `eyemakkah-vercel.current.zip`) kept for comparison. |
+| `baseline/` | The canonical **current** Rihab Makkah (`RihabMakkah-app.current.tsx`, `rihab-vercel.current.zip`) kept for comparison. |
 | `docs/handover/` | Meeting notes, the five group definitions, product rules, visual system, DO-NOT-DO. |
 | `PHOTO_SOURCES.md` | Every bundled photograph: its use, tier (exact / Makkah context / generic) and provenance. |
 | `docs/APP_QUALITY_AUDIT.md` | The screen-by-screen visual, responsive, bilingual and media quality audit and its corrections. |
@@ -55,14 +55,14 @@ Entry is account-first: **Start → Language → Sign in / Create account → (e
 The tabs, Save / Plan / Join / booking hand-off, Community and the Assistant stay one shared system. There is no persona toggle.
 
 Two permanent demo accounts are ready on every device:
-- `resident@eyemakkah.demo` / `demo`
-- `visitor@eyemakkah.demo` / `demo`
+- `resident@rihab.app` / `demo`
+- `visitor@rihab.app` / `demo`
 
 See `docs/DUAL_EXPERIENCE.md`.
 
 **الرئيسية · اكتشف · المجتمع · خطتي** — Profile sits behind the avatar. There is no AI tab:
 AI is horizontal (relevance, trust, journey continuity, translation, community intelligence).
-The EyeMakkah Assistant opens from the Home assistant card (and from search) as a single
+The Rihab Makkah Assistant opens from the Home assistant card (and from search) as a single
 free-text conversation — no fifth tab, no floating bubble.
 
 ## Offers & the Assistant
@@ -85,7 +85,7 @@ See `docs/CITY_OPPORTUNITIES.md`.
 
 > حفظ ≠ أضف إلى خطتي ≠ انضم ≠ سأحضر ≠ حجز ≠ مؤكد ≠ حضرت
 
-Leaving EyeMakkah for an external provider records `انتقلت لإكمال الحجز`. Nothing becomes
+Leaving Rihab Makkah for an external provider records `انتقلت لإكمال الحجز`. Nothing becomes
 `مؤكد` without a real callback or an explicit confirmation from the user.
 
 ## The five transformation groups, cumulative in one app
@@ -149,7 +149,7 @@ chain's name, or every word of the query in the name — with Arabic spelling va
 
 Operational values, offers, participant counts and community contributions are
 illustrative prototype content, not live data. Official and transactional services stay
-with the authorities and providers that own them; EyeMakkah orchestrates the context
+with the authorities and providers that own them; Rihab Makkah orchestrates the context
 around the decision.
 
 ## Real Makkah places

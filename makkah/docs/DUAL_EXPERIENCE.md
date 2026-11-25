@@ -1,10 +1,10 @@
 # One app, two experiences — resident and visitor
 
-EyeMakkah has one app, one set of tabs (الرئيسية · اكتشف · المجتمع · خطتي) and one shared
+Rihab Makkah has one app, one set of tabs (الرئيسية · اكتشف · المجتمع · خطتي) and one shared
 system for Save, Plan, Join, booking hand-off, Community and the Assistant. What changes
 between a **ساكن في مكة** (resident) and a **زائر** (visitor) is the information
 architecture, ranking, copy and theme. These all come from one persona layer in
-`EyeMakkah-app.jsx`:
+`RihabMakkah-app.jsx`:
 - `personaOf`, `INTERESTS`, `STAY_OPTS`, `PARTY_OPTS`, `MUST_DO` and `PERSONA_WEIGHT`;
 - `PERSONA_THEME` and `applyTheme`.
 
@@ -71,8 +71,8 @@ only difference: titles, modules, copy and icons also differ.
 These on-device accounts are present on every launch, including after storage is cleared.
 Sign-up rules are unchanged. See `docs/ACCOUNTS.md`.
 
-- `resident@eyemakkah.demo` / `demo`: أمل الحربي, Al-Awali, family.
-- `visitor@eyemakkah.demo` / `demo`: يوسف الأنصاري, no area, 3–5 days with children.
+- `resident@rihab.app` / `demo`: أمل الحربي, Al-Awali, family.
+- `visitor@rihab.app` / `demo`: يوسف الأنصاري, no area, 3–5 days with children.
 - `admin@admin.com` / `admin`: review account, a resident.
 
 ## QA

@@ -99,9 +99,9 @@ for (const lang of LANGS) {
     const tab = async (id) => { await clearOverlays(); await page.locator(`[data-nav="${id}"]`).first().click(); await W(600); };
 
     await page.goto(site.url, { waitUntil: "networkidle" }); await W(700);
-    await page.getByText(/^(ابدأ|Enter Ruh Al Madinah)$/).first().click(); await W(400);
+    await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click(); await W(400);
     await page.locator(`[data-lang="${lang}"]`).click(); await W(700);
-    await page.locator("[data-auth-email]").fill(`${who}@ruhalmadinah.demo`);
+    await page.locator("[data-auth-email]").fill(`${who}@rihab.demo`);
     await page.locator("[data-auth-password]").fill("demo");
     await page.locator("[data-auth-submit]").click();
     await page.locator("[data-home-greeting]").waitFor({ timeout: 10000 });
@@ -149,7 +149,7 @@ for (const lang of LANGS) {
     await page.locator("[data-assistant-card] button").last().click(); await W(700);
     await scan("assistant (opened)");
     for (const [a, e, asked] of ASK) {
-      const input = page.getByLabel(/^(اسأل روح المدينة|Ask Ruh Al Madinah)$/).first();
+      const input = page.getByLabel(/^(اسأل رحاب المدينة|Ask Rihab Madinah)$/).first();
       await input.fill(T(a, e)); await input.press("Enter"); await W(900);
       await scan(`assistant "${T(a, e)}"`, { asked });
     }

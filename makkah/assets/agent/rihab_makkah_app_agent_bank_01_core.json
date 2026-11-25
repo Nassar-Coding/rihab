@@ -1,13 +1,13 @@
 {
-  "file": "eyemakkah_app_agent_bank_01_core.json",
+  "file": "rihab_makkah_app_agent_bank_01_core.json",
   "version": "1.0.0",
   "phase": 1,
   "part": "01_core",
   "product": {
-    "name_ar": "تطبيق EyeMakkah",
-    "name_en": "EyeMakkah App",
-    "assistant_name_ar": "مساعد EyeMakkah",
-    "assistant_name_en": "EyeMakkah Assistant"
+    "name_ar": "تطبيق رحاب مكة",
+    "name_en": "Rihab Makkah App",
+    "assistant_name_ar": "مساعد رحاب مكة",
+    "assistant_name_en": "Rihab Makkah Assistant"
   },
   "source_alignment": {
     "app_branch": "claude/upbeat-bell-hkmvzy",
@@ -21,9 +21,9 @@
       "Trust/provenance",
       "Offers and booking handoff semantics"
     ],
-    "note": "Intent semantics are aligned to the current EyeMakkah consumer-app information model. This file defines the bank only and does not modify or integrate the app."
+    "note": "Intent semantics are aligned to the current Rihab Makkah consumer-app information model. This file defines the bank only and does not modify or integrate the app."
   },
-  "purpose": "Core bilingual intent bank for a natural free-text EyeMakkah consumer assistant. Covers social conversation, agent identity, app help, user-context controls, fallbacks, and out-of-scope handling. No LLM/API is required and no app code integration is performed in this phase.",
+  "purpose": "Core bilingual intent bank for a natural free-text Rihab Makkah consumer assistant. Covers social conversation, agent identity, app help, user-context controls, fallbacks, and out-of-scope handling. No LLM/API is required and no app code integration is performed in this phase.",
   "integration_contract": {
     "languages": [
       "ar",
@@ -39,7 +39,7 @@
       "fallback"
     ],
     "fixed_responses": "Select among response variants to reduce scripted repetition.",
-    "dynamic_responses": "Resolve {{placeholder}} values from current EyeMakkah state.",
+    "dynamic_responses": "Resolve {{placeholder}} values from current Rihab Makkah state.",
     "action_intents": "Actions describe future integration behavior and should update only the relevant user context while preserving unrelated context.",
     "truthfulness": [
       "Do not claim live LLM/API connectivity when none exists.",
@@ -198,13 +198,13 @@
         "handler": null,
         "responses": {
           "ar": [
-            "هلا، أنا مساعد EyeMakkah. وش ودك تسوي في مكة اليوم؟",
-            "وعليكم السلام. قل لي بطريقتك وش تحتاج، وأنا أساعدك من داخل EyeMakkah.",
+            "هلا، أنا مساعد رحاب مكة. وش ودك تسوي في مكة اليوم؟",
+            "وعليكم السلام. قل لي بطريقتك وش تحتاج، وأنا أساعدك من داخل رحاب مكة.",
             "يا هلا. أقدر أساعدك تلقى مكان، تجربة، عرض، مجتمع، أو ترتّب خطتك."
           ],
           "en": [
-            "Hello. I'm the EyeMakkah Assistant. What would you like to do in Makkah today?",
-            "Hi. Tell me naturally what you need and I'll help using EyeMakkah.",
+            "Hello. I'm the Rihab Makkah Assistant. What would you like to do in Makkah today?",
+            "Hi. Tell me naturally what you need and I'll help using Rihab Makkah.",
             "Hello. I can help you find a place, experience, offer, community, or build your plan."
           ]
         }
@@ -262,12 +262,12 @@
           "ar": [
             "بخير وجاهز أساعدك. وش ودك تسوي أو تعرف في مكة؟",
             "تمام، وأنا حاضر. اكتب اللي في بالك بطريقتك.",
-            "كل شيء تمام. وش تحتاج من EyeMakkah؟"
+            "كل شيء تمام. وش تحتاج من رحاب مكة؟"
           ],
           "en": [
             "I'm ready to help. What would you like to do or know in Makkah?",
             "Doing well. Just ask naturally.",
-            "All good. What do you need from EyeMakkah?"
+            "All good. What do you need from Rihab Makkah?"
           ]
         }
       },
@@ -777,11 +777,11 @@
         "responses": {
           "ar": [
             "ما عندي معلومات طقس مباشرة، لكن أقدر أساعدك تختار شيئًا داخليًا أو خارجيًا حسب تفضيلك ووقتك.",
-            "ما أتابع الطقس لحظيًا، لكن أقدر أرشّح لك تجارب داخلية أو خارجية من EyeMakkah."
+            "ما أتابع الطقس لحظيًا، لكن أقدر أرشّح لك تجارب داخلية أو خارجية من رحاب مكة."
           ],
           "en": [
             "I don't have live weather, but I can help you choose indoor or outdoor options based on your preference and the time you have.",
-            "I don't track the weather live, but I can suggest indoor or outdoor experiences from EyeMakkah."
+            "I don't track the weather live, but I can suggest indoor or outdoor experiences from Rihab Makkah."
           ]
         }
       },
@@ -838,12 +838,12 @@
         "handler": null,
         "responses": {
           "ar": [
-            "أنا مساعد EyeMakkah. أساعد السكان والزوار يكتشفون أماكن وتجارب وأنشطة وعروض ومجتمعات، ويرتبون خطتهم باستخدام محتوى EyeMakkah وسياقهم الحالي.",
-            "أنا المساعد داخل تطبيق EyeMakkah. اكتب لي وش تحتاج بطريقتك، وأنا أحاول أوصلك لأفضل خيار أو خطوة داخل التطبيق."
+            "أنا مساعد رحاب مكة. أساعد السكان والزوار يكتشفون أماكن وتجارب وأنشطة وعروض ومجتمعات، ويرتبون خطتهم باستخدام محتوى رحاب مكة وسياقهم الحالي.",
+            "أنا المساعد داخل تطبيق رحاب مكة. اكتب لي وش تحتاج بطريقتك، وأنا أحاول أوصلك لأفضل خيار أو خطوة داخل التطبيق."
           ],
           "en": [
-            "I'm the EyeMakkah Assistant. I help residents and visitors discover places, experiences, activities, offers, communities, and build their plan using EyeMakkah content and current context.",
-            "I'm the assistant inside the EyeMakkah app. Ask naturally and I'll help you move to a useful option or next step."
+            "I'm the Rihab Makkah Assistant. I help residents and visitors discover places, experiences, activities, offers, communities, and build their plan using Rihab Makkah content and current context.",
+            "I'm the assistant inside the Rihab Makkah app. Ask naturally and I'll help you move to a useful option or next step."
           ]
         }
       },
@@ -961,12 +961,12 @@
         "handler": null,
         "responses": {
           "ar": [
-            "أنا مخصص لتجربة EyeMakkah وما أختلق بيانات غير موجودة. ما أقدر أؤكد طقسًا أو ازدحامًا أو توفرًا أو حجزًا حيًا إذا التطبيق ما عنده مصدر فعلي لها.",
-            "نطاقي هو محتوى EyeMakkah وسياق الاستخدام الحالي. إذا طلبت شيء خارج البيانات المتاحة، أقول لك مباشرة بدل ما أخمّن."
+            "أنا مخصص لتجربة رحاب مكة وما أختلق بيانات غير موجودة. ما أقدر أؤكد طقسًا أو ازدحامًا أو توفرًا أو حجزًا حيًا إذا التطبيق ما عنده مصدر فعلي لها.",
+            "نطاقي هو محتوى رحاب مكة وسياق الاستخدام الحالي. إذا طلبت شيء خارج البيانات المتاحة، أقول لك مباشرة بدل ما أخمّن."
           ],
           "en": [
-            "I'm scoped to the EyeMakkah experience and won't invent unavailable data. I can't confirm live weather, crowds, availability or bookings unless the provider or the official body confirms them.",
-            "My scope is EyeMakkah content and the current app context. If something is outside the available data, I'll say so rather than guess."
+            "I'm scoped to the Rihab Makkah experience and won't invent unavailable data. I can't confirm live weather, crowds, availability or bookings unless the provider or the official body confirms them.",
+            "My scope is Rihab Makkah content and the current app context. If something is outside the available data, I'll say so rather than guess."
           ]
         }
       },
@@ -1025,12 +1025,12 @@
         "handler": null,
         "responses": {
           "ar": [
-            "إجاباتي مبنية على محتوى EyeMakkah: الأماكن والتجارب والأنشطة والعروض والمجتمعات و«خطتي» وسياقك. للمعلومات اللحظية تواصل مع الجهة الرسمية أو مقدّم الخدمة.",
-            "أعتمد على محتوى EyeMakkah وسياقك، وللتفاصيل اللحظية أوجّهك للجهة الرسمية أو مقدّم الخدمة."
+            "إجاباتي مبنية على محتوى رحاب مكة: الأماكن والتجارب والأنشطة والعروض والمجتمعات و«خطتي» وسياقك. للمعلومات اللحظية تواصل مع الجهة الرسمية أو مقدّم الخدمة.",
+            "أعتمد على محتوى رحاب مكة وسياقك، وللتفاصيل اللحظية أوجّهك للجهة الرسمية أو مقدّم الخدمة."
           ],
           "en": [
-            "My answers draw on EyeMakkah content: places, experiences, activities, offers, communities, My Plan and your context. For real-time details, check with the official body or the provider.",
-            "I rely on EyeMakkah content and your context; for real-time details I'll point you to the official body or the provider."
+            "My answers draw on Rihab Makkah content: places, experiences, activities, offers, communities, My Plan and your context. For real-time details, check with the official body or the provider.",
+            "I rely on Rihab Makkah content and your context; for real-time details I'll point you to the official body or the provider."
           ]
         }
       },
@@ -1087,12 +1087,12 @@
         "handler": null,
         "responses": {
           "ar": [
-            "أنا مساعد EyeMakkah المدمج في التطبيق: أفهم طلبك وأرد من محتوى EyeMakkah وسياقك، ولا أرسل محادثتك إلى خدمة خارجية.",
-            "أنا جزء من EyeMakkah نفسه، وإجاباتي تأتي من محتوى التطبيق وسياقك وليس من خدمة خارجية."
+            "أنا مساعد رحاب مكة المدمج في التطبيق: أفهم طلبك وأرد من محتوى رحاب مكة وسياقك، ولا أرسل محادثتك إلى خدمة خارجية.",
+            "أنا جزء من رحاب مكة نفسه، وإجاباتي تأتي من محتوى التطبيق وسياقك وليس من خدمة خارجية."
           ],
           "en": [
-            "I'm EyeMakkah's built-in assistant. I answer from EyeMakkah content and your context, and your conversation isn't sent to an outside service.",
-            "I'm part of EyeMakkah itself: my answers come from the app's content and your context, not from an outside service."
+            "I'm Rihab Makkah's built-in assistant. I answer from Rihab Makkah content and your context, and your conversation isn't sent to an outside service.",
+            "I'm part of Rihab Makkah itself: my answers come from the app's content and your context, not from an outside service."
           ]
         }
       },
@@ -1234,37 +1234,37 @@
       "priority": 90
     },
     {
-      "id": "app_what_is_eyemakkah",
+      "id": "app_what_is_rihab",
       "category": "app_help",
-      "purpose": "Explain the current EyeMakkah consumer app.",
+      "purpose": "Explain the current Rihab Makkah consumer app.",
       "examples": {
         "ar": [
-          "وش هي EyeMakkah",
-          "ايش EyeMakkah",
+          "وش هي رحاب مكة",
+          "ايش رحاب مكة",
           "وش التطبيق",
           "ايش هذا التطبيق",
-          "ما هي EyeMakkah",
-          "اشرح لي EyeMakkah",
+          "ما هي رحاب مكة",
+          "اشرح لي رحاب مكة",
           "وش هدف التطبيق",
-          "وش فكرة EyeMakkah"
+          "وش فكرة رحاب مكة"
         ],
         "en": [
-          "what is EyeMakkah",
+          "what is Rihab Makkah",
           "what is this app",
-          "explain EyeMakkah",
+          "explain Rihab Makkah",
           "what is the purpose of the app",
-          "what is EyeMakkah for"
+          "what is Rihab Makkah for"
         ]
       },
       "matching": {
         "keywords_ar": [
-          "EyeMakkah",
+          "Rihab Makkah",
           "التطبيق",
           "هدف",
           "فكرة"
         ],
         "keywords_en": [
-          "EyeMakkah",
+          "Rihab Makkah",
           "app",
           "purpose"
         ],
@@ -1275,12 +1275,12 @@
         "handler": null,
         "responses": {
           "ar": [
-            "EyeMakkah هو مجتمع رقمي لمكة يساعد السكان والزوار يكتشفون أماكن وتجارب وخدمات ومجتمعات، ينتقلون من الاكتشاف إلى المشاركة، ويحافظون على قراراتهم داخل «خطتي».",
-            "فكرة EyeMakkah مو مجرد دليل أماكن؛ هو تجربة تربط الاكتشاف بالمجتمع والمشاركة والخطة، وتتحسن حسب سياق واستخدام الشخص."
+            "رحاب مكة هو مجتمع رقمي لمكة يساعد السكان والزوار يكتشفون أماكن وتجارب وخدمات ومجتمعات، ينتقلون من الاكتشاف إلى المشاركة، ويحافظون على قراراتهم داخل «خطتي».",
+            "فكرة رحاب مكة مو مجرد دليل أماكن؛ هو تجربة تربط الاكتشاف بالمجتمع والمشاركة والخطة، وتتحسن حسب سياق واستخدام الشخص."
           ],
           "en": [
-            "EyeMakkah is a digital community for Makkah that helps residents and visitors discover places, experiences, services, and communities, then move from discovery into participation and My Plan.",
-            "EyeMakkah is more than a directory. It connects discovery, community, participation, and planning around the user's context."
+            "Rihab Makkah is a digital community for Makkah that helps residents and visitors discover places, experiences, services, and communities, then move from discovery into participation and My Plan.",
+            "Rihab Makkah is more than a directory. It connects discovery, community, participation, and planning around the user's context."
           ]
         }
       },
@@ -1335,11 +1335,11 @@
         "handler": null,
         "responses": {
           "ar": [
-            "التنقل الرئيسي في EyeMakkah أربع مناطق: «الرئيسية» للاقتراحات والسياق، «اكتشف» للتصفح والبحث، «المجتمع» للأسئلة والتوصيات والمشاركة، و«خطتي» لما حفظته أو تنوي فعله أو أكملته.",
+            "التنقل الرئيسي في رحاب مكة أربع مناطق: «الرئيسية» للاقتراحات والسياق، «اكتشف» للتصفح والبحث، «المجتمع» للأسئلة والتوصيات والمشاركة، و«خطتي» لما حفظته أو تنوي فعله أو أكملته.",
             "عندك أربع تبويبات رئيسية: الرئيسية، اكتشف، المجتمع، خطتي. والحساب موجود خلف صورة الملف الشخصي."
           ],
           "en": [
-            "EyeMakkah has four primary areas: Home for contextual suggestions, Discover for browsing and search, Community for questions and contributions, and My Plan for what you saved, intend to do, or completed.",
+            "Rihab Makkah has four primary areas: Home for contextual suggestions, Discover for browsing and search, Community for questions and contributions, and My Plan for what you saved, intend to do, or completed.",
             "The four main tabs are Home, Discover, Community, and My Plan. Profile sits behind the avatar."
           ]
         }
@@ -1611,12 +1611,12 @@
         "handler": null,
         "responses": {
           "ar": [
-            "البحث في EyeMakkah مو للأماكن فقط؛ يقدر يرجع أماكن ومطاعم وتجارب وأنشطة ومجتمعات وخدمات ومساهمات مرتبطة بما كتبته.",
+            "البحث في رحاب مكة مو للأماكن فقط؛ يقدر يرجع أماكن ومطاعم وتجارب وأنشطة ومجتمعات وخدمات ومساهمات مرتبطة بما كتبته.",
             "اكتب الشيء بطريقتك مثل «قهوة هادئة»، «حراء»، «للعائلة» أو «تطوع»، والبحث يحاول يطابق أكثر من نوع محتوى."
           ],
           "en": [
             "Search is not limited to places. It can return places, restaurants, experiences, activities, communities, services, and relevant contributions.",
-            "Search naturally, for example 'quiet coffee', 'Hira', 'family-friendly', or 'volunteering', and EyeMakkah can match across multiple content types."
+            "Search naturally, for example 'quiet coffee', 'Hira', 'family-friendly', or 'volunteering', and Rihab Makkah can match across multiple content types."
           ]
         }
       },
@@ -1671,11 +1671,11 @@
         "responses": {
           "ar": [
             "لا. «حفظ» يعني احتفظت بالشيء للرجوع له. «أضف إلى خطتي» خطوة أقوى وتدخل العنصر في مسار التخطيط والاستمرارية. الحفظ ≠ الخطة ≠ الانضمام ≠ الحجز.",
-            "إذا حفظت شيئًا ما ما يعني أنك قررت تروح له أو حجزته. EyeMakkah يحافظ على هذه الحالات منفصلة."
+            "إذا حفظت شيئًا ما ما يعني أنك قررت تروح له أو حجزته. رحاب مكة يحافظ على هذه الحالات منفصلة."
           ],
           "en": [
             "No. Save means keeping something for later. Add to My Plan is a stronger planning step. Save ≠ Plan ≠ Join ≠ Booking.",
-            "Saving something does not mean you decided to go or booked it. EyeMakkah keeps those states separate."
+            "Saving something does not mean you decided to go or booked it. Rihab Makkah keeps those states separate."
           ]
         }
       },
@@ -1697,7 +1697,7 @@
           "هل تحجزون من التطبيق",
           "إذا ضغطت حجز يعني تم",
           "وش يعني انتقلت لإكمال الحجز",
-          "هل EyeMakkah يؤكد الحجز",
+          "هل رحاب مكة يؤكد الحجز",
           "الحجز داخل التطبيق ولا برا"
         ],
         "en": [
@@ -1705,7 +1705,7 @@
           "do you book inside the app",
           "if I tap book is it confirmed",
           "what does left to complete booking mean",
-          "does EyeMakkah confirm bookings",
+          "does Rihab Makkah confirm bookings",
           "is booking inside or outside the app"
         ]
       },
@@ -1728,12 +1728,12 @@
         "handler": null,
         "responses": {
           "ar": [
-            "بعض الحجوزات تنتقل لمقدم الخدمة أو منصة خارجية. EyeMakkah يسجل «انتقلت لإكمال الحجز» فقط، ولا يعتبر الحجز مؤكدًا إلا إذا وصل تأكيد فعلي أو أكده المستخدم صراحة.",
+            "بعض الحجوزات تنتقل لمقدم الخدمة أو منصة خارجية. رحاب مكة يسجل «انتقلت لإكمال الحجز» فقط، ولا يعتبر الحجز مؤكدًا إلا إذا وصل تأكيد فعلي أو أكده المستخدم صراحة.",
             "الضغط على زر حجز خارجي مو نفسه «تم الحجز». التطبيق يحافظ على الفرق بين الانتقال للحجز والتأكيد."
           ],
           "en": [
-            "Some bookings hand off to an external provider. EyeMakkah records that you left to complete booking, but doesn't mark it confirmed until the provider confirms it or you mark it confirmed yourself.",
-            "Tapping an external booking action is not the same as a confirmed booking. EyeMakkah keeps those states separate."
+            "Some bookings hand off to an external provider. Rihab Makkah records that you left to complete booking, but doesn't mark it confirmed until the provider confirms it or you mark it confirmed yourself.",
+            "Tapping an external booking action is not the same as a confirmed booking. Rihab Makkah keeps those states separate."
           ]
         }
       },
@@ -1791,11 +1791,11 @@
         "handler": null,
         "responses": {
           "ar": [
-            "EyeMakkah يوضح مصدر المعلومة عندما يكون متاحًا: رسمي، من مقدم الخدمة، أو من المجتمع، ويعرض حداثتها أو وجود تعارض بدل ما يخفيه.",
+            "رحاب مكة يوضح مصدر المعلومة عندما يكون متاحًا: رسمي، من مقدم الخدمة، أو من المجتمع، ويعرض حداثتها أو وجود تعارض بدل ما يخفيه.",
             "إذا اختلفت المصادر، التطبيق يقدر يعرض الادعاءات والتواريخ جنب بعض بدل ما يدّعي أن واحدًا منها صحيح بدون دليل."
           ],
           "en": [
-            "EyeMakkah can show whether information comes from an official source, provider, or community, and indicate freshness or conflicts instead of hiding them.",
+            "Rihab Makkah can show whether information comes from an official source, provider, or community, and indicate freshness or conflicts instead of hiding them.",
             "When sources disagree, the app can show the claims and dates side by side rather than pretending one is true without evidence."
           ]
         }
@@ -1847,11 +1847,11 @@
         "handler": null,
         "responses": {
           "ar": [
-            "اختيار «ساكن في مكة» أو «زائر» يعطي EyeMakkah سياقًا أفضل. ساكن مكة غالبًا يحتاج اكتشافًا متجددًا وحياة يومية ومجتمعات محلية، والزائر قد يحتاج تجربة أوضح حسب الوقت والزيارة والخطة.",
+            "اختيار «ساكن في مكة» أو «زائر» يعطي رحاب مكة سياقًا أفضل. ساكن مكة غالبًا يحتاج اكتشافًا متجددًا وحياة يومية ومجتمعات محلية، والزائر قد يحتاج تجربة أوضح حسب الوقت والزيارة والخطة.",
             "الاختيار يساعد في الترتيب فقط، وما يمنعك من اكتشاف أي نوع محتوى داخل التطبيق."
           ],
           "en": [
-            "Choosing resident or visitor gives EyeMakkah better context. Residents may benefit more from ongoing local discovery and communities, while visitors may need clearer time-based experiences and planning.",
+            "Choosing resident or visitor gives Rihab Makkah better context. Residents may benefit more from ongoing local discovery and communities, while visitors may need clearer time-based experiences and planning.",
             "The choice helps ranking; it does not block you from discovering other content."
           ]
         }
@@ -1910,11 +1910,11 @@
         "responses": {
           "ar": [
             "التخصيص يعتمد على سياق صريح وسلوك مفيد داخل التطبيق مثل ما حفظته أو أضفته لخطتك أو أكملته، بدون افتراض صفات حساسة عنك. وتقدر تصحح اهتماماتك من الحساب.",
-            "EyeMakkah ما يفترض أن كل مشاهدة تعني اهتمام قوي، وما يحول رفضًا واحدًا إلى كراهية دائمة."
+            "رحاب مكة ما يفترض أن كل مشاهدة تعني اهتمام قوي، وما يحول رفضًا واحدًا إلى كراهية دائمة."
           ],
           "en": [
             "Personalization uses explicit context and meaningful in-app actions such as saving, planning, joining, or completing, without inferring sensitive traits. You can correct your interests from Profile.",
-            "EyeMakkah does not treat every view as a strong preference or one dismissal as a permanent dislike."
+            "Rihab Makkah does not treat every view as a strong preference or one dismissal as a permanent dislike."
           ]
         }
       },
@@ -1970,11 +1970,11 @@
         "handler": null,
         "responses": {
           "ar": [
-            "الموقع اختياري. EyeMakkah يقدر يشتغل بدون موقع دقيق باستخدام الحي أو المنطقة التي تختارها. إذا شاركت الموقع يمكن استخدامه لتحسين القرب، ولا يُعرض موقعك الدقيق لأحد، ولا يُستخدم لاكتشاف أشخاص قريبين منك.",
+            "الموقع اختياري. رحاب مكة يقدر يشتغل بدون موقع دقيق باستخدام الحي أو المنطقة التي تختارها. إذا شاركت الموقع يمكن استخدامه لتحسين القرب، ولا يُعرض موقعك الدقيق لأحد، ولا يُستخدم لاكتشاف أشخاص قريبين منك.",
             "تقدر تستخدم التطبيق بدون إذن الموقع، وتختار منطقتك يدويًا."
           ],
           "en": [
-            "Location is optional. EyeMakkah can work without precise location using the area or neighborhood you choose. If location is shared, it can improve proximity results, but your exact location is never shown to other people or used to find people near you.",
+            "Location is optional. Rihab Makkah can work without precise location using the area or neighborhood you choose. If location is shared, it can improve proximity results, but your exact location is never shown to other people or used to find people near you.",
             "You can use the app without location permission and choose your area manually."
           ]
         }
@@ -2031,11 +2031,11 @@
         "handler": null,
         "responses": {
           "ar": [
-            "EyeMakkah يقدر يعرض عروضًا وخصومات مرتبطة بالمطاعم والمقاهي والإقامة والتجارب والأنشطة والمتاجر والخدمات، مثل خصم مباشر أو باقة عائلية أو سعر خاص عبر التطبيق، مع إظهار شروط العرض وحالته بوضوح.",
+            "رحاب مكة يقدر يعرض عروضًا وخصومات مرتبطة بالمطاعم والمقاهي والإقامة والتجارب والأنشطة والمتاجر والخدمات، مثل خصم مباشر أو باقة عائلية أو سعر خاص عبر التطبيق، مع إظهار شروط العرض وحالته بوضوح.",
             "تظهر العروض حيث تفيدك: في الاكتشاف وصفحات التفاصيل وداخل النتائج."
           ],
           "en": [
-            "EyeMakkah shows offers and discounts across restaurants, cafés, stays, experiences, activities, shops, and services, such as direct discounts, family packages, or app-only prices, with clear terms and status.",
+            "Rihab Makkah shows offers and discounts across restaurants, cafés, stays, experiences, activities, shops, and services, such as direct discounts, family packages, or app-only prices, with clear terms and status.",
             "Offers appear where they help: in Discover, on detail pages and in results."
           ]
         }
@@ -2091,11 +2091,11 @@
         "handler": null,
         "responses": {
           "ar": [
-            "أستخدم فقط السياق المتاح داخل EyeMakkah مثل كونك ساكنًا في مكة أو زائرًا لها، الحي المختار، الوقت المتاح، فرد/عائلة/أطفال/مجموعة، الاهتمامات، متطلبات الوصول، وما عندك في «خطتي».",
+            "أستخدم فقط السياق المتاح داخل رحاب مكة مثل كونك ساكنًا في مكة أو زائرًا لها، الحي المختار، الوقت المتاح، فرد/عائلة/أطفال/مجموعة، الاهتمامات، متطلبات الوصول، وما عندك في «خطتي».",
             "السياق يساعدني أرتب الخيارات، لكنه ما يخليني أفترض معلومات حساسة غير موجودة."
           ],
           "en": [
-            "I use context available inside EyeMakkah such as whether you live in or are visiting Makkah, your area, available time, solo/family/kids/group, interests, accessibility preferences, and My Plan.",
+            "I use context available inside Rihab Makkah such as whether you live in or are visiting Makkah, your area, available time, solo/family/kids/group, interests, accessibility preferences, and My Plan.",
             "Context helps rank options, but it does not justify inferring sensitive information that is not provided."
           ]
         }
@@ -2270,11 +2270,11 @@
         "handler": null,
         "responses": {
           "ar": [
-            "المناطق المتاحة في EyeMakkah: العوالي، العزيزية، الششة، الشوقية، النسيم، بطحاء قريش، المسفلة، أجياد، الهجرة، الزاهر، الكعكية، جرول، الرصيفة، التنعيم، ومحيط الحرم.",
+            "المناطق المتاحة في رحاب مكة: العوالي، العزيزية، الششة، الشوقية، النسيم، بطحاء قريش، المسفلة، أجياد، الهجرة، الزاهر، الكعكية، جرول، الرصيفة، التنعيم، ومحيط الحرم.",
             "تقدر تختار الحي يدويًا حتى لو ما فعّلت الموقع الدقيق."
           ],
           "en": [
-            "EyeMakkah covers Al Awali, Al Aziziyah, Al-Shishah, Al Shawqiyah, An Naseem, Batha Quraysh, Al Misfalah, Ajyad, Al Hijrah, Az Zahir, Al Kakiyah, Jarwal, Ar Rusayfah, At Tanim, and the Haram area.",
+            "Rihab Makkah covers Al Awali, Al Aziziyah, Al-Shishah, Al Shawqiyah, An Naseem, Batha Quraysh, Al Misfalah, Ajyad, Al Hijrah, Az Zahir, Al Kakiyah, Jarwal, Ar Rusayfah, At Tanim, and the Haram area.",
             "You can choose an area manually even without precise location."
           ]
         }
@@ -2958,12 +2958,12 @@
         "handler": null,
         "responses": {
           "ar": [
-            "هذا خارج نطاق مساعد EyeMakkah داخل التطبيق. أقدر أساعدك في مكة من خلال الأماكن والتجارب والمطاعم والعروض والمجتمعات و«خطتي».",
-            "سؤالك عام وخارج نطاق تجربة EyeMakkah الحالية."
+            "هذا خارج نطاق مساعد رحاب مكة داخل التطبيق. أقدر أساعدك في مكة من خلال الأماكن والتجارب والمطاعم والعروض والمجتمعات و«خطتي».",
+            "سؤالك عام وخارج نطاق تجربة رحاب مكة الحالية."
           ],
           "en": [
-            "That's outside the EyeMakkah app assistant scope. I can help with Makkah places, experiences, restaurants, offers, communities, and My Plan.",
-            "That's a general question outside the current EyeMakkah experience."
+            "That's outside the Rihab Makkah app assistant scope. I can help with Makkah places, experiences, restaurants, offers, communities, and My Plan.",
+            "That's a general question outside the current Rihab Makkah experience."
           ]
         }
       },
@@ -3017,12 +3017,12 @@
         "handler": null,
         "responses": {
           "ar": [
-            "ما أتابع الأخبار المباشرة، لكن أقدر أساعدك في الفعاليات والتحديثات داخل EyeMakkah.",
-            "ما عندي أخبار مباشرة، لكن أقدر أعرض لك آخر الفعاليات والتحديثات في EyeMakkah."
+            "ما أتابع الأخبار المباشرة، لكن أقدر أساعدك في الفعاليات والتحديثات داخل رحاب مكة.",
+            "ما عندي أخبار مباشرة، لكن أقدر أعرض لك آخر الفعاليات والتحديثات في رحاب مكة."
           ],
           "en": [
-            "I don't follow live news, but I can help with events and updates in EyeMakkah.",
-            "I don't have live news, but I can show you the latest events and updates in EyeMakkah."
+            "I don't follow live news, but I can help with events and updates in Rihab Makkah.",
+            "I don't have live news, but I can show you the latest events and updates in Rihab Makkah."
           ]
         }
       },
@@ -3082,7 +3082,7 @@
         "handler": null,
         "responses": {
           "ar": [
-            "ما أقدر أؤكد حالة حية إذا EyeMakkah ما عنده مصدر تشغيلي فعلي لها. أقدر أعرض لك آخر معلومة متاحة ومصدرها أو أحولك للمصدر الرسمي/مقدم الخدمة إذا كان موجودًا.",
+            "ما أقدر أؤكد حالة حية إذا رحاب مكة ما عنده مصدر تشغيلي فعلي لها. أقدر أعرض لك آخر معلومة متاحة ومصدرها أو أحولك للمصدر الرسمي/مقدم الخدمة إذا كان موجودًا.",
             "الحالة اللحظية مثل الزحام والتوفر تحتاج مصدرًا حيًا؛ ما راح أخمّنها."
           ],
           "en": [
@@ -3151,11 +3151,11 @@
         "handler": null,
         "responses": {
           "ar": [
-            "ما أقدر أكشف مواقع المستخدمين أو هويات الحضور أو بيانات شخصية/حساسة. EyeMakkah مصمم للمجتمع والمشاركة بدون تحويله لتتبع أشخاص.",
+            "ما أقدر أكشف مواقع المستخدمين أو هويات الحضور أو بيانات شخصية/حساسة. رحاب مكة مصمم للمجتمع والمشاركة بدون تحويله لتتبع أشخاص.",
             "أقدر أساعدك بمعلومات النشاط أو المجتمع نفسه، لكن مو ببيانات خاصة عن أشخاص آخرين."
           ],
           "en": [
-            "I can't expose user locations, attendee identities, or personal/sensitive data. EyeMakkah is designed for community participation without turning into people tracking.",
+            "I can't expose user locations, attendee identities, or personal/sensitive data. Rihab Makkah is designed for community participation without turning into people tracking.",
             "I can help with information about the activity or community itself, not private data about other people."
           ]
         }
@@ -3171,7 +3171,7 @@
     {
       "id": "out_of_scope_external_confirmation_or_authority",
       "category": "out_of_scope",
-      "purpose": "Avoid pretending EyeMakkah can authoritatively confirm external transactions or official/religious decisions it does not own.",
+      "purpose": "Avoid pretending Rihab Makkah can authoritatively confirm external transactions or official/religious decisions it does not own.",
       "examples": {
         "ar": [
           "أكد لي حجزي",
@@ -3216,11 +3216,11 @@
         "handler": null,
         "responses": {
           "ar": [
-            "EyeMakkah ما يقدر يصدر تأكيدًا رسميًا أو دينيًا من نفسه. للحجز أو الدخول أو الحكم الشرعي، أعرض لك ما هو موجود في التطبيق وأوجهك للمصدر المختص عند الحاجة.",
+            "رحاب مكة ما يقدر يصدر تأكيدًا رسميًا أو دينيًا من نفسه. للحجز أو الدخول أو الحكم الشرعي، أعرض لك ما هو موجود في التطبيق وأوجهك للمصدر المختص عند الحاجة.",
             "إذا كان الشيء يحتاج تأكيد جهة رسمية أو مقدم خدمة أو مرجع ديني مختص، ما راح أستبدل ذلك بتخمين من المساعد."
           ],
           "en": [
-            "EyeMakkah cannot issue an official or religious confirmation on its own. For bookings, access, or religious rulings, I can show what the app has and direct you to the appropriate source when needed.",
+            "Rihab Makkah cannot issue an official or religious confirmation on its own. For bookings, access, or religious rulings, I can show what the app has and direct you to the appropriate source when needed.",
             "If something requires confirmation from an authority, provider, or qualified religious source, I won't replace that with a guess."
           ]
         }

@@ -1,8 +1,8 @@
-# EyeMakkah — photo sources
+# Rihab Makkah — photo sources
 
 Every photograph the application can render is listed below: 44 files in
 `assets/photos/`. `scripts/photos-build.py` builds them from `assets/photos/manifest.json`,
-and `scripts/photo-sync.mjs` inlines them into `EyeMakkah-app.jsx` as `PHOTO_DATA`. As a
+and `scripts/photo-sync.mjs` inlines them into `RihabMakkah-app.jsx` as `PHOTO_DATA`. As a
 result, neither the JSX artifact nor the zero-build package needs an image host. The app
 has no remote image URLs and no CSS background images.
 
@@ -36,8 +36,8 @@ Of 178 real places:
 - 1 shows a context photograph (متحف القهوة السعودية, in the Hira Cultural District).
 - 44 show a category visual, a drawn tile, not a photograph.
 
-**Supplied assets** (`assets/places/`, `EyeMakkah_Verified_Assets.zip`, 5 Oct 2026): 99
-files, one per brand or place, supplied and verified by the EyeMakkah project owner.
+**Supplied assets** (`assets/places/`, `Rihab Makkah_Verified_Assets.zip`, 5 Oct 2026): 99
+files, one per brand or place, supplied and verified by the Rihab Makkah project owner.
 `assets/places/manifest.json` records each file's kind (photo or logo) and the records
 that use it. Their rights and licences rest with the project owner's collection; confirm
 them before a public launch.

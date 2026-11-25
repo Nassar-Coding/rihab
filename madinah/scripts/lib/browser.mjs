@@ -40,7 +40,7 @@ export async function launchBrowser(opts = {}) {
     const newContext = browser.newContext.bind(browser);
     browser.newContext = async (o) => {
       const ctx = await newContext(o);
-      await ctx.addInitScript((now) => { window.RUHALMADINAH_NOW = now; }, QA_NOW);
+      await ctx.addInitScript((now) => { window.RIHAB_MADINAH_NOW = now; }, QA_NOW);
       return ctx;
     };
     browser.newPage = async (o) => (await browser.newContext(o)).newPage();
@@ -48,7 +48,7 @@ export async function launchBrowser(opts = {}) {
   return browser;
 }
 
-export const outDir = (name) => process.env.OUT || join(tmpdir(), "ruhalmadinah-qa", name);
+export const outDir = (name) => process.env.OUT || join(tmpdir(), "rihab-qa", name);
 
 const MIME = {
   ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".json": "application/json",

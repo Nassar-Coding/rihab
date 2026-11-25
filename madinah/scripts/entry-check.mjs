@@ -21,10 +21,10 @@ for (const langId of ["ar", "en"]) {
   const shell = () => page.locator("[data-screen]").count();
 
   const t1 = await txt();
-  results.push(["landing shows first", /(روح المدينة|Ruh Al Madinah)/.test(t1) && /(ابدأ|Enter Ruh Al Madinah)/.test(t1) && (await shell()) === 0]);
+  results.push(["landing shows first", /(رحاب المدينة|Rihab Madinah)/.test(t1) && /(ابدأ|Enter Rihab Madinah)/.test(t1) && (await shell()) === 0]);
   results.push(["landing carries no prototype label", !/(نموذج أولي|Prototype)/.test(t1)]);
   if (langId === "ar") await page.screenshot({ path: `${shots}/01-landing.png` });
-  await page.getByText(/^(ابدأ|Enter Ruh Al Madinah)$/).first().click();
+  await page.getByText(/^(ابدأ|Enter Rihab Madinah)$/).first().click();
   await page.waitForTimeout(500);
   const t2 = await txt();
   results.push(["language screen second", /اختر لغتك/.test(t2) && /English/.test(t2) && (await shell()) === 0]);

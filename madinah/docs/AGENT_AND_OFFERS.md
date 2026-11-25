@@ -1,6 +1,6 @@
-# Offers layer and the Ruh Al Madinah Assistant
+# Offers layer and the Rihab Madinah Assistant
 
-Both live in `RuhAlMadinah-app.jsx`, read the same inventory and user state as every other
+Both live in `RihabMadinah-app.jsx`, read the same inventory and user state as every other
 screen, and run entirely on the device. No LLM, backend or external API is connected, and
 the assistant says so if asked.
 
@@ -22,7 +22,7 @@ A record holds the following fields:
 - `pct` or `now`/`was`
 - `badge`, `title`, `desc` and `terms`, each in AR/EN
 - `incl` (package contents) and `who` (eligibility)
-- `exclusive` (حصري عبر روح المدينة) and `when` (morning / evening / weekend)
+- `exclusive` (حصري عبر رحاب المدينة) and `when` (morning / evening / weekend)
 - `start`/`end` validity and `redeem` (booking / venue / code)
 - `source: "prototype"`
 
@@ -57,7 +57,7 @@ Using an offer never changes plan state beyond the existing reducer actions. Boo
 
 **Source of truth**
 
-The Agent Bank lives in `assets/agent/ruhalmadinah_app_agent_bank_0{1..4}_*.json`, which holds:
+The Agent Bank lives in `assets/agent/rihab_madinah_app_agent_bank_0{1..4}_*.json`, which holds:
 - 156 intents with 2,413 AR/EN example utterances, including six for the Market and City Opportunities (see `docs/MARKET_AND_OPPORTUNITIES.md`)
 - keywords, response variants and required context
 - follow-up routing, confidence thresholds and contextual suggestions
@@ -121,7 +121,7 @@ Each action dispatches the app's own reducer actions and guards what each one me
 
 **UI**
 - It is entered from the Home assistant card: «خصّص يومي» sends «رتب لي يومي», and «اسأل» opens an empty chat. Search also offers «اسأل المساعد: …».
-- There is one input («اسأل روح المدينة...»), with 0–2 contextual suggestions from the bank. It never shows a question grid, and the Intent Bank is never displayed.
+- There is one input («اسأل رحاب المدينة...»), with 0–2 contextual suggestions from the bank. It never shows a question grid, and the Intent Bank is never displayed.
 - There is no Assistant tab and no floating bubble. The bottom nav hides on this screen, as it does on search and decision pages.
 
 **Tests**

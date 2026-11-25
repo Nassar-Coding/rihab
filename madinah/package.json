@@ -1,8 +1,8 @@
 {
-  "name": "ruhalmadinah",
+  "name": "rihab",
   "version": "2.0.0",
   "private": true,
-  "description": "Ruh Al Madinah — روح المدينة، مجتمع المدينة الرقمي. A product demo for Madinah residents and visitors: one React source file, built into a zero-build Vercel package.",
+  "description": "Rihab Madinah — رحاب المدينة، مجتمع المدينة الرقمي. A product demo for Madinah residents and visitors: one React source file, built into a zero-build Vercel package.",
   "type": "module",
   "scripts": {
     "build": "node build/build.mjs",

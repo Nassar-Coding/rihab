@@ -1,5 +1,5 @@
 {
-  "file": "eyemakkah_app_agent_bank_03_actions_business.json",
+  "file": "rihab_makkah_app_agent_bank_03_actions_business.json",
   "version": "1.1.0",
   "phase": 1,
   "part": "03_actions_business",
@@ -14,15 +14,15 @@
       "My Plan buckets and continuity",
       "Community recommendations, threads, contributions, memberships and linked activities"
     ],
-    "note": "This bank is aligned to the EyeMakkah consumer-app product rules and assumes offer/discount objects are resolved from the current app state after the offer layer is implemented. It defines intents only and does not modify or integrate the app."
+    "note": "This bank is aligned to the Rihab Makkah consumer-app product rules and assumes offer/discount objects are resolved from the current app state after the offer layer is implemented. It defines intents only and does not modify or integrate the app."
   },
   "product": {
-    "name_ar": "تطبيق EyeMakkah",
-    "name_en": "EyeMakkah App",
-    "assistant_name_ar": "مساعد EyeMakkah",
-    "assistant_name_en": "EyeMakkah Assistant"
+    "name_ar": "تطبيق رحاب مكة",
+    "name_en": "Rihab Makkah App",
+    "assistant_name_ar": "مساعد رحاب مكة",
+    "assistant_name_en": "Rihab Makkah Assistant"
   },
-  "purpose": "Bilingual consumer-agent intent bank for offers/discounts, transactional actions, My Plan continuity, and community participation. Dynamic answers/actions must use the same EyeMakkah object states and offer data shown in the UI.",
+  "purpose": "Bilingual consumer-agent intent bank for offers/discounts, transactional actions, My Plan continuity, and community participation. Dynamic answers/actions must use the same Rihab Makkah object states and offer data shown in the UI.",
   "integration_contract": {
     "languages": [
       "ar",
@@ -41,7 +41,7 @@
       "booking_state",
       "offer_state"
     ],
-    "offer_rule": "Offers must resolve dynamically from active offer records linked to current EyeMakkah objects. Do not invent a percentage, package, exclusivity flag, eligibility, expiry, or redemption path that is not present in current offer data.",
+    "offer_rule": "Offers must resolve dynamically from active offer records linked to current Rihab Makkah objects. Do not invent a percentage, package, exclusivity flag, eligibility, expiry, or redemption path that is not present in current offer data.",
     "offer_visibility_rule": "Offer intents are cross-category. The same offer layer may apply to restaurants, cafés, stays/hotels, experiences, activities, markets/retail and services when those objects have an active offer.",
     "offer_lifecycle_rule": "Active and ending-soon offers may be recommended. Expired offers must not be promoted as active; they may only appear in historical/detail context if the product supports that state.",
     "transaction_state_rule": "Save ≠ Add to Plan ≠ Join/Going ≠ Booking handoff ≠ Confirmed ≠ Attended/Completed. Every handler must preserve this separation.",
@@ -52,7 +52,7 @@
     "action_confirmation_rule": "Action handlers must return a concise confirmation that names exactly which state changed and which states did not.",
     "truthfulness": [
       "Do not fabricate active discounts or offers.",
-      "Do not claim a discount is EyeMakkah-exclusive unless the offer data explicitly marks it so.",
+      "Do not claim a discount is Rihab Makkah-exclusive unless the offer data explicitly marks it so.",
       "Do not claim booking confirmation after an outbound click.",
       "Do not infer attendance from booking or Plan state.",
       "Do not infer booking from Save, Join, or Add to Plan.",
@@ -141,7 +141,7 @@
     {
       "id": "offers_all_active",
       "category": "offers",
-      "purpose": "Return active offers and discounts across all supported EyeMakkah content types.",
+      "purpose": "Return active offers and discounts across all supported Rihab Makkah content types.",
       "examples": {
         "ar": [
           "وش العروض الموجودة",
@@ -190,11 +190,11 @@
         "responses": {
           "ar": [
             "هذه أبرز العروض النشطة ضمن سياقك الحالي: {{offers}}.",
-            "العروض المتاحة الآن في EyeMakkah: {{offers}}."
+            "العروض المتاحة الآن في رحاب مكة: {{offers}}."
           ],
           "en": [
             "These are the strongest active offers in your current context: {{offers}}.",
-            "The offers currently available in EyeMakkah are: {{offers}}."
+            "The offers currently available in Rihab Makkah are: {{offers}}."
           ]
         },
         "result_shape": "ranked_list"
@@ -423,11 +423,11 @@
         "handler": "offers_stays",
         "responses": {
           "ar": [
-            "هذه عروض الإقامة النشطة في EyeMakkah: {{offers}}.",
+            "هذه عروض الإقامة النشطة في رحاب مكة: {{offers}}.",
             "إذا تبغى إقامة عليها عرض، هذه الخيارات المتاحة: {{offers}}."
           ],
           "en": [
-            "These are the active stay offers in EyeMakkah: {{offers}}.",
+            "These are the active stay offers in Rihab Makkah: {{offers}}.",
             "If you want accommodation with an offer, these are the available matches: {{offers}}."
           ]
         },
@@ -608,18 +608,18 @@
         "ar": [
           "فيه خصم إذا حجزت من التطبيق",
           "وش عروض التطبيق",
-          "فيه خصم حصري EyeMakkah",
+          "فيه خصم حصري رحاب مكة",
           "أبغى العروض الحصرية",
-          "وش ينقص إذا حجزت من EyeMakkah",
+          "وش ينقص إذا حجزت من رحاب مكة",
           "فيه 10 بالمية من التطبيق",
           "عروض خاصة بالتطبيق"
         ],
         "en": [
           "is there a discount if I book from the app",
           "what app offers are there",
-          "any EyeMakkah exclusive discount",
+          "any Rihab Makkah exclusive discount",
           "show exclusive offers",
-          "do I get a discount through EyeMakkah",
+          "do I get a discount through Rihab Makkah",
           "is there a 10 percent app discount",
           "app-only offers"
         ]
@@ -628,7 +628,7 @@
         "keywords_ar": [
           "خصم من التطبيق",
           "عروض التطبيق",
-          "حصري EyeMakkah",
+          "حصري رحاب مكة",
           "العروض الحصرية",
           "10 بالمية",
           "خاصة بالتطبيق"
@@ -636,7 +636,7 @@
         "keywords_en": [
           "discount from the app",
           "app offers",
-          "EyeMakkah exclusive",
+          "Rihab Makkah exclusive",
           "exclusive offers",
           "10 percent",
           "app-only"
@@ -652,11 +652,11 @@
         "handler": "offers_app_exclusive",
         "responses": {
           "ar": [
-            "هذه العروض المعلّمة كعروض خاصة عبر EyeMakkah: {{offers}}. كل عرض يعرض النسبة/القيمة والشروط بوضوح.",
+            "هذه العروض المعلّمة كعروض خاصة عبر رحاب مكة: {{offers}}. كل عرض يعرض النسبة/القيمة والشروط بوضوح.",
             "إذا تبغى خصم مرتبط باستخدام التطبيق، هذه العروض الحالية: {{offers}}."
           ],
           "en": [
-            "These offers are marked as EyeMakkah app-specific: {{offers}}. Each offer should show the discount/value and terms clearly.",
+            "These offers are marked as Rihab Makkah app-specific: {{offers}}. Each offer should show the discount/value and terms clearly.",
             "If you want a discount tied to using the app, these are the current matches: {{offers}}."
           ]
         },
@@ -1369,11 +1369,11 @@
         "handler": "action_open_directions",
         "responses": {
           "ar": [
-            "أفتح لك الاتجاهات إلى {{object}} باستخدام موقع المكان المتاح في EyeMakkah.",
+            "أفتح لك الاتجاهات إلى {{object}} باستخدام موقع المكان المتاح في رحاب مكة.",
             "جاهز، بفتح لك مسار الوصول إلى {{object}}."
           ],
           "en": [
-            "I'll open directions to {{object}} using the location available in EyeMakkah.",
+            "I'll open directions to {{object}} using the location available in Rihab Makkah.",
             "Ready. I'll open the route to {{object}}."
           ]
         },
@@ -1392,7 +1392,7 @@
     {
       "id": "action_open_details",
       "category": "actions",
-      "purpose": "Open the selected EyeMakkah object detail/decision page.",
+      "purpose": "Open the selected Rihab Makkah object detail/decision page.",
       "examples": {
         "ar": [
           "افتحه",
@@ -1440,11 +1440,11 @@
         "handler": "action_open_object_detail",
         "responses": {
           "ar": [
-            "أفتح لك صفحة {{object}} داخل EyeMakkah.",
+            "أفتح لك صفحة {{object}} داخل رحاب مكة.",
             "جاهز، ننتقل لتفاصيل {{object}}."
           ],
           "en": [
-            "I'll open {{object}} inside EyeMakkah.",
+            "I'll open {{object}} inside Rihab Makkah.",
             "Ready. Let's open the details for {{object}}."
           ]
         },

@@ -1,4 +1,4 @@
-# EyeMakkah — media accuracy audit
+# Rihab Makkah — media accuracy audit
 
 **Branch:** `claude/upbeat-bell-hkmvzy` (the phone app) · **Baseline:** `55482ca`
 **Trigger:** stakeholder report that some images depict Al Madinah or other cities instead of Makkah.
@@ -49,7 +49,7 @@
 - **`makkah_jabal_nour`**: Jabal al-Nour, Wikimedia Commons, Selami Akceylan, CC BY 3.0. Verified by the summit profile and the pilgrim path to Hira.
 - Four generic coffee photographs (Open Images, CC BY 2.0, authors recorded).
 
-**Root fixes in `EyeMakkah-app.jsx`:**
+**Root fixes in `RihabMakkah-app.jsx`:**
 1. **Pools hold only safe imagery:**
    - non-place generic subjects: dishes, coffee, crafts, books, a hotel room
    - verified Makkah landmarks, for city-level content only (the Haram, Abraj Al Bait, the skyline)

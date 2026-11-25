@@ -1,6 +1,6 @@
 > **STATUS:** Upcoming transformation guidance — not a description of the current live version.
 
-# EyeMakkah — Visual Design System
+# Rihab Makkah — Visual Design System
 
 ## Product feeling
 

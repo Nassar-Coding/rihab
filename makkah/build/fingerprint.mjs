@@ -1,6 +1,6 @@
 /* Cache-safe asset names for the drag-and-drop package.
 
-   Browsers that visited an early EyeMakkah deployment were told to keep `/app.js` for a
+   Browsers that visited an early Rihab Makkah deployment were told to keep `/app.js` for a
    year without asking again (`immutable`). Because the file kept the same name, those
    browsers went on running the old app after every redeploy, while a fresh (incognito)
    window loaded the new one. The fix is to never reuse an asset URL for new content:
@@ -42,8 +42,8 @@ export function fingerprint(dir) {
   html = html
     .replace(/<script src="\.\/app(?:\.[0-9a-f]{10})?\.js"><\/script>/, `<script src="./${app}"></script>`)
     .replace(/<script src="\.\/config\.js(?:\?v=[0-9a-f]{10})?"><\/script>/, `<script src="./config.js?v=${configVersion}"></script>`)
-    .replace(/<meta name="eyemakkah-build" content="[^"]*"\/>\n?/, "")
-    .replace(/<meta charset="utf-8"\/>\n/, `<meta charset="utf-8"/>\n<meta name="eyemakkah-build" content="${version}"/>\n`);
+    .replace(/<meta name="rihab-makkah-build" content="[^"]*"\/>\n?/, "")
+    .replace(/<meta charset="utf-8"\/>\n/, `<meta charset="utf-8"/>\n<meta name="rihab-makkah-build" content="${version}"/>\n`);
   if (!html.includes(`src="./${app}"`) || !html.includes(`config.js?v=${configVersion}`)) throw new Error("index.html: script tags not found");
   if (html !== before) writeFileSync(indexPath, html);
   return { app, version, configVersion, bytes: code.length };

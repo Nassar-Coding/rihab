@@ -1,6 +1,6 @@
-# Offers layer and the EyeMakkah Assistant
+# Offers layer and the Rihab Makkah Assistant
 
-Both live in `EyeMakkah-app.jsx`, read the same inventory and user state as every other
+Both live in `RihabMakkah-app.jsx`, read the same inventory and user state as every other
 screen, and run entirely on the device. No LLM, backend or external API is connected, and
 the assistant says so if asked.
 
@@ -22,7 +22,7 @@ A record holds the following fields:
 - `pct` or `now`/`was`
 - `badge`, `title`, `desc` and `terms`, each in AR/EN
 - `incl` (package contents) and `who` (eligibility)
-- `exclusive` (حصري عبر EyeMakkah) and `when` (morning / evening / weekend)
+- `exclusive` (حصري عبر Rihab Makkah) and `when` (morning / evening / weekend)
 - `start`/`end` validity and `redeem` (booking / venue / code)
 - `source: "prototype"`
 
@@ -39,7 +39,7 @@ always has offers running.
 - 4 culture tickets
 - 6 markets and 5 services
 
-By type there are 28 percentage discounts, 14 packages, 12 bundles, 8 special prices and 2 fixed-value offers. 14 are EyeMakkah-exclusive.
+By type there are 28 percentage discounts, 14 packages, 12 bundles, 8 special prices and 2 fixed-value offers. 14 are Rihab Makkah-exclusive.
 
 **Surfaces:**
 
@@ -58,7 +58,7 @@ Using an offer never changes plan state beyond the existing reducer actions. Boo
 
 **Source of truth**
 
-The Agent Bank lives in `assets/agent/eyemakkah_app_agent_bank_0{1..4}_*.json`, which holds:
+The Agent Bank lives in `assets/agent/rihab_makkah_app_agent_bank_0{1..4}_*.json`, which holds:
 - 150 intents with 2,123 AR/EN example utterances
 - keywords, response variants and required context
 - follow-up routing, confidence thresholds and contextual suggestions
@@ -106,7 +106,7 @@ Each action dispatches the app's own reducer actions and guards what each one me
 
 **UI**
 - It is entered from the Home assistant card: «خصّص يومي» sends «رتب لي يومي», and «اسأل» opens an empty chat. Search also offers «اسأل المساعد: …».
-- There is one input («اسأل EyeMakkah...»), with 0–2 contextual suggestions from the bank. It never shows a question grid, and the Intent Bank is never displayed.
+- There is one input («اسأل Rihab Makkah...»), with 0–2 contextual suggestions from the bank. It never shows a question grid, and the Intent Bank is never displayed.
 - There is no fifth tab and no floating bubble. The bottom nav hides on this screen, as it does on search and decision pages.
 
 ## Limits (honest)
