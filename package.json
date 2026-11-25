@@ -1,0 +1,19 @@
+{
+  "name": "rihab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rihab (رحاب) — one platform for Makkah and Madinah: a Rihab sign-in, a city picker, and each city's app in its own identity.",
+  "type": "module",
+  "scripts": {
+    "build": "node build/build.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^0.446.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "playwright": "^1.63.0"
+  }
+}

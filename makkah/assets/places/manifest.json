@@ -1,0 +1,1118 @@
+{
+ "_about": "Place and brand visuals supplied by the EyeMakkah project owner (EyeMakkah_Verified_Assets.zip, 5 Oct 2026). One asset per brand or place; `ids` are the inventory records that use it (every branch of a brand). kind: photo = photographic image, logo = brand mark shown on a plain surface. Built by scripts/place-assets-build.py.",
+ "abraj_al_bait_mall": {
+  "kind": "photo",
+  "ar": "مجمع أبراج البيت التجاري",
+  "en": "Abraj Al Bait Mall",
+  "ids": [
+   "v-abraj-al-bait-mall-clock-tower"
+  ],
+  "lo": true,
+  "w": 638,
+  "h": 480
+ },
+ "abu_zaid_restaurant": {
+  "kind": "photo",
+  "ar": "مطعم أبو زيد",
+  "en": "Abu Zaid Restaurant",
+  "ids": [
+   "v-abu-zaid-restaurant-al-sharai"
+  ],
+  "lo": true,
+  "w": 447,
+  "h": 447
+ },
+ "ain_zubaidah": {
+  "kind": "photo",
+  "ar": "خاصرة عين زبيدة",
+  "en": "Khasirat Ain Zubaidah",
+  "ids": [
+   "ain-zubaydah"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 542
+ },
+ "al_bukhari_al_mumtaz": {
+  "kind": "logo",
+  "ar": "البخاري الممتاز",
+  "en": "Al Bukhari Al Mumtaz",
+  "ids": [
+   "v-al-bukhari-al-mumtaz-al-shawqiyah"
+  ],
+  "bg": "#FFFFFF",
+  "w": 231,
+  "h": 239
+ },
+ "al_diyafa_mall": {
+  "kind": "photo",
+  "ar": "الضيافة مول",
+  "en": "Al Diyafa Mall",
+  "ids": [
+   "v-al-diyafa-mall-souk-al-diyafa"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 809
+ },
+ "al_hijaz_mall": {
+  "kind": "photo",
+  "ar": "الحجاز مول",
+  "en": "Al Hijaz Mall",
+  "ids": [
+   "v-al-hijaz-mall"
+  ],
+  "lo": true,
+  "w": 550,
+  "h": 315
+ },
+ "al_hudaybiyah": {
+  "kind": "photo",
+  "ar": "الحديبية",
+  "en": "Al-Hudaybiyah",
+  "ids": [
+   "hudaybiyah"
+  ],
+  "lo": false,
+  "w": 768,
+  "h": 544
+ },
+ "al_ijabah_mosque": {
+  "kind": "photo",
+  "ar": "مسجد الإجابة",
+  "en": "Al-Ijabah Mosque",
+  "ids": [
+   "v-al-ijabah-mosque"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 462
+ },
+ "al_misfalah_market": {
+  "kind": "photo",
+  "ar": "سوق المسفلة",
+  "en": "Al-Misfalah Market",
+  "ids": [
+   "v-al-misfalah-market"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "al_misfalah_park": {
+  "kind": "photo",
+  "ar": "حديقة المسفلة (بركة ماجد)",
+  "en": "Al-Misfalah Park (Birkat Majid)",
+  "ids": [
+   "v-al-misfalah-park-birkat-majid"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 546
+ },
+ "al_qusoor_sweets": {
+  "kind": "logo",
+  "ar": "حلويات القصور",
+  "en": "Al Qusoor Sweets",
+  "ids": [
+   "v-al-qusoor-sweets-al-awali",
+   "v-al-qusoor-sweets-al-shawqiyah"
+  ],
+  "bg": "#F6F6F6",
+  "w": 328,
+  "h": 418
+ },
+ "al_rawaq_pakistani_restaurant": {
+  "kind": "logo",
+  "ar": "مطعم الرواق الباكستاني",
+  "en": "Al Rawaq Pakistani Restaurant",
+  "ids": [
+   "v-al-rawaq-pakistani-restaurant"
+  ],
+  "bg": "#FFFFFF",
+  "w": 672,
+  "h": 478
+ },
+ "al_romansiah": {
+  "kind": "photo",
+  "ar": "الرومانسية",
+  "en": "Al Romansiah",
+  "ids": [
+   "v-al-romansiah-al-aziziyah",
+   "v-al-romansiah-al-shawqiyah",
+   "v-al-romansiah-al-shubaikah"
+  ],
+  "lo": true,
+  "w": 638,
+  "h": 480
+ },
+ "al_rushd_bookstore": {
+  "kind": "logo",
+  "ar": "مكتبة الرشد",
+  "en": "Al-Rushd Bookstore",
+  "ids": [
+   "v-al-rushd-bookstore-makkah"
+  ],
+  "bg": "#FBF9F4",
+  "w": 346,
+  "h": 193
+ },
+ "al_saraya_mall": {
+  "kind": "photo",
+  "ar": "السرايا مول",
+  "en": "Al Saraya Mall",
+  "ids": [
+   "v-al-saraya-mall"
+  ],
+  "lo": false,
+  "w": 760,
+  "h": 570
+ },
+ "al_taneem_mosque": {
+  "kind": "photo",
+  "ar": "مسجد التنعيم (مسجد السيدة عائشة)",
+  "en": "Al-Tan'eem Mosque (Masjid Aisha)",
+  "ids": [
+   "v-al-taneem-mosque-masjid-aisha"
+  ],
+  "lo": false,
+  "w": 800,
+  "h": 565
+ },
+ "al_tazaj": {
+  "kind": "logo",
+  "ar": "الطازج",
+  "en": "Al Tazaj",
+  "ids": [
+   "v-al-tazaj-al-awali",
+   "v-al-tazaj-ar-rusayfah",
+   "v-al-tazaj-al-sharai"
+  ],
+  "bg": "#FFFFFF",
+  "w": 592,
+  "h": 421
+ },
+ "albaik": {
+  "kind": "logo",
+  "ar": "البيك",
+  "en": "ALBAIK",
+  "ids": [
+   "v-albaik-al-aziziyah",
+   "v-albaik-al-shawqiyah",
+   "v-albaik-jabal-omar",
+   "v-albaik-al-zahir",
+   "v-albaik-al-kakiyah",
+   "v-albaik-ar-rusayfah"
+  ],
+  "bg": "#FFFFFF",
+  "w": 220,
+  "h": 251
+ },
+ "arak_park": {
+  "kind": "photo",
+  "ar": "حديقة الأراك",
+  "en": "Arak Park",
+  "ids": [
+   "v-arak-park-al-husayniyah-park"
+  ],
+  "lo": true,
+  "w": 615,
+  "h": 820
+ },
+ "arc_cafe": {
+  "kind": "logo",
+  "ar": "أرك كافيه",
+  "en": "ARC Café",
+  "ids": [
+   "v-arc-cafe"
+  ],
+  "bg": "#FBF9F4",
+  "w": 594,
+  "h": 246
+ },
+ "ashraf_restaurant_and_grills": {
+  "kind": "logo",
+  "ar": "مطعم ومشويات أشرف",
+  "en": "Ashraf Restaurant & Grills",
+  "ids": [
+   "v-ashraf-restaurant-grills"
+  ],
+  "bg": "#1F2321",
+  "w": 591,
+  "h": 600
+ },
+ "asmak_al_naseem": {
+  "kind": "photo",
+  "ar": "أسماك النسيم",
+  "en": "Asmak Al Naseem",
+  "ids": [
+   "v-asmak-al-naseem",
+   "v-asmak-al-naseem-al-sharai-branch"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "asmak_al_nujoom": {
+  "kind": "photo",
+  "ar": "مطعم أسماك النجوم",
+  "en": "Asmak Al Nujoom",
+  "ids": [
+   "v-asmak-al-nujoom"
+  ],
+  "lo": true,
+  "w": 615,
+  "h": 820
+ },
+ "asmak_al_sayadiah": {
+  "kind": "photo",
+  "ar": "أسماك الصيادية",
+  "en": "Asmak Al Sayadiah",
+  "ids": [
+   "v-asmak-al-sayadiah-al-awali"
+  ],
+  "lo": true,
+  "w": 426,
+  "h": 240
+ },
+ "barns": {
+  "kind": "logo",
+  "ar": "بارنز",
+  "en": "Barn's",
+  "ids": [
+   "v-barns-aziziyah",
+   "v-barns-al-kakiyah",
+   "v-barns-al-jad-al-hijrah"
+  ],
+  "bg": "#FBF9F4",
+  "w": 600,
+  "h": 362
+ },
+ "batha_quraish_walkway": {
+  "kind": "photo",
+  "ar": "ممشى بطحاء قريش",
+  "en": "Batha Quraish Walkway",
+  "ids": [
+   "v-batha-quraish-walkway"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 494
+ },
+ "bilyoun_seafood_restaurant": {
+  "kind": "logo",
+  "ar": "مطعم بليون للمأكولات البحرية",
+  "en": "Bilyoun Seafood Restaurant",
+  "ids": [
+   "v-bilyoun-seafood-restaurant"
+  ],
+  "bg": "#FFFFFF",
+  "w": 444,
+  "h": 294
+ },
+ "bin_afif_restaurant": {
+  "kind": "photo",
+  "ar": "مطعم بن عفيف",
+  "en": "Bin Afif Restaurant",
+  "ids": [
+   "v-bin-afif-restaurant"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "bindawood": {
+  "kind": "logo",
+  "ar": "بن داود",
+  "en": "BinDawood",
+  "ids": [
+   "v-bindawood-aziziyah",
+   "v-bindawood-al-awali",
+   "v-bindawood-hypermarket-al-kakiyah",
+   "v-bindawood-abraj-al-bait",
+   "v-bindawood-hypermarket-al-shisha"
+  ],
+  "bg": "#FFFFFF",
+  "w": 672,
+  "h": 253
+ },
+ "brew92": {
+  "kind": "photo",
+  "ar": "برو 92",
+  "en": "Brew92",
+  "ids": [
+   "v-brew92-clock-tower",
+   "v-brew92-makkah-company"
+  ],
+  "lo": true,
+  "w": 447,
+  "h": 447
+ },
+ "broast_al_farooj": {
+  "kind": "photo",
+  "ar": "بروست الفروج",
+  "en": "Broast Al Farooj",
+  "ids": [
+   "v-broast-al-farooj-batha-quraish"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "camel_step": {
+  "kind": "photo",
+  "ar": "خطوة جمل",
+  "en": "Camel Step",
+  "ids": [
+   "v-camel-step-jabal-omar"
+  ],
+  "lo": true,
+  "w": 388,
+  "h": 515
+ },
+ "clock_tower_museum": {
+  "kind": "photo",
+  "ar": "متحف برج الساعة",
+  "en": "Clock Tower Museum",
+  "ids": [
+   "clock-museum"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "costa_coffee": {
+  "kind": "logo",
+  "ar": "كوستا كوفي",
+  "en": "Costa Coffee",
+  "ids": [
+   "v-costa-coffee-al-diyafa-mall"
+  ],
+  "bg": "#FFFFFF",
+  "w": 480,
+  "h": 475
+ },
+ "danube": {
+  "kind": "logo",
+  "ar": "الدانوب",
+  "en": "Danube",
+  "ids": [
+   "v-danube-dan-plaza-al-awali"
+  ],
+  "bg": "#FFFFFF",
+  "w": 672,
+  "h": 382
+ },
+ "deep_fries": {
+  "kind": "logo",
+  "ar": "ديب فرايز",
+  "en": "Deep Fries",
+  "ids": [
+   "v-deep-fries"
+  ],
+  "bg": "#FBF9F4",
+  "w": 600,
+  "h": 454
+ },
+ "diyar_al_majd_restaurants": {
+  "kind": "logo",
+  "ar": "مطاعم ديار المجد",
+  "en": "Diyar Al Majd Restaurants",
+  "ids": [
+   "v-diyar-al-majd-restaurants"
+  ],
+  "bg": "#FFFFFF",
+  "w": 672,
+  "h": 569
+ },
+ "dose_cafe": {
+  "kind": "logo",
+  "ar": "دوز كافيه",
+  "en": "Dose Café",
+  "ids": [
+   "v-dose-cafe-al-awali"
+  ],
+  "bg": "#FBF9F4",
+  "w": 584,
+  "h": 372
+ },
+ "dunkin": {
+  "kind": "logo",
+  "ar": "دانكن",
+  "en": "Dunkin’",
+  "ids": [
+   "v-dunkin-al-awali"
+  ],
+  "bg": "#FFFFFF",
+  "w": 516,
+  "h": 474
+ },
+ "fakhr_al_bihar": {
+  "kind": "photo",
+  "ar": "مطعم فخر البحار",
+  "en": "Fakhr Al Bihar",
+  "ids": [
+   "v-fakhr-al-bihar"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "falafil_wafita": {
+  "kind": "logo",
+  "ar": "فلافل وافيتا",
+  "en": "Falafil Wafita",
+  "ids": [
+   "v-falafil-wafita"
+  ],
+  "bg": "#F7F7F7",
+  "w": 672,
+  "h": 533
+ },
+ "fire_grill": {
+  "kind": "logo",
+  "ar": "فاير جريل",
+  "en": "Fire Grill",
+  "ids": [
+   "v-fire-grill"
+  ],
+  "bg": "#000000",
+  "w": 672,
+  "h": 378
+ },
+ "foul_ibn_mansi": {
+  "kind": "photo",
+  "ar": "فول ابن منسي",
+  "en": "Foul Ibn Mansi",
+  "ids": [
+   "v-foul-ibn-mansi-al-kakiyah"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "foul_taiba_al_shaabi": {
+  "kind": "photo",
+  "ar": "مطعم فول طيبة الشعبي",
+  "en": "Foul Taiba Al Shaabi",
+  "ids": [
+   "v-foul-taiba-al-shaabi"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "grand_mosque_library": {
+  "kind": "photo",
+  "ar": "مكتبة المسجد الحرام",
+  "en": "Grand Mosque Library",
+  "ids": [
+   "v-grand-mosque-library-maktabat-al-masjid-al-haram"
+  ],
+  "lo": true,
+  "w": 422,
+  "h": 473
+ },
+ "half_million": {
+  "kind": "photo",
+  "ar": "هاف مليون",
+  "en": "Half Million",
+  "ids": [
+   "v-half-million-al-sharaie"
+  ],
+  "lo": true,
+  "w": 447,
+  "h": 447
+ },
+ "haramain_railway_makkah_station": {
+  "kind": "photo",
+  "ar": "محطة قطار الحرمين السريع — مكة المكرمة",
+  "en": "Haramain High Speed Railway — Makkah Station",
+  "ids": [
+   "v-haramain-high-speed-railway-makkah-station"
+  ],
+  "lo": true,
+  "w": 590,
+  "h": 338
+ },
+ "harman": {
+  "kind": "logo",
+  "ar": "هرمان",
+  "en": "Harman",
+  "ids": [
+   "v-harman-al-shawqiyah",
+   "v-harman-al-hijrah"
+  ],
+  "bg": "#FBF9F4",
+  "w": 575,
+  "h": 600
+ },
+ "hashi_pasha": {
+  "kind": "logo",
+  "ar": "حاشي باشا",
+  "en": "Hashi Pasha",
+  "ids": [
+   "v-hashi-pasha-al-shawqiyah",
+   "v-hashi-pasha-batha-quraish"
+  ],
+  "bg": "#FFFFFF",
+  "w": 457,
+  "h": 451
+ },
+ "heraa_restaurants_and_kitchens": {
+  "kind": "photo",
+  "ar": "مطاعم ومطابخ حراء",
+  "en": "Heraa Restaurants & Kitchens",
+  "ids": [
+   "v-heraa-restaurants-kitchens"
+  ],
+  "lo": true,
+  "w": 615,
+  "h": 820
+ },
+ "hira_cultural_district": {
+  "kind": "photo",
+  "ar": "حي حراء الثقافي",
+  "en": "Hira Cultural District",
+  "ids": [
+   "hira"
+  ],
+  "lo": true,
+  "w": 515,
+  "h": 388
+ },
+ "holy_quran_museum": {
+  "kind": "photo",
+  "ar": "متحف القرآن الكريم",
+  "en": "Holy Quran Museum",
+  "ids": [
+   "v-holy-quran-museum"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "indonesia_restaurant": {
+  "kind": "logo",
+  "ar": "مطعم إندونيسيا",
+  "en": "Indonesia Restaurant",
+  "ids": [
+   "v-indonesia-restaurant-al-misfalah"
+  ],
+  "bg": "#FFFFFF",
+  "w": 672,
+  "h": 555
+ },
+ "jabal_thawr": {
+  "kind": "photo",
+  "ar": "جبل ثور",
+  "en": "Jabal Thawr",
+  "ids": [
+   "jabal-thawr"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 434
+ },
+ "jan_burger": {
+  "kind": "logo",
+  "ar": "جان برجر",
+  "en": "Jan Burger",
+  "ids": [
+   "v-jan-burger-jabal-omar"
+  ],
+  "bg": "#1F2321",
+  "w": 600,
+  "h": 600
+ },
+ "jarir": {
+  "kind": "logo",
+  "ar": "مكتبة جرير",
+  "en": "Jarir Bookstore",
+  "ids": [
+   "v-jarir-bookstore-al-awali",
+   "v-jarir-bookstore-al-adel",
+   "v-jarir-bookstore-al-hijaz-mall"
+  ],
+  "bg": "#FFFFFF",
+  "w": 427,
+  "h": 104
+ },
+ "joint": {
+  "kind": "photo",
+  "ar": "مطعم جوينت",
+  "en": "Joint",
+  "ids": [
+   "v-joint-al-tanim"
+  ],
+  "lo": true,
+  "w": 615,
+  "h": 820
+ },
+ "kabeebat_ul_falaq": {
+  "kind": "photo",
+  "ar": "كبيبات الفلق",
+  "en": "Kabeebat Ul Falaq",
+  "ids": [
+   "v-kabeebat-ul-falaq-al-hujun"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "king_abdullah_park": {
+  "kind": "photo",
+  "ar": "حديقة الملك عبدالله",
+  "en": "King Abdullah Park",
+  "ids": [
+   "v-king-abdullah-park"
+  ],
+  "lo": false,
+  "w": 720,
+  "h": 539
+ },
+ "king_fahd_housing_walkway": {
+  "kind": "photo",
+  "ar": "ممشى إسكان الملك فهد",
+  "en": "King Fahd Housing Walkway",
+  "ids": [
+   "v-king-fahd-housing-walkway"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 546
+ },
+ "kiswah_complex": {
+  "kind": "photo",
+  "ar": "مجمع الملك عبدالعزيز لكسوة الكعبة المشرفة",
+  "en": "King Abdulaziz Complex for the Kaaba Kiswah",
+  "ids": [
+   "kiswa-complex"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 513
+ },
+ "koshary_el_tahrir": {
+  "kind": "logo",
+  "ar": "كشري التحرير",
+  "en": "Koshary El Tahrir",
+  "ids": [
+   "v-koshary-el-tahrir-makkah"
+  ],
+  "bg": "#023919",
+  "w": 667,
+  "h": 672
+ },
+ "kudu": {
+  "kind": "logo",
+  "ar": "كودو",
+  "en": "Kudu",
+  "ids": [
+   "v-kudu-al-shawqiyah",
+   "v-kudu-makkah-mall"
+  ],
+  "bg": "#1F2321",
+  "w": 600,
+  "h": 93
+ },
+ "lahza_kaif_coffee": {
+  "kind": "logo",
+  "ar": "مقهى لحظة كيف",
+  "en": "Lahza Kaif Coffee",
+  "ids": [
+   "v-lahza-kaif-coffee"
+  ],
+  "bg": "#FBF9F4",
+  "w": 329,
+  "h": 600
+ },
+ "mado": {
+  "kind": "photo",
+  "ar": "مادو",
+  "en": "MADO",
+  "ids": [
+   "v-mado-jabal-omar"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "makkah_mall": {
+  "kind": "photo",
+  "ar": "مكة مول",
+  "en": "Makkah Mall",
+  "ids": [
+   "v-makkah-mall"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 514
+ },
+ "makkah_museum": {
+  "kind": "photo",
+  "ar": "متحف مكة المكرمة للتراث والحضارة",
+  "en": "Makkah Museum of Heritage and Civilisation",
+  "ids": [
+   "makkah-museum"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "makkah_public_library": {
+  "kind": "photo",
+  "ar": "مكتبة مكة المكرمة",
+  "en": "Makkah Public Library",
+  "ids": [
+   "makkah-library"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 542
+ },
+ "malaysia_food_restaurant": {
+  "kind": "photo",
+  "ar": "مطعم مأكولات ماليزيا",
+  "en": "Malaysia Food Restaurant",
+  "ids": [
+   "v-malaysia-food-restaurant-al-hijrah-branch"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "masjid_al_jinn": {
+  "kind": "photo",
+  "ar": "مسجد الجن",
+  "en": "Masjid al-Jinn",
+  "ids": [
+   "v-masjid-al-jinn"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 546
+ },
+ "moroccan_taste": {
+  "kind": "photo",
+  "ar": "المذاق المغربي",
+  "en": "Moroccan Taste",
+  "ids": [
+   "v-moroccan-taste-al-shawqiyah"
+  ],
+  "lo": true,
+  "w": 554,
+  "h": 554
+ },
+ "museum_of_the_prophets_biography": {
+  "kind": "photo",
+  "ar": "المعرض والمتحف الدولي للسيرة النبوية والحضارة الإسلامية",
+  "en": "International Fair and Museum of the Prophet's Biography and Islamic Civilization",
+  "ids": [
+   "v-international-fair-and-museum-of-the-prophets-bi"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 656
+ },
+ "mutabbaq_al_sindi": {
+  "kind": "photo",
+  "ar": "مطبق السندي",
+  "en": "Mutabbaq Al Sindi",
+  "ids": [
+   "v-mutabbaq-al-sindi"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "neama_bakeries_and_sweets": {
+  "kind": "logo",
+  "ar": "مخابز وحلويات نعمة",
+  "en": "Neama Bakeries & Sweets",
+  "ids": [
+   "v-neama-bakeries-sweets-aziziyah"
+  ],
+  "bg": "#FFFFFF",
+  "w": 593,
+  "h": 593
+ },
+ "panda": {
+  "kind": "logo",
+  "ar": "بنده",
+  "en": "Panda",
+  "ids": [
+   "v-hyper-panda-al-awali",
+   "v-hyper-panda-al-kakiyah",
+   "v-panda-batha-quraish"
+  ],
+  "bg": "#FFFFFF",
+  "w": 586,
+  "h": 389
+ },
+ "papa_smurf": {
+  "kind": "photo",
+  "ar": "بابا سنفور",
+  "en": "Papa Smurf",
+  "ids": [
+   "v-papa-smurf-al-sharai"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "rawames_restaurants_and_kitchens": {
+  "kind": "photo",
+  "ar": "مطاعم ومطابخ روامس",
+  "en": "Rawames Restaurants & Kitchens",
+  "ids": [
+   "v-rawames-restaurants-kitchens"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "relish": {
+  "kind": "photo",
+  "ar": "ريليش",
+  "en": "Relish",
+  "ids": [
+   "v-relish-joy-of-taste-al-kakiyah"
+  ],
+  "lo": true,
+  "w": 408,
+  "h": 408
+ },
+ "saadeddin_sweets": {
+  "kind": "photo",
+  "ar": "حلويات سعد الدين",
+  "en": "Saadeddin Sweets",
+  "ids": [
+   "v-saadeddin-sweets-aziziyah"
+  ],
+  "lo": true,
+  "w": 600,
+  "h": 512
+ },
+ "sayd_al_bahr_fish": {
+  "kind": "photo",
+  "ar": "صيد البحر للأسماك",
+  "en": "Sayd Al Bahr Fish",
+  "ids": [
+   "v-sayd-al-bahr-fish"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "shawarma_al_andalus": {
+  "kind": "logo",
+  "ar": "شاورما الأندلس",
+  "en": "Shawarma Al Andalus",
+  "ids": [
+   "v-shawarma-al-andalus"
+  ],
+  "bg": "#08080A",
+  "w": 405,
+  "h": 228
+ },
+ "simit_sarayi": {
+  "kind": "logo",
+  "ar": "سميت سراي",
+  "en": "Simit Sarayi",
+  "ids": [
+   "v-simit-sarayi-ajyad"
+  ],
+  "bg": "#FBF9F4",
+  "w": 600,
+  "h": 147
+ },
+ "souq_al_halaqa": {
+  "kind": "photo",
+  "ar": "سوق الحلقة (حلقة الكعكية)",
+  "en": "Souq Al-Halaqa",
+  "ids": [
+   "v-souq-al-halaqa-kakiyah-wholesale-market"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "sulala_cafe": {
+  "kind": "photo",
+  "ar": "كافيه سلالة",
+  "en": "Sulala Café",
+  "ids": [
+   "v-sulala-cafe-batha-quraish"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "tayibat_al_umawi": {
+  "kind": "photo",
+  "ar": "طيبات الأموي",
+  "en": "Tayibat Al Umawi",
+  "ids": [
+   "v-tayibat-al-umawi-al-jamiah"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "tayyibah_restaurant": {
+  "kind": "photo",
+  "ar": "مطعم طيبة",
+  "en": "Tayyibah Restaurant",
+  "ids": [
+   "v-tayyibah-restaurant-al-misfalah"
+  ],
+  "lo": true,
+  "w": 461,
+  "h": 820
+ },
+ "thabat_cafe": {
+  "kind": "logo",
+  "ar": "مقهى ثبات",
+  "en": "Thabat Café",
+  "ids": [
+   "v-thabat-cafe"
+  ],
+  "bg": "#323431",
+  "w": 672,
+  "h": 211
+ },
+ "the_coffee_address": {
+  "kind": "logo",
+  "ar": "عنوان القهوة",
+  "en": "The Coffee Address",
+  "ids": [
+   "v-the-coffee-address-jabal-al-nour"
+  ],
+  "bg": "#FBF9F4",
+  "w": 400,
+  "h": 400
+ },
+ "the_meating": {
+  "kind": "photo",
+  "ar": "ذا ميتنق",
+  "en": "The Meating",
+  "ids": [
+   "v-the-meating"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 535
+ },
+ "the_revelation_exhibition": {
+  "kind": "photo",
+  "ar": "معرض الوحي",
+  "en": "The Revelation Exhibition",
+  "ids": [
+   "x-revelation"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 600
+ },
+ "tim_hortons": {
+  "kind": "logo",
+  "ar": "تيم هورتنز",
+  "en": "Tim Hortons",
+  "ids": [
+   "v-tim-hortons-an-naseem",
+   "v-tim-hortons-abraj-al-bait"
+  ],
+  "bg": "#FBF9F4",
+  "w": 600,
+  "h": 121
+ },
+ "transit_cafe": {
+  "kind": "logo",
+  "ar": "ترانزيت كافيه",
+  "en": "Transit Café",
+  "ids": [
+   "v-transit-cafe"
+  ],
+  "bg": "#CF8544",
+  "w": 499,
+  "h": 499
+ },
+ "turkish_almazaq": {
+  "kind": "photo",
+  "ar": "مطعم المذاق التركي",
+  "en": "Turkish Almazaq (Turkish Taste)",
+  "ids": [
+   "v-turkish-almazaq-turkish-taste-al-awali"
+  ],
+  "lo": true,
+  "w": 447,
+  "h": 447
+ },
+ "two_holy_mosques_architecture_exhibition": {
+  "kind": "photo",
+  "ar": "معرض عمارة الحرمين الشريفين",
+  "en": "Exhibition of the Two Holy Mosques' Architecture",
+  "ids": [
+   "haramain-arch"
+  ],
+  "lo": true,
+  "w": 259,
+  "h": 194
+ },
+ "uncle_fluffy": {
+  "kind": "logo",
+  "ar": "أنكل فلافي",
+  "en": "Uncle Fluffy",
+  "ids": [
+   "v-uncle-fluffy-an-nuzhah"
+  ],
+  "bg": "#1F2321",
+  "w": 293,
+  "h": 64
+ },
+ "way_pizza_and_pasta": {
+  "kind": "logo",
+  "ar": "واي بيتزا وباستا",
+  "en": "Way Pizza & Pasta",
+  "ids": [
+   "v-way-pizza-pasta-al-sharai"
+  ],
+  "bg": "#FFFFFF",
+  "w": 668,
+  "h": 430
+ },
+ "wister": {
+  "kind": "logo",
+  "ar": "ويستر",
+  "en": "WISTER",
+  "ids": [
+   "v-wister-al-zahir"
+  ],
+  "bg": "#FBF9F4",
+  "w": 399,
+  "h": 90
+ },
+ "zainab_al_hilaliyah_walkway": {
+  "kind": "photo",
+  "ar": "ممشى زينب الهلالية",
+  "en": "Zainab al-Hilaliyah Walkway",
+  "ids": [
+   "v-zainab-al-hilaliyah-walkway"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 545
+ },
+ "zeeka_cafe": {
+  "kind": "logo",
+  "ar": "زيكا كافيه",
+  "en": "Zeeka Café",
+  "ids": [
+   "v-zeeka-cafe-al-zahir"
+  ],
+  "bg": "#FFFFFF",
+  "w": 487,
+  "h": 454
+ }
+}

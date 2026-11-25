@@ -1,0 +1,22 @@
+{
+  "name": "ruhalmadinah",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Ruh Al Madinah — روح المدينة، مجتمع المدينة الرقمي. A product demo for Madinah residents and visitors: one React source file, built into a zero-build Vercel package.",
+  "type": "module",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "check": "node build/build.mjs --check",
+    "sync": "node scripts/i18n-sync.mjs && node scripts/agent-sync.mjs && node scripts/photo-sync.mjs && node scripts/place-sync.mjs",
+    "package": "node scripts/package.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^0.446.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "playwright": "^1.63.0"
+  }
+}

@@ -1,0 +1,52 @@
+Ruh Al Madinah — Missing images
+
+12 of 174 requested assets are omitted. No placeholders are included.
+
+9. Al-Salam Museum — متحف السلام
+Expected file: al_salam_museum.jpg
+Reason: No confidently verified, clean photograph of this museum; renderings and other museums were excluded.
+
+20. Ain Al-Zarqa (Al-Zarqa Spring Channel) — العين الزرقاء
+Expected file: ain_al_zarqa.jpg
+Reason: The verified photograph contains a printed annotation; no clean alternative was verified.
+
+22. Al-Fadeekh Mosque — مسجد الفضيخ
+Expected file: al_fadeekh_mosque.jpg
+Reason: Available verified photographs were watermarked or embedded in text graphics.
+
+59. Al Nakheel — النخيل
+Expected file: al_nakheel.jpg
+Reason: The place name is ambiguous; available photographs could not be confidently tied to the Madinah location.
+
+69. Hamsa Chef / Lahori Hotel — همسة شيف / لاهوري هوتل
+Expected file: hamsa_chef_lahori_hotel.jpg
+Reason: No reliable photograph matching this exact place was identified.
+
+71. Hosni — حسني
+Expected file: hosni.jpg
+Reason: No suitable location photograph was obtained; available results were menu/product images or inaccessible.
+
+78. Shawarma Al Chef — شاورما الشيف
+Expected file: shawarma_al_chef.jpg
+Reason: No photograph could be confidently matched to this exact restaurant.
+
+97. Molten Chocolate Cafe — مولتن شوكليت كافيه
+Expected file: molten_chocolate_cafe.jpg
+Reason: Matching Madinah image URLs were found, but the image host could not be downloaded; other branches were excluded.
+
+102. Al Maktaba Al Asriya (Modern Library) — المكتبة العصرية
+Expected file: al_maktaba_al_asriya.jpg
+Reason: No photograph of a confidently matched Madinah bookstore was found.
+
+115. Thaqafa Library (bookstore) — مكتبة الثقافة
+Expected file: thaqafa_library.jpg
+Reason: No suitable photograph of the named Madinah bookstore was verified.
+
+116. Al-Khalidiyah Park — حديقة الخالدية
+Expected file: al_khalidiyah_park.jpg
+Reason: Verified park photographs were watermarked; unmarked alternatives could not be confidently matched.
+
+129. King Abdulaziz Library, Madinah — مكتبة الملك عبدالعزيز بالمدينة المنورة
+Expected file: king_abdulaziz_library_madinah.jpg
+Reason: Verified photographs of this library carried agency watermarks.
+

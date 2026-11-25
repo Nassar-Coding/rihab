@@ -1,0 +1,1962 @@
+{
+ "_about": "Place photographs and brand logos for Ruh Al Madinah's real places: Madinah photographs and logos collected for the project (assets/madinah/, sources in assets/madinah/SOURCES.csv) and brand logos carried over from the earlier prototype. One asset per brand or place; `ids` are the content-workbook records (PLC-…) that show it — every branch of a brand. kind: photo = photograph, logo = brand mark on a plain surface. Built by scripts/place-assets-build.py.",
+ "44x_specialty_coffee": {
+  "kind": "photo",
+  "ar": "44X للقهوة المختصة",
+  "en": "44X Specialty Coffee",
+  "ids": [
+   "PLC-110"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 820
+ },
+ "abu_bakr_al_siddiq_mosque": {
+  "kind": "photo",
+  "ar": "مسجد أبي بكر الصديق",
+  "en": "Abu Bakr Al-Siddiq Mosque (near the Prophet's Mosque)",
+  "ids": [
+   "PLC-041"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "abu_zaid_restaurant_logo": {
+  "kind": "logo",
+  "ar": "مطعم أبو زيد",
+  "en": "Abu Zaid Restaurant",
+  "ids": [
+   "PLC-016"
+  ],
+  "bg": "#FFFFFF",
+  "w": 672,
+  "h": 366
+ },
+ "al_ansar_club": {
+  "kind": "photo",
+  "ar": "نادي الأنصار",
+  "en": "Al-Ansar Club",
+  "ids": [
+   "PLC-144"
+  ],
+  "lo": true,
+  "w": 600,
+  "h": 400
+ },
+ "al_ansar_hospital": {
+  "kind": "photo",
+  "ar": "مستشفى الأنصار",
+  "en": "Al-Ansar Hospital",
+  "ids": [
+   "PLC-156"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "al_aqiq_valley_walking_trail": {
+  "kind": "photo",
+  "ar": "ممشى وادي العقيق",
+  "en": "Al-Aqiq Valley Walking Trail",
+  "ids": [
+   "PLC-073"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "al_baqi_cemetery": {
+  "kind": "photo",
+  "ar": "بقيع الغرقد",
+  "en": "Al-Baqi' Cemetery (Baqi' Al-Gharqad)",
+  "ids": [
+   "PLC-043"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 513
+ },
+ "al_fath_mosque": {
+  "kind": "photo",
+  "ar": "مسجد الفتح",
+  "en": "Al-Fath Mosque (Upper Mosque)",
+  "ids": [
+   "PLC-045"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "al_ghamama_mosque": {
+  "kind": "photo",
+  "ar": "مسجد الغمامة",
+  "en": "Al-Ghamama Mosque",
+  "ids": [
+   "PLC-046"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "al_hijrah_walking_trail": {
+  "kind": "photo",
+  "ar": "ممشى الهجرة",
+  "en": "Al-Hijrah Walking Trail",
+  "ids": [
+   "PLC-047"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "al_hokair_time_madinah": {
+  "kind": "photo",
+  "ar": "الحكير تايم المدينة",
+  "en": "Al Hokair Time Madinah",
+  "ids": [
+   "PLC-018"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 616
+ },
+ "al_ijabah_mosque": {
+  "kind": "photo",
+  "ar": "مسجد الإجابة",
+  "en": "Al-Ijabah Mosque",
+  "ids": [
+   "PLC-048"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "al_jumuah_mosque": {
+  "kind": "photo",
+  "ar": "مسجد الجمعة",
+  "en": "Al-Jumu'ah Mosque",
+  "ids": [
+   "PLC-049"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "al_madinah_al_munawwarah_research_and_studies_center": {
+  "kind": "photo",
+  "ar": "مركز المدينة المنورة للبحوث والدراسات",
+  "en": "Al-Madinah Al-Munawwarah Research and Studies Center",
+  "ids": [
+   "PLC-149"
+  ],
+  "lo": false,
+  "w": 800,
+  "h": 568
+ },
+ "al_majeedi": {
+  "kind": "photo",
+  "ar": "المجيدي",
+  "en": "Al Majeedi (Millennium Al Aqeeq Hotel)",
+  "ids": [
+   "PLC-079"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 537
+ },
+ "al_manar_mall": {
+  "kind": "photo",
+  "ar": "المنار مول",
+  "en": "Al Manar Mall",
+  "ids": [
+   "PLC-126"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 616
+ },
+ "al_miqat_general_hospital": {
+  "kind": "photo",
+  "ar": "مستشفى الميقات العام",
+  "en": "Al-Miqat General Hospital",
+  "ids": [
+   "PLC-157"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 451
+ },
+ "al_modeef_restaurant": {
+  "kind": "photo",
+  "ar": "المضيف",
+  "en": "Al Modeef Restaurant",
+  "ids": [
+   "PLC-080"
+  ],
+  "lo": false,
+  "w": 800,
+  "h": 600
+ },
+ "al_mustarah_mosque": {
+  "kind": "photo",
+  "ar": "مسجد المستراح",
+  "en": "Al-Mustarah Mosque",
+  "ids": [
+   "PLC-050"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "al_noor_mall": {
+  "kind": "photo",
+  "ar": "النور مول",
+  "en": "Al Noor Mall (Cenomi Al Noor Mall)",
+  "ids": [
+   "PLC-127"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "al_qaswa_walking_trail": {
+  "kind": "photo",
+  "ar": "ممشى القصواء",
+  "en": "Al-Qaswa Walking Trail",
+  "ids": [
+   "PLC-145"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "al_qiblatayn_mosque": {
+  "kind": "photo",
+  "ar": "مسجد القبلتين",
+  "en": "Al-Qiblatayn Mosque",
+  "ids": [
+   "PLC-051"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 820
+ },
+ "al_rashid_mega_mall": {
+  "kind": "photo",
+  "ar": "الراشد ميغا مول",
+  "en": "Al-Rashid Mega Mall",
+  "ids": [
+   "PLC-128"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 616
+ },
+ "al_rayhan_restaurant": {
+  "kind": "photo",
+  "ar": "مطعم الريحان",
+  "en": "Al Rayhan Restaurant",
+  "ids": [
+   "PLC-082"
+  ],
+  "lo": true,
+  "w": 615,
+  "h": 820
+ },
+ "al_rayyan_hotel": {
+  "kind": "photo",
+  "ar": "فندق الريان",
+  "en": "Al Rayyan Hotel (Qiba Road)",
+  "ids": [
+   "PLC-170"
+  ],
+  "lo": false,
+  "w": 767,
+  "h": 575
+ },
+ "al_romansiah_logo": {
+  "kind": "logo",
+  "ar": "الرومانسية",
+  "en": "Al Romansiah",
+  "ids": [
+   "PLC-005"
+  ],
+  "bg": "#FBF9F4",
+  "w": 600,
+  "h": 536
+ },
+ "al_rukn_al_shami_restaurant": {
+  "kind": "photo",
+  "ar": "الركن الشامي",
+  "en": "Al Rukn Al Shami Restaurant",
+  "ids": [
+   "PLC-083"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "al_salam_endowment_hospital": {
+  "kind": "photo",
+  "ar": "مستشفى السلام الوقفي",
+  "en": "Al-Salam Endowment Hospital",
+  "ids": [
+   "PLC-158"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "aletta_cafe": {
+  "kind": "photo",
+  "ar": "أليتا كافيه",
+  "en": "Aletta Cafe",
+  "ids": [
+   "PLC-111"
+  ],
+  "lo": true,
+  "w": 615,
+  "h": 820
+ },
+ "ali_ibn_abi_talib_mosque": {
+  "kind": "photo",
+  "ar": "مسجد علي بن أبي طالب",
+  "en": "Ali ibn Abi Talib Mosque (near the Prophet's Mosque)",
+  "ids": [
+   "PLC-052"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "aliat_al_madinah_farms": {
+  "kind": "photo",
+  "ar": "مزارع عالية المدينة",
+  "en": "Aliat Al-Madinah Farms",
+  "ids": [
+   "PLC-074"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "anwar_al_madinah_movenpick_hotel": {
+  "kind": "photo",
+  "ar": "أنوار المدينة موفنبيك",
+  "en": "Anwar Al Madinah Mövenpick Hotel",
+  "ids": [
+   "PLC-171"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "arabesque_restaurant": {
+  "kind": "photo",
+  "ar": "أرابيسك",
+  "en": "Arabesque Restaurant",
+  "ids": [
+   "PLC-084"
+  ],
+  "lo": false,
+  "w": 677,
+  "h": 570
+ },
+ "as_safiyyah_museum_and_park": {
+  "kind": "photo",
+  "ar": "متحف وبستان الصفية",
+  "en": "As-Safiyyah Museum and Park",
+  "ids": [
+   "PLC-032"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "as_saqiya_mosque": {
+  "kind": "photo",
+  "ar": "مسجد السقيا",
+  "en": "As-Saqiya Mosque",
+  "ids": [
+   "PLC-053"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "atlas_morocco": {
+  "kind": "photo",
+  "ar": "أطلس المغرب",
+  "en": "Atlas Morocco",
+  "ids": [
+   "PLC-085"
+  ],
+  "lo": true,
+  "w": 615,
+  "h": 820
+ },
+ "bab_sanaa_restaurant": {
+  "kind": "photo",
+  "ar": "باب صنعاء",
+  "en": "Bab Sana'a Restaurant",
+  "ids": [
+   "PLC-086"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 666
+ },
+ "bani_haram_mosque": {
+  "kind": "photo",
+  "ar": "مسجد بني حرام",
+  "en": "Bani Haram Mosque",
+  "ids": [
+   "PLC-054"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 513
+ },
+ "bani_unaif_mosque": {
+  "kind": "photo",
+  "ar": "مسجد بني أنيف",
+  "en": "Bani Unaif (Bani Anif) Mosque",
+  "ids": [
+   "PLC-055"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "bilal_market": {
+  "kind": "photo",
+  "ar": "سوق بلال",
+  "en": "Bilal Market",
+  "ids": [
+   "PLC-129"
+  ],
+  "lo": false,
+  "w": 720,
+  "h": 540
+ },
+ "brew92_logo": {
+  "kind": "logo",
+  "ar": "برو 92",
+  "en": "Brew92",
+  "ids": [
+   "PLC-026"
+  ],
+  "bg": "#FFFFFF",
+  "w": 672,
+  "h": 658
+ },
+ "bustan_al_mustazill": {
+  "kind": "photo",
+  "ar": "بستان المستظل",
+  "en": "Bustan Al-Mustazill",
+  "ids": [
+   "PLC-056"
+  ],
+  "lo": false,
+  "w": 674,
+  "h": 446
+ },
+ "central_dates_market": {
+  "kind": "photo",
+  "ar": "سوق التمور المركزي",
+  "en": "Central Dates Market (Souq Al Tumor)",
+  "ids": [
+   "PLC-130"
+  ],
+  "lo": true,
+  "w": 461,
+  "h": 820
+ },
+ "coffee_20gm": {
+  "kind": "photo",
+  "ar": "مقهى عشرين جم",
+  "en": "Coffee 20GM",
+  "ids": [
+   "PLC-112"
+  ],
+  "lo": false,
+  "w": 800,
+  "h": 450
+ },
+ "coffee_selham": {
+  "kind": "photo",
+  "ar": "مقهى سلهم",
+  "en": "Coffee Selham",
+  "ids": [
+   "PLC-113"
+  ],
+  "lo": true,
+  "w": 462,
+  "h": 820
+ },
+ "crowne_plaza_madinah": {
+  "kind": "photo",
+  "ar": "كراون بلازا المدينة",
+  "en": "Crowne Plaza Madinah",
+  "ids": [
+   "PLC-172"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 410
+ },
+ "dar_al_madinah_museum": {
+  "kind": "photo",
+  "ar": "متحف دار المدينة",
+  "en": "Dar Al Madinah Museum",
+  "ids": [
+   "PLC-033"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "dar_al_taqwa_hotel_madinah": {
+  "kind": "photo",
+  "ar": "دار التقوى",
+  "en": "Dar Al Taqwa Hotel Madinah",
+  "ids": [
+   "PLC-173"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 500
+ },
+ "dawoodia_market": {
+  "kind": "photo",
+  "ar": "سوق الداودية",
+  "en": "Dawoodia Market",
+  "ids": [
+   "PLC-131"
+  ],
+  "lo": true,
+  "w": 615,
+  "h": 820
+ },
+ "dhu_al_hulayfah_miqat": {
+  "kind": "photo",
+  "ar": "ميقات ذي الحليفة (أبيار علي)",
+  "en": "Dhu al-Hulayfah Miqat (Abyar Ali)",
+  "ids": [
+   "PLC-057"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 546
+ },
+ "doubletree_by_hilton_madinah_gate": {
+  "kind": "photo",
+  "ar": "دبل تري باي هيلتون بوابة المدينة",
+  "en": "DoubleTree by Hilton Madinah Gate",
+  "ids": [
+   "PLC-174"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 546
+ },
+ "dr_soliman_fakeeh_hospital_madina": {
+  "kind": "photo",
+  "ar": "مستشفى د. سليمان فقيه بالمدينة المنورة",
+  "en": "Dr. Soliman Fakeeh Hospital Madina",
+  "ids": [
+   "PLC-159"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 487
+ },
+ "elaf_al_taqwa_hotel": {
+  "kind": "photo",
+  "ar": "إيلاف التقوى",
+  "en": "Elaf Al Taqwa Hotel",
+  "ids": [
+   "PLC-175"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "elaf_taiba_hotel": {
+  "kind": "photo",
+  "ar": "إيلاف طيبة",
+  "en": "Elaf Taiba Hotel",
+  "ids": [
+   "PLC-176"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "empire_cinemas_al_rashid_mall": {
+  "kind": "photo",
+  "ar": "إمباير سينما (الراشد مول)",
+  "en": "Empire Cinemas - Al Rashid Mall",
+  "ids": [
+   "PLC-140"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 472
+ },
+ "eqamh_etlala_el_quba": {
+  "kind": "photo",
+  "ar": "إقامة إطلالة قباء",
+  "en": "Eqamh Etlala El Quba",
+  "ids": [
+   "PLC-177"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "etruh_cafe": {
+  "kind": "photo",
+  "ar": "كافيه إتروح",
+  "en": "Etruh Cafe",
+  "ids": [
+   "PLC-115"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 820
+ },
+ "fateer_sharqi": {
+  "kind": "photo",
+  "ar": "فطير شرقي",
+  "en": "Fateer Sharqi",
+  "ids": [
+   "PLC-087"
+  ],
+  "lo": true,
+  "w": 589,
+  "h": 820
+ },
+ "food_master": {
+  "kind": "photo",
+  "ar": "فود ماستر",
+  "en": "Food Master",
+  "ids": [
+   "PLC-088"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "fragrance_cafe": {
+  "kind": "photo",
+  "ar": "فراجرانس كافيه",
+  "en": "Fragrance Cafe",
+  "ids": [
+   "PLC-116"
+  ],
+  "lo": true,
+  "w": 400,
+  "h": 398
+ },
+ "frontel_al_harithia_hotel": {
+  "kind": "photo",
+  "ar": "فرونتل الحارثية",
+  "en": "Frontel Al Harithia Hotel",
+  "ids": [
+   "PLC-178"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 383
+ },
+ "ghars_well": {
+  "kind": "photo",
+  "ar": "بئر غرس",
+  "en": "Ghars Well",
+  "ids": [
+   "PLC-058"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "golden_village_cafeteria": {
+  "kind": "photo",
+  "ar": "وجبات القرية الذهبية",
+  "en": "Golden Village Cafeteria",
+  "ids": [
+   "PLC-089"
+  ],
+  "lo": false,
+  "w": 800,
+  "h": 600
+ },
+ "hadramout_kitchen": {
+  "kind": "photo",
+  "ar": "مطبخ حضرموت",
+  "en": "Hadramout Kitchen",
+  "ids": [
+   "PLC-090"
+  ],
+  "lo": false,
+  "w": 800,
+  "h": 450
+ },
+ "hafawah_suites": {
+  "kind": "photo",
+  "ar": "أجنحة حفاوة",
+  "en": "Hafawah Suites",
+  "ids": [
+   "PLC-179"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 546
+ },
+ "half_million_logo": {
+  "kind": "logo",
+  "ar": "هاف مليون",
+  "en": "Half Million",
+  "ids": [
+   "PLC-028"
+  ],
+  "bg": "#FBF9F4",
+  "w": 600,
+  "h": 272
+ },
+ "haramain_high_speed_railway_madinah_station": {
+  "kind": "photo",
+  "ar": "محطة قطار الحرمين السريع — المدينة المنورة",
+  "en": "Haramain High Speed Railway — Madinah Station",
+  "ids": [
+   "PLC-030"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 462
+ },
+ "hardees": {
+  "kind": "photo",
+  "ar": "هارديز",
+  "en": "Hardee's (Madinah)",
+  "ids": [
+   "PLC-092"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "hayat_charity_association_madinah": {
+  "kind": "photo",
+  "ar": "جمعية حياة الخيرية بالمدينة المنورة",
+  "en": "Hayat Charity Association, Madinah",
+  "ids": [
+   "PLC-194"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "hejaz_railway_museum": {
+  "kind": "photo",
+  "ar": "متحف سكة حديد الحجاز (متحف المدينة المنورة)",
+  "en": "Hejaz Railway Museum (Al-Madinah Museum)",
+  "ids": [
+   "PLC-034"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "huda_turk": {
+  "kind": "photo",
+  "ar": "هدى ترك",
+  "en": "Huda Turk",
+  "ids": [
+   "PLC-094"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "hyderabad_house": {
+  "kind": "photo",
+  "ar": "هيدراباد هاوس",
+  "en": "Hyderabad House",
+  "ids": [
+   "PLC-095"
+  ],
+  "lo": true,
+  "w": 615,
+  "h": 820
+ },
+ "intercontinental_dar_al_hijra_madinah": {
+  "kind": "photo",
+  "ar": "إنتركونتيننتال دار الهجرة",
+  "en": "InterContinental Dar Al Hijra Madinah",
+  "ids": [
+   "PLC-180"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "intercontinental_madinah_dar_al_iman": {
+  "kind": "photo",
+  "ar": "إنتركونتيننتال المدينة دار الإيمان",
+  "en": "InterContinental Madinah Dar Al Iman",
+  "ids": [
+   "PLC-181"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 820
+ },
+ "international_fair_and_museum_of_the_prophets_biography_and_islamic_civilisation": {
+  "kind": "photo",
+  "ar": "المعرض والمتحف الدولي للسيرة النبوية والحضارة الإسلامية",
+  "en": "International Fair and Museum of the Prophet's Biography and Islamic Civilisation",
+  "ids": [
+   "PLC-035"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "islamic_university_of_madinah": {
+  "kind": "photo",
+  "ar": "الجامعة الإسلامية بالمدينة المنورة",
+  "en": "Islamic University of Madinah",
+  "ids": [
+   "PLC-150"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "jabal_al_rumah": {
+  "kind": "photo",
+  "ar": "جبل الرماة",
+  "en": "Jabal Al-Rumah (Archers' Hill)",
+  "ids": [
+   "PLC-059"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "jabal_ayr": {
+  "kind": "photo",
+  "ar": "جبل عير",
+  "en": "Jabal Ayr",
+  "ids": [
+   "PLC-075"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "jabal_ohud_garden": {
+  "kind": "photo",
+  "ar": "حديقة جبل أحد",
+  "en": "Jabal Ohud Garden",
+  "ids": [
+   "PLC-141"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "khasamah_coffee": {
+  "kind": "photo",
+  "ar": "خصامة كوفي",
+  "en": "Khasamah Coffee",
+  "ids": [
+   "PLC-117"
+  ],
+  "lo": true,
+  "w": 461,
+  "h": 820
+ },
+ "kiffa": {
+  "kind": "photo",
+  "ar": "كِفّة",
+  "en": "Kiffa",
+  "ids": [
+   "PLC-118"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 783
+ },
+ "king_abdulaziz_complex_for_endowment_libraries": {
+  "kind": "photo",
+  "ar": "مجمع الملك عبدالعزيز للمكتبات الوقفية",
+  "en": "King Abdulaziz Complex for Endowment Libraries",
+  "ids": [
+   "PLC-151"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 570
+ },
+ "king_fahd_central_park": {
+  "kind": "photo",
+  "ar": "حديقة الملك فهد المركزية",
+  "en": "King Fahd Central Park",
+  "ids": [
+   "PLC-142"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "king_fahd_glorious_quran_printing_complex": {
+  "kind": "photo",
+  "ar": "مجمع الملك فهد لطباعة المصحف الشريف",
+  "en": "King Fahd Glorious Quran Printing Complex",
+  "ids": [
+   "PLC-036"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 536
+ },
+ "king_fahd_hospital_madinah": {
+  "kind": "photo",
+  "ar": "مستشفى الملك فهد بالمدينة المنورة",
+  "en": "King Fahd Hospital, Madinah",
+  "ids": [
+   "PLC-160"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "king_salman_medical_city_madinah": {
+  "kind": "photo",
+  "ar": "مدينة الملك سلمان الطبية بالمدينة المنورة",
+  "en": "King Salman Medical City, Madinah",
+  "ids": [
+   "PLC-161"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 531
+ },
+ "lumian_hotel_madinah": {
+  "kind": "photo",
+  "ar": "فندق لوميان",
+  "en": "Lumian Hotel Madinah",
+  "ids": [
+   "PLC-182"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "madina_national_hospital": {
+  "kind": "photo",
+  "ar": "مستشفى المدينة الوطني",
+  "en": "Madina National Hospital",
+  "ids": [
+   "PLC-162"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 474
+ },
+ "madinah_arts_center": {
+  "kind": "photo",
+  "ar": "مركز الفنون بالمدينة المنورة",
+  "en": "Madinah Arts Center",
+  "ids": [
+   "PLC-037"
+  ],
+  "lo": true,
+  "w": 600,
+  "h": 400
+ },
+ "madinah_boulevard": {
+  "kind": "photo",
+  "ar": "بوليفارد المدينة",
+  "en": "Madinah Boulevard",
+  "ids": [
+   "PLC-143"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "madinah_bus": {
+  "kind": "photo",
+  "ar": "حافلات المدينة",
+  "en": "Madinah Bus (public transport)",
+  "ids": [
+   "PLC-163"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "madinah_health_affairs_sawaed_volunteer_programme": {
+  "kind": "photo",
+  "ar": "برنامج سواعد التطوعي - صحة المدينة المنورة",
+  "en": "Madinah Health Affairs 'Sawaed' Volunteer Programme",
+  "ids": [
+   "PLC-195"
+  ],
+  "lo": true,
+  "w": 600,
+  "h": 524
+ },
+ "madinah_hilton": {
+  "kind": "photo",
+  "ar": "هيلتون المدينة المنورة",
+  "en": "Madinah Hilton",
+  "ids": [
+   "PLC-183"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 462
+ },
+ "madinah_hop_on_hop_off_sightseeing_bus": {
+  "kind": "photo",
+  "ar": "حافلة المدينة السياحية (هوب أون هوب أوف)",
+  "en": "Madinah Hop-On Hop-Off Sightseeing Bus",
+  "ids": [
+   "PLC-164"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 512
+ },
+ "madinah_region_municipality": {
+  "kind": "photo",
+  "ar": "أمانة منطقة المدينة المنورة",
+  "en": "Madinah Region Municipality (Amanah)",
+  "ids": [
+   "PLC-165"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "madinah_warehouse_charity_association": {
+  "kind": "photo",
+  "ar": "جمعية مستودع المدينة المنورة الخيري",
+  "en": "Madinah Warehouse Charity Association",
+  "ids": [
+   "PLC-196"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 368
+ },
+ "madiniat_cafe": {
+  "kind": "photo",
+  "ar": "كافيه مدينية",
+  "en": "Madiniat Cafe",
+  "ids": [
+   "PLC-119"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 483
+ },
+ "marriott_executive_apartments_madinah": {
+  "kind": "photo",
+  "ar": "ماريوت إكزكتيف أبارتمنتس المدينة المنورة",
+  "en": "Marriott Executive Apartments Madinah",
+  "ids": [
+   "PLC-184"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 546
+ },
+ "medina_kabsa": {
+  "kind": "photo",
+  "ar": "كبسة المدينة",
+  "en": "Medina Kabsa",
+  "ids": [
+   "PLC-096"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 450
+ },
+ "memaz": {
+  "kind": "photo",
+  "ar": "ميماز",
+  "en": "Memaz",
+  "ids": [
+   "PLC-097"
+  ],
+  "lo": false,
+  "w": 800,
+  "h": 573
+ },
+ "millennium_al_aqeeq_hotel": {
+  "kind": "photo",
+  "ar": "ميلينيوم العقيق",
+  "en": "Millennium Al Aqeeq Hotel",
+  "ids": [
+   "PLC-185"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "millennium_madinah_airport": {
+  "kind": "photo",
+  "ar": "ميلينيوم المدينة المطار",
+  "en": "Millennium Madinah Airport",
+  "ids": [
+   "PLC-186"
+  ],
+  "lo": false,
+  "w": 657,
+  "h": 438
+ },
+ "moroccan_taste_logo": {
+  "kind": "logo",
+  "ar": "المذاق المغربي",
+  "en": "Moroccan Taste",
+  "ids": [
+   "PLC-009"
+  ],
+  "bg": "#FFFFFF",
+  "w": 331,
+  "h": 232
+ },
+ "mount_uhud": {
+  "kind": "photo",
+  "ar": "جبل أحد",
+  "en": "Mount Uhud",
+  "ids": [
+   "PLC-076"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "museum_and_exhibition_of_the_holy_quran": {
+  "kind": "photo",
+  "ar": "معرض ومتحف القرآن الكريم",
+  "en": "Museum and Exhibition of the Holy Quran",
+  "ids": [
+   "PLC-038"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "nabaa_al_imtiyaz_sweets": {
+  "kind": "photo",
+  "ar": "نبع الامتياز للحلويات",
+  "en": "Nabaa Al Imtiyaz Sweets",
+  "ids": [
+   "PLC-098"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "namq_cafe": {
+  "kind": "photo",
+  "ar": "نمق كافيه",
+  "en": "Namq Cafe (Sultanah Gardens Mall)",
+  "ids": [
+   "PLC-121"
+  ],
+  "lo": false,
+  "w": 768,
+  "h": 432
+ },
+ "ohud_club": {
+  "kind": "photo",
+  "ar": "نادي أحد",
+  "en": "Ohud Club",
+  "ids": [
+   "PLC-146"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 546
+ },
+ "ohud_hospital": {
+  "kind": "photo",
+  "ar": "مستشفى أحد",
+  "en": "Ohud Hospital",
+  "ids": [
+   "PLC-166"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "old_bazaar": {
+  "kind": "photo",
+  "ar": "السوق القديم",
+  "en": "Old Bazaar (Souq Al-Qadim)",
+  "ids": [
+   "PLC-134"
+  ],
+  "lo": true,
+  "w": 550,
+  "h": 413
+ },
+ "padel_side": {
+  "kind": "photo",
+  "ar": "بادل سايد",
+  "en": "Padel Side",
+  "ids": [
+   "PLC-147"
+  ],
+  "lo": false,
+  "w": 800,
+  "h": 600
+ },
+ "pakistani_multani_restaurant_rukn_rihab": {
+  "kind": "photo",
+  "ar": "مطعم ركن رحاب الباكستاني الملتاني",
+  "en": "Pakistani Multani Restaurant Rukn Rihab",
+  "ids": [
+   "PLC-099"
+  ],
+  "lo": false,
+  "w": 800,
+  "h": 600
+ },
+ "prince_mohammad_bin_abdulaziz_international_airport": {
+  "kind": "photo",
+  "ar": "مطار الأمير محمد بن عبدالعزيز الدولي",
+  "en": "Prince Mohammad bin Abdulaziz International Airport",
+  "ids": [
+   "PLC-167"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 593
+ },
+ "prince_mohammed_bin_abdulaziz_hospital": {
+  "kind": "photo",
+  "ar": "مستشفى الأمير محمد بن عبدالعزيز (الشؤون الصحية بالحرس الوطني)",
+  "en": "Prince Mohammed bin Abdulaziz Hospital (National Guard Health Affairs)",
+  "ids": [
+   "PLC-168"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 431
+ },
+ "prince_mohammed_bin_abdulaziz_sports_city": {
+  "kind": "photo",
+  "ar": "مدينة الأمير محمد بن عبدالعزيز الرياضية",
+  "en": "Prince Mohammed bin Abdulaziz Sports City (Stadium)",
+  "ids": [
+   "PLC-148"
+  ],
+  "lo": true,
+  "w": 600,
+  "h": 450
+ },
+ "prophets_mosque_library": {
+  "kind": "photo",
+  "ar": "مكتبة المسجد النبوي",
+  "en": "Prophet's Mosque Library",
+  "ids": [
+   "PLC-153"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "prophets_mosque_museum": {
+  "kind": "photo",
+  "ar": "معرض ومتحف عمارة المسجد النبوي",
+  "en": "Prophet's Mosque Museum (Exhibition of the Prophet's Mosque Architecture)",
+  "ids": [
+   "PLC-039"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "prophets_mosque_volunteer_programme": {
+  "kind": "photo",
+  "ar": "برنامج التطوع في المسجد النبوي",
+  "en": "Prophet's Mosque Volunteer Programme",
+  "ids": [
+   "PLC-197"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 546
+ },
+ "pullman_zamzam_madina": {
+  "kind": "photo",
+  "ar": "بولمان زمزم المدينة",
+  "en": "Pullman Zamzam Madina",
+  "ids": [
+   "PLC-187"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 615
+ },
+ "quba_mosque": {
+  "kind": "photo",
+  "ar": "مسجد قباء",
+  "en": "Quba Mosque",
+  "ids": [
+   "PLC-060"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 513
+ },
+ "quba_square": {
+  "kind": "photo",
+  "ar": "ساحة قباء",
+  "en": "Quba Square",
+  "ids": [
+   "PLC-061"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "quba_walking_trail": {
+  "kind": "photo",
+  "ar": "ممشى قباء",
+  "en": "Quba Walking Trail",
+  "ids": [
+   "PLC-062"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "radisson_hotel_madinah": {
+  "kind": "photo",
+  "ar": "راديسون المدينة المنورة",
+  "en": "Radisson Hotel Madinah",
+  "ids": [
+   "PLC-188"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 533
+ },
+ "rasia_hotel_madinah": {
+  "kind": "photo",
+  "ar": "فندق راسية المدينة",
+  "en": "Rasia Hotel Madinah",
+  "ids": [
+   "PLC-189"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "saadeddin_logo": {
+  "kind": "logo",
+  "ar": "حلويات سعد الدين",
+  "en": "Saadeddin",
+  "ids": [
+   "PLC-006"
+  ],
+  "bg": "#FBF9F4",
+  "w": 600,
+  "h": 298
+ },
+ "saqifat_bani_saidah": {
+  "kind": "photo",
+  "ar": "سقيفة بني ساعدة",
+  "en": "Saqifat Bani Sa'idah",
+  "ids": [
+   "PLC-063"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "saudi_electronic_university_madinah_branch": {
+  "kind": "photo",
+  "ar": "الجامعة السعودية الإلكترونية - فرع المدينة المنورة",
+  "en": "Saudi Electronic University - Madinah Branch",
+  "ids": [
+   "PLC-154"
+  ],
+  "lo": false,
+  "w": 804,
+  "h": 820
+ },
+ "saudi_german_hospital_madinah": {
+  "kind": "photo",
+  "ar": "المستشفى السعودي الألماني بالمدينة المنورة",
+  "en": "Saudi German Hospital Madinah",
+  "ids": [
+   "PLC-169"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 433
+ },
+ "sayyid_al_shuhada_mosque": {
+  "kind": "photo",
+  "ar": "مسجد سيد الشهداء",
+  "en": "Sayyid Al-Shuhada Mosque",
+  "ids": [
+   "PLC-064"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "shing_yang_restaurant": {
+  "kind": "photo",
+  "ar": "شينغ يانغ",
+  "en": "Shing Yang Restaurant",
+  "ids": [
+   "PLC-101"
+  ],
+  "lo": false,
+  "w": 680,
+  "h": 510
+ },
+ "site_of_the_battle_of_the_trench": {
+  "kind": "photo",
+  "ar": "موقع غزوة الخندق",
+  "en": "Site of the Battle of the Trench (Al-Khandaq)",
+  "ids": [
+   "PLC-065"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "sofitel_shahd_al_madinah": {
+  "kind": "photo",
+  "ar": "سوفيتيل شهد المدينة",
+  "en": "Sofitel Shahd Al Madinah",
+  "ids": [
+   "PLC-190"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "souq_al_manakha": {
+  "kind": "photo",
+  "ar": "سوق المناخة",
+  "en": "Souq Al Manakha",
+  "ids": [
+   "PLC-135"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 614
+ },
+ "souq_al_tabbakha": {
+  "kind": "photo",
+  "ar": "سوق الطباخة",
+  "en": "Souq Al-Tabbakha",
+  "ids": [
+   "PLC-102"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "souq_suwaiqah": {
+  "kind": "photo",
+  "ar": "سوق سويقة",
+  "en": "Souq Suwaiqah",
+  "ids": [
+   "PLC-136"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "swiss_house": {
+  "kind": "photo",
+  "ar": "سويس هاوس",
+  "en": "Swiss House",
+  "ids": [
+   "PLC-103"
+  ],
+  "lo": true,
+  "w": 440,
+  "h": 440
+ },
+ "taiba_commercial_centre": {
+  "kind": "photo",
+  "ar": "مركز طيبة التجاري (طيبة مول)",
+  "en": "Taiba Commercial Centre (Taiba Mall)",
+  "ids": [
+   "PLC-137"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 820
+ },
+ "taiba_front_hotel": {
+  "kind": "photo",
+  "ar": "فندق طيبة فرونت",
+  "en": "Taiba Front Hotel",
+  "ids": [
+   "PLC-191"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "taibah_university": {
+  "kind": "photo",
+  "ar": "جامعة طيبة",
+  "en": "Taibah University",
+  "ids": [
+   "PLC-155"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 513
+ },
+ "tasty_burger_grille": {
+  "kind": "photo",
+  "ar": "تيستي برجر آند جريل",
+  "en": "Tasty Burger Grille",
+  "ids": [
+   "PLC-104"
+  ],
+  "lo": true,
+  "w": 615,
+  "h": 820
+ },
+ "the_moghul_room": {
+  "kind": "photo",
+  "ar": "ذا موغول روم",
+  "en": "The Moghul Room (The Oberoi, Madina)",
+  "ids": [
+   "PLC-105"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "the_oberoi_madina": {
+  "kind": "photo",
+  "ar": "ذا أوبروي المدينة",
+  "en": "The Oberoi, Madina",
+  "ids": [
+   "PLC-192"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "the_porch_cafe": {
+  "kind": "photo",
+  "ar": "ذا بورش كافيه",
+  "en": "The Porch Cafe",
+  "ids": [
+   "PLC-122"
+  ],
+  "lo": true,
+  "w": 615,
+  "h": 820
+ },
+ "the_prophets_mosque": {
+  "kind": "photo",
+  "ar": "المسجد النبوي",
+  "en": "The Prophet's Mosque (Al-Masjid an-Nabawi)",
+  "ids": [
+   "PLC-040"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 513
+ },
+ "the_seven_mosques": {
+  "kind": "photo",
+  "ar": "المساجد السبعة",
+  "en": "The Seven Mosques (Al-Khandaq)",
+  "ids": [
+   "PLC-066"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 462
+ },
+ "the_tea_house": {
+  "kind": "photo",
+  "ar": "ذا تي هاوس",
+  "en": "The Tea House",
+  "ids": [
+   "PLC-123"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 475
+ },
+ "tohfa_cafe": {
+  "kind": "photo",
+  "ar": "كافيه تحفة",
+  "en": "Tohfa Cafe",
+  "ids": [
+   "PLC-124"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 624
+ },
+ "tokushi_sushi_house": {
+  "kind": "photo",
+  "ar": "توكوشي سوشي هاوس",
+  "en": "Tokushi - Sushi House",
+  "ids": [
+   "PLC-106"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "uhud_martyrs_cemetery": {
+  "kind": "photo",
+  "ar": "مقبرة شهداء أحد",
+  "en": "Uhud Martyrs' Cemetery",
+  "ids": [
+   "PLC-068"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 546
+ },
+ "uhud_martyrs_square": {
+  "kind": "photo",
+  "ar": "ساحة شهداء أحد",
+  "en": "Uhud Martyrs Square",
+  "ids": [
+   "PLC-067"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "umar_ibn_al_khattab_mosque": {
+  "kind": "photo",
+  "ar": "مسجد عمر بن الخطاب",
+  "en": "Umar ibn Al-Khattab Mosque (near the Prophet's Mosque)",
+  "ids": [
+   "PLC-069"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "urwa_ibn_al_zubayr_palace": {
+  "kind": "photo",
+  "ar": "قصر عروة بن الزبير",
+  "en": "Urwa ibn al-Zubayr Palace",
+  "ids": [
+   "PLC-070"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 456
+ },
+ "view_al_madinah_hotel": {
+  "kind": "photo",
+  "ar": "فندق فيو المدينة",
+  "en": "View Al Madinah Hotel",
+  "ids": [
+   "PLC-193"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 650
+ },
+ "wadi_al_aqiq": {
+  "kind": "photo",
+  "ar": "وادي العقيق",
+  "en": "Wadi Al-Aqiq",
+  "ids": [
+   "PLC-077"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 398
+ },
+ "wadi_al_baida": {
+  "kind": "photo",
+  "ar": "وادي البيضاء (وادي الجن / جبل المغناطيس)",
+  "en": "Wadi Al-Baida (Wadi al-Jinn / Magnetic Hill)",
+  "ids": [
+   "PLC-078"
+  ],
+  "lo": false,
+  "w": 800,
+  "h": 450
+ },
+ "well_of_aris": {
+  "kind": "photo",
+  "ar": "بئر أريس (بئر الخاتم)",
+  "en": "Well of Aris (The Ring Well)",
+  "ids": [
+   "PLC-071"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 547
+ },
+ "well_of_rumah": {
+  "kind": "photo",
+  "ar": "بئر رومة (بئر عثمان)",
+  "en": "Well of Rumah (Uthman ibn Affan's Well)",
+  "ids": [
+   "PLC-072"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 549
+ },
+ "wesal_bukhari_restaurant": {
+  "kind": "photo",
+  "ar": "مطعم وصال بخاري",
+  "en": "Wesal Bukhari Restaurant",
+  "ids": [
+   "PLC-107"
+  ],
+  "lo": true,
+  "w": 615,
+  "h": 820
+ },
+ "zaitoon_restaurant": {
+  "kind": "photo",
+  "ar": "زيتون",
+  "en": "Zaitoon Restaurant",
+  "ids": [
+   "PLC-108"
+  ],
+  "lo": false,
+  "w": 800,
+  "h": 800
+ },
+ "zaman_jaddi": {
+  "kind": "photo",
+  "ar": "زمن جدّي",
+  "en": "Zaman Jaddi",
+  "ids": [
+   "PLC-109"
+  ],
+  "lo": false,
+  "w": 820,
+  "h": 461
+ },
+ "al_tazaj": {
+  "kind": "logo",
+  "ar": "الطازج",
+  "en": "Al Tazaj",
+  "ids": [
+   "PLC-003"
+  ],
+  "bg": "#FFFFFF",
+  "w": 592,
+  "h": 421
+ },
+ "albaik": {
+  "kind": "logo",
+  "ar": "البيك",
+  "en": "ALBAIK",
+  "ids": [
+   "PLC-004"
+  ],
+  "bg": "#FFFFFF",
+  "w": 220,
+  "h": 251
+ },
+ "barns": {
+  "kind": "logo",
+  "ar": "بارنز",
+  "en": "Barn's",
+  "ids": [
+   "PLC-027"
+  ],
+  "bg": "#FBF9F4",
+  "w": 600,
+  "h": 362
+ },
+ "bindawood": {
+  "kind": "logo",
+  "ar": "بن داود",
+  "en": "BinDawood",
+  "ids": [
+   "PLC-020"
+  ],
+  "bg": "#FFFFFF",
+  "w": 661,
+  "h": 253
+ },
+ "costa_coffee": {
+  "kind": "logo",
+  "ar": "كوستا كوفي",
+  "en": "Costa Coffee",
+  "ids": [
+   "PLC-029"
+  ],
+  "bg": "#FFFFFF",
+  "w": 480,
+  "h": 475
+ },
+ "danube": {
+  "kind": "logo",
+  "ar": "الدانوب",
+  "en": "Danube",
+  "ids": [
+   "PLC-021"
+  ],
+  "bg": "#FFFFFF",
+  "w": 672,
+  "h": 382
+ },
+ "deep_fries": {
+  "kind": "logo",
+  "ar": "ديب فرايز",
+  "en": "Deep Fries",
+  "ids": [
+   "PLC-010"
+  ],
+  "bg": "#FBF9F4",
+  "w": 600,
+  "h": 454
+ },
+ "dose_cafe": {
+  "kind": "logo",
+  "ar": "دوز كافيه",
+  "en": "Dose Café",
+  "ids": [
+   "PLC-114"
+  ],
+  "bg": "#FBF9F4",
+  "w": 584,
+  "h": 372
+ },
+ "dunkin": {
+  "kind": "logo",
+  "ar": "دانكن",
+  "en": "Dunkin’",
+  "ids": [
+   "PLC-025"
+  ],
+  "bg": "#FFFFFF",
+  "w": 516,
+  "h": 473
+ },
+ "fire_grill": {
+  "kind": "logo",
+  "ar": "فاير جريل",
+  "en": "Fire Grill",
+  "ids": [
+   "PLC-001"
+  ],
+  "bg": "#000000",
+  "w": 672,
+  "h": 240
+ },
+ "harman": {
+  "kind": "logo",
+  "ar": "هرمان",
+  "en": "Harman",
+  "ids": [
+   "PLC-008"
+  ],
+  "bg": "#FBF9F4",
+  "w": 575,
+  "h": 600
+ },
+ "hashi_pasha": {
+  "kind": "logo",
+  "ar": "حاشي باشا",
+  "en": "Hashi Pasha",
+  "ids": [
+   "PLC-007"
+  ],
+  "bg": "#FFFFFF",
+  "w": 457,
+  "h": 451
+ },
+ "jan_burger": {
+  "kind": "logo",
+  "ar": "جان برجر",
+  "en": "Jan Burger",
+  "ids": [
+   "PLC-013",
+   "PLC-014"
+  ],
+  "bg": "#1F2321",
+  "w": 600,
+  "h": 600
+ },
+ "jarir": {
+  "kind": "logo",
+  "ar": "مكتبة جرير",
+  "en": "Jarir Bookstore",
+  "ids": [
+   "PLC-017"
+  ],
+  "bg": "#FFFFFF",
+  "w": 427,
+  "h": 104
+ },
+ "kudu": {
+  "kind": "logo",
+  "ar": "كودو",
+  "en": "Kudu",
+  "ids": [
+   "PLC-011"
+  ],
+  "bg": "#1F2321",
+  "w": 600,
+  "h": 93
+ },
+ "panda": {
+  "kind": "logo",
+  "ar": "بنده",
+  "en": "Panda",
+  "ids": [
+   "PLC-019"
+  ],
+  "bg": "#FFFFFF",
+  "w": 586,
+  "h": 389
+ },
+ "simit_sarayi": {
+  "kind": "logo",
+  "ar": "سميت سراي",
+  "en": "Simit Sarayi",
+  "ids": [
+   "PLC-012"
+  ],
+  "bg": "#FBF9F4",
+  "w": 600,
+  "h": 147
+ },
+ "tim_hortons": {
+  "kind": "logo",
+  "ar": "تيم هورتنز",
+  "en": "Tim Hortons",
+  "ids": [
+   "PLC-024"
+  ],
+  "bg": "#FBF9F4",
+  "w": 600,
+  "h": 121
+ }
+}
