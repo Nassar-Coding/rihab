@@ -24,13 +24,13 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const which = process.argv[2] || "all";
 const hash = (buf) => createHash("sha256").update(buf).digest("hex").slice(0, 10);
 
-/* the shell bundle (shared by both sites) and its photos */
+/* the shell bundle (shared by both sites), with its two photographs inside it */
 async function shellInto(OUT, { mode, title, description }) {
   const r = await build({ entryPoints: [join(ROOT, "shell/src/Shell.jsx")], bundle: true, minify: true, write: false, format: "iife",
-    jsx: "automatic", target: ["es2020"], define: { "process.env.NODE_ENV": '"production"' }, legalComments: "none" });
+    jsx: "automatic", target: ["es2020"], define: { "process.env.NODE_ENV": '"production"' }, legalComments: "none",
+    loader: { ".webp": "dataurl" } });
   const js = r.outputFiles[0].contents, v = hash(js);
   await writeFile(join(OUT, `shell.${v}.js`), js);
-  await cp(join(ROOT, "shell/media"), join(OUT, "media"), { recursive: true });
   let html = (await readFile(join(ROOT, "shell/index.html"), "utf8")).replace("__SHELL__", `./shell.${v}.js`);
   if (mode === "bi") {
     html = html.replace("<title>رحاب</title>", `<title>${title}</title>`)

@@ -7,6 +7,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { RIHAB as K, MODE, store, Accounts, passwordError, normEmail, EMAIL_RX } from "./rihab-auth.js";
+/* the two city photographs travel inside the bundle (as the city apps carry theirs), so they always load */
+import PHOTO_MAKKAH from "../media/makkah.webp";
+import PHOTO_MADINAH from "../media/madinah.webp";
 const BI = MODE === "bi";
 
 /* ── identity ─────────────────────────────────────────────────────────────
@@ -19,9 +22,9 @@ const C = {
   gold: "#C8A45D", goldHi: "#E3CA92", goldLo: "#9C7C3C", marble: "#F4EFE4", mist: "#A7B2AF", mist2: "#7F8C89", err: "#E8A193",
 };
 const CITY = {
-  makkah: { href: "./makkah/", photo: "./media/makkah.webp", bg: "#17463A", deep: "#0F3229", accent: "#D7B56D", soft: "#EFE6D5",
+  makkah: { href: "./makkah/", photo: PHOTO_MAKKAH, bg: "#17463A", deep: "#0F3229", accent: "#D7B56D", soft: "#EFE6D5",
     ar: "مكة المكرمة", en: "Makkah", appAr: "رحاب مكة", appEn: "Rihab Makkah", alt: ["الكعبة المشرفة وساحات المسجد الحرام عند الغروب", "The Kaaba and the courtyards of the Grand Mosque at dusk"] },
-  madinah: { href: "./madinah/", photo: "./media/madinah.webp", bg: "#172A46", deep: "#101E33", accent: "#F3D79E", soft: "#F5F5F2",
+  madinah: { href: "./madinah/", photo: PHOTO_MADINAH, bg: "#172A46", deep: "#101E33", accent: "#F3D79E", soft: "#F5F5F2",
     ar: "المدينة المنورة", en: "Madinah", appAr: "رحاب المدينة", appEn: "Rihab Madinah", alt: ["المسجد النبوي والقبة الخضراء", "The Prophet's Mosque and the Green Dome"] },
 };
 
@@ -76,7 +79,9 @@ body{min-height:100dvh}
   border-radius:13px;padding:13px 14px;outline:none;transition:border-color .15s}
 .field input::placeholder{color:${C.mist2}}
 .field input:focus{border-color:${C.gold}}
-.field .eye{position:absolute;inset-inline-end:8px;top:50%;transform:translateY(-50%);background:none;border:0;color:${C.mist};font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;padding:6px}
+.field .eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);background:none;border:0;color:${C.mist};cursor:pointer;width:36px;height:36px;display:grid;place-items:center;border-radius:10px;padding:0}
+.field .eye:hover{color:${C.goldHi}}
+.field .eye:focus-visible{outline:2px solid ${C.goldHi};outline-offset:0}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .btn{appearance:none;width:100%;border:0;border-radius:14px;padding:14px 16px;font:inherit;font-size:15.5px;font-weight:700;cursor:pointer;
   background:linear-gradient(180deg,${C.goldHi},${C.gold} 55%,${C.goldLo});color:#1B1608;letter-spacing:.01em;box-shadow:0 10px 26px -14px rgba(200,164,93,.8)}
@@ -206,8 +211,15 @@ function Field({ label, type = "text", value, onChange, auto, show, onToggle, t,
       <span>{label}</span>
       <div className="box">
         <input type={type === "password" && show ? "text" : type} value={value} onChange={(e) => onChange(e.target.value)} autoComplete={auto} dir={dir}
-          style={type === "password" ? { paddingInlineEnd: 64 } : null} />
-        {type === "password" && <button type="button" className="eye" onClick={onToggle}>{show ? t.hide : t.show}</button>}
+          style={type === "password" ? { paddingRight: 46 } : null} />
+        {type === "password" && (
+          <button type="button" className="eye" onClick={onToggle} aria-label={show ? t.hide : t.show} title={show ? t.hide : t.show} aria-pressed={show}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z" /><circle cx="12" cy="12" r="3" />
+              {show && <path d="M4 4l16 16" />}
+            </svg>
+          </button>
+        )}
       </div>
     </label>
   );

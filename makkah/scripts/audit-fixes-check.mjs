@@ -62,7 +62,7 @@ async function openByName(page, name, query = name, nth = null) {
 async function ask(page, q) {
   await tab(page, "home");
   await page.locator("[data-assistant-card] button").last().click(); await W(page, 600);
-  const input = page.getByLabel(/^(اسأل رحاب مكة|Ask رحاب مكة)$/).first();
+  const input = page.getByLabel(/^(اسأل رحاب مكة|Ask Rihab Makkah)$/).first();
   await input.fill(q); await input.press("Enter"); await W(page, 1000);
   const msgs = await page.locator("[data-screen]").innerText();
   await back(page);

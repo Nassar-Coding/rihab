@@ -151,7 +151,7 @@ for (const lang of LANGS) {
     await page.locator("[data-assistant-card] button").last().click(); await W(700);
     await scan("assistant (opened)");
     for (const [a, e, asked] of ASK) {
-      const input = page.getByLabel(/^(اسأل رحاب مكة|Ask رحاب مكة)$/).first();
+      const input = page.getByLabel(/^(اسأل رحاب مكة|Ask Rihab Makkah)$/).first();
       await input.fill(T(a, e)); await input.press("Enter"); await W(900);
       await scan(`assistant "${T(a, e)}"`, { asked });
     }
